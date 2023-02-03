@@ -34,12 +34,13 @@ const LoginFormPage = () => {
 
     return (
         <form onSubmit={handleSubmit}>
-            <ul>
+            <ul id="errorsUl">
                 {errors.map(error => <li key={error}>{error}</li>)}
             </ul>
-            <label>
+            <label id="credLabel">
                 Username or Email 
                 <input
+                    id="credInput"
                     type="text"
                     value={credential}
                     onChange={(e) => setCredential(e.target.value)}
@@ -47,9 +48,10 @@ const LoginFormPage = () => {
                 />
             </label>
             <br/>
-            <label>
+            <label id="passLabel">
                 Password
                 <input
+                    id="passInput"
                     type="password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
@@ -57,7 +59,10 @@ const LoginFormPage = () => {
                 />
             </label>
             <br/>
-            <button type="submit">Log In</button>
+            <button 
+                type="submit"
+                id="submitButton"
+                >Log In</button>
         </form>
     );
 }
