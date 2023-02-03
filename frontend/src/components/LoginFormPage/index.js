@@ -13,7 +13,7 @@ const LoginFormPage = () => {
     const [errors, setErrors] = useState([])
     const sessionUser = useSelector(getSessionUser)
 
-    if (sessionUser) <Redirect to={'/'} />
+    if (sessionUser) return <Redirect to={'/'} />
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -31,39 +31,47 @@ const LoginFormPage = () => {
                 else setErrors([res.statusText]);
             });
     }
-
+    const handleDemoSubmit = (e) => {
+        e.preventDefault();
+        return dispatch(sessionActions.fetchSession({ credential: 'demo@user.io', password: 'password' }))
+    }
     return (
-        <form onSubmit={handleSubmit}>
-            <ul id="errorsUl">
-                {errors.map(error => <li key={error}>{error}</li>)}
-            </ul>
-            <label id="credLabel">
-                Username or Email 
-                <input
-                    id="credInput"
-                    type="text"
-                    value={credential}
-                    onChange={(e) => setCredential(e.target.value)}
-                    required
-                />
-            </label>
-            <br/>
-            <label id="passLabel">
-                Password
-                <input
-                    id="passInput"
-                    type="password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    required
-                />
-            </label>
-            <br/>
-            <button 
-                type="submit"
-                id="submitButton"
+        <div id="form">
+            <form onSubmit={handleSubmit} id='loginForm'>
+                <ul id="errorsUl">
+                    {errors.map(error => <li key={error}>{error}</li>)}
+                </ul>
+                <label id="credLabel">
+                    Username or Email
+                    <input
+                        id="credInput"
+                        type="text"
+                        value={credential}
+                        onChange={(e) => setCredential(e.target.value)}
+                        required
+                    />
+                </label>
+                <br />
+                <label id="passLabel">
+                    Password
+                    <input
+                        id="passInput"
+                        type="password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        required
+                    />
+                </label>
+                <br />
+                <button
+                    type="submit"
+                    id="submitButton"
                 >Log In</button>
-        </form>
+            </form>
+            <form id="demoForm" onSubmit={handleDemoSubmit}>
+                <button id='demoSubmit'>Demo Login</button>
+            </form>
+        </div>
     );
 }
 
