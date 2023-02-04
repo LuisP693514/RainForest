@@ -4,6 +4,7 @@ import { getSessionUser } from "../../store/session"
 import { useState } from "react"
 import * as sessionActions from '../../store/session';
 import './LoginForm.css'
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
 const LoginFormPage = () => {
 
@@ -36,7 +37,7 @@ const LoginFormPage = () => {
         return dispatch(sessionActions.fetchSession({ credential: 'demo@user.io', password: 'password' }))
     }
     return (
-        <div id="form">
+        <div id="logInForm">
             <form onSubmit={handleSubmit} id='loginForm'>
                 <ul id="errorsUl">
                     {errors.map(error => <li key={error}>{error}</li>)}
@@ -71,6 +72,7 @@ const LoginFormPage = () => {
             <form id="demoForm" onSubmit={handleDemoSubmit}>
                 <button id='demoSubmit'>Demo Login</button>
             </form>
+            <p id="noAccount">Don't have an account? <Link to={'/signup'}>Sign Up</Link></p>
         </div>
     );
 }

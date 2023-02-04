@@ -1,0 +1,120 @@
+@font-face {
+    src: url(../../fonts/Ember/Amazon-Ember-Medium.ttf);
+    font-family: ember;
+}
+@font-face {
+    src: url(../../fonts/Ember/AmazonEmber_Th.ttf);
+    font-family: emberthin;
+}
+
+#root {
+    justify-content: center;
+    text-align: center;
+    -webkit-text-size-adjust: 100%;
+}
+
+#titleHeader {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 18px;
+}
+
+#titleHeader img {
+    height: 65px;
+}
+
+#outerDiv {
+    position: relative;
+    justify-self: center;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+}
+
+
+
+
+#signUpForm {
+    position: relative;
+    display: block;
+    border: 1px black solid;
+    border-radius: 4px;
+    margin: 0 auto;
+    width: fit-content;
+    font-size: 24px;
+    padding: 20px 26px;
+    text-align: start;
+}
+
+#signUpForm h1 {
+    font-family: emberthin;
+    font-size: 30px;
+    text-align: start;
+}
+
+input {
+    font-family: ember;
+    box-shadow: 0 1px 0 rgb(255 255 255 / 50%), 0 1px 0 rgb(0 0 0 / 7%) inset;
+    border-radius: 3px;
+    border: 1px solid #a6a6a6;
+    border-top-color: #949494;
+    outline: 0;
+    line-height: 19px;
+    display: inline-block;
+    user-select: none;
+    width: 250px;
+    padding: 3px 7px;
+    transition: all 0.1s linear;
+}
+
+input:focus {
+    border-color: #e77600;
+    box-shadow: 0 0 3px 2px rgb(228 121 17 / 50%);
+}
+
+#error {
+    list-style-type: none;
+}
+
+label {
+    display: inline-block;
+    width: 256px;
+    font-family: ember, Arial, Helvetica, sans-serif ;
+    font-size: 13px;
+    text-align: start;
+}
+
+#signInPTag {
+    font-family: ember;
+    font-size: medium;
+}
+
+#signUpButton {
+    -webkit-text-size-adjust: 100%;
+    display: inline-block;
+    padding: 3px 1px;
+    vertical-align: middle;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 3px;
+    border-color: #a88734 #9c7e31 #846a29;
+    background: #f0c14b;
+    display: inline-block;
+    box-sizing: border-box;
+    width: 265px;
+    margin-top: 16px;
+    box-shadow: 0px 5px 10px gray;
+    transition: all 0.1s linear;
+}
+
+#signUpButton:focus {
+    outline: none;
+    border-color: #e77600;
+    box-shadow: 0 0 3px 2px rgb(228 121 17 / 50%);
+}
+#signUpButton:hover {
+    box-shadow: 0px 1px 1px gray;
+}
+
+
+

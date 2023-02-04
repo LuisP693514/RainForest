@@ -3,6 +3,9 @@ import { Redirect } from "react-router-dom";
 import { getSessionUser } from "../../store/session";
 import * as sessionActions from '../../store/session'
 import { useState } from "react";
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
+import './SignUpForm.css'
+import LOGO from '../../images/logo.png'
 
 const SignUpForm = () => {
     const dispatch = useDispatch();
@@ -37,53 +40,70 @@ const SignUpForm = () => {
     }
 
     return (
-        <form onSubmit={handleSubmit}>
-            <ul>
-                {errors.map(error => <li key={error}>{error}</li>)}
-            </ul>
-            <label htmlFor="email">Email 
-                <input
-                    id="email"
-                    type='email'
-                    value={email}
-                    onChange={(e) => setEmail(e.currentTarget.value)}
-                    required
-                />
-            </label>
-            <br/>
-            <label htmlFor="name">Name 
-                <input
-                    id="name"
-                    type={'text'}
-                    value={name}
-                    onChange={(e) => setName(e.currentTarget.value)}
-                    required
-                />
-            </label>
-            <br/>
-            <label htmlFor="password">Password 
-                <input
-                    id="password"
-                    type={'password'}
-                    value={password}
-                    onChange={(e) => setPassword(e.currentTarget.value)}
-                    required
-                />
-            </label>
-            <br/>
-            <label htmlFor="cofirmPassword">Confirm Password 
-                <input
-                    id="confirmPassword"
-                    type={'password'}
-                    value={confirmPassword}
-                    onChange={(e) => setConfirmPassword(e.currentTarget.value)}
-                    required
-                />
-            </label>
-            <br/>
-            <button>Sign Up</button>
+        <div id="outerDiv">
+            <div id="titleHeader">
+                <img src={(LOGO)} alt='' />
 
-        </form>
+            </div>
+            <div id="signUpForm">
+                <h1>Create account</h1>
+                <form onSubmit={handleSubmit} id='suForm'>
+                    <ul id="errorsUl">
+                        {errors.map(error => <li id='error' key={error}>{error}</li>)}
+                    </ul>
+                    <label htmlFor="email" id="emailLabel">Email</label>
+                    <br />
+                    <input
+                        id="email"
+                        type='email'
+                        value={email}
+                        placeholder='Your email'
+                        onChange={(e) => setEmail(e.currentTarget.value)}
+                        required
+                    />
+
+                    <br />
+                    <label htmlFor="name" id="nameLabel">Name</label>
+                    <br />
+                    <input
+                        id="name"
+                        type={'text'}
+                        value={name}
+                        placeholder='Your name'
+                        onChange={(e) => setName(e.currentTarget.value)}
+                        required
+                    />
+
+                    <br />
+                    <label htmlFor="password" id="passwordLabel">Password</label>
+                    <br />
+                    <input
+                        id="password"
+                        type={'password'}
+                        value={password}
+                        placeholder='At least 6 characters'
+                        onChange={(e) => setPassword(e.currentTarget.value)}
+                        required
+                    />
+
+                    <br />
+                    <label htmlFor="cofirmPassword" id="confirmPasswordLabel">Re-enter password</label>
+                    <br />
+                    <input
+                        id="confirmPassword"
+                        type={'password'}
+                        value={confirmPassword}
+                        onChange={(e) => setConfirmPassword(e.currentTarget.value)}
+                        required
+                    />
+
+                    <br />
+                    <button id="signUpButton">Sign Up</button>
+
+                </form>
+                <p id="signInPTag">Already have an account? <Link to={'/login'} id='signInLink'> Sign in </Link> </p>
+            </div>
+        </div>
     )
 }
 
