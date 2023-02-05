@@ -1,0 +1,25 @@
+{
+  "name": "rainforest",
+  "version": "0.1.2",
+  "description": "amazon clone",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "build": "npm install --prefix frontend && npm run build --prefix frontend"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LuisP693514/RainForest.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LuisP693514/RainForest/issues"
+  },
+  "homepage": "https://github.com/LuisP693514/RainForest#readme",
+  "engines": {
+    "node": "16.x"
+  }
+}
