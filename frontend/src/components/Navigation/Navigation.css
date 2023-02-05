@@ -22,4 +22,15 @@
 
 #nav-right {
     margin-left: auto;
+    justify-content: space-between;
+}
+
+#nav-left {
+    margin-right: auto;
+    justify-content: space-between;
+}
+
+#nav-fill {
+    margin: 0 auto;
+    
 }

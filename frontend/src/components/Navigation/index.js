@@ -8,16 +8,17 @@ const Navigation = () => {
     const dispatch = useDispatch();
     const history = useHistory();
     const session = useSelector(getSessionUser)
+    const userName = session?.user
     
     const signedIn = !!session
     const displaySignOut = (
-        <button onClick={(e)=>{
+        <button id='signOutButtonNav' onClick={(e)=>{
             e.preventDefault();
             dispatch(logout());
         }}>Sign out</button>
     )
     const displaySignIn = (
-        <button onClick={(e)=> {
+        <button id='signInButtonNav' onClick={(e)=> {
             e.preventDefault();
             history.push('/login');
         }}>Sign in</button>
