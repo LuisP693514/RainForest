@@ -2,12 +2,13 @@ import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
 import { getSessionUser } from "../../store/session";
 import * as sessionActions from '../../store/session'
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import './SignUpForm.css'
 import LOGO from '../../images/logo.png'
 
 const SignUpForm = () => {
+    const inputRef = useRef(null)
     const dispatch = useDispatch();
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
@@ -35,9 +36,14 @@ const SignUpForm = () => {
                     else setErrors([res.statusText]);
                 });
         } else {
-            return setErrors(['Both password fields should match.'])
+            return setErrors(['Passwords must match'])
         }
     }
+
+    const emailError = errors.find(error => error.toLowerCase().startsWith('email'))
+    const nameError = errors.find(error => error.toLowerCase().startsWith('name'))
+    const passError = errors.find(error => error.toLowerCase().startsWith('password '))
+    const matchError = errors.find(error => error.toLowerCase().startsWith('passwords'))
 
     return (
         <div id="outerDiv">
@@ -48,21 +54,21 @@ const SignUpForm = () => {
             <div id="signUpForm">
                 <h1>Create account</h1>
                 <form onSubmit={handleSubmit} id='suForm'>
-                    <ul id="errorsUl">
-                        {errors.map(error => <li id='error' key={error}>{error}</li>)}
-                    </ul>
+
                     <label htmlFor="email" id="emailLabel">Email</label>
                     <br />
                     <input
                         id="email"
-                        type='email'
+                        type='text'
                         value={email}
                         placeholder='Your email'
                         onChange={(e) => setEmail(e.currentTarget.value)}
                         required
+                        style={{ borderColor: emailError ? "red" : "", boxShadow: emailError ? ('0 0 3px 1px #C40000') : '' }}  // Change the border when error exists  
                     />
+                    {/* Render error if it exists, otherwise break to new line */}
+                    {emailError ? <li id='error' key={emailError}><i className="fa-sharp fa-solid fa-triangle-exclamation"></i> {emailError}</li> : <br />}
 
-                    <br />
                     <label htmlFor="name" id="nameLabel">Name</label>
                     <br />
                     <input
@@ -72,9 +78,11 @@ const SignUpForm = () => {
                         placeholder='Your name'
                         onChange={(e) => setName(e.currentTarget.value)}
                         required
+                        style={{ borderColor: nameError ? "red" : "", boxShadow: nameError ? ('0 0 3px 1px #C40000') : '' }}  // Change the border when error exists  
                     />
 
-                    <br />
+                    {nameError ? <li id='error' key={nameError}><i className="fa-sharp fa-solid fa-triangle-exclamation"></i> {nameError}</li> : <br />}
+
                     <label htmlFor="password" id="passwordLabel">Password</label>
                     <br />
                     <input
@@ -84,24 +92,31 @@ const SignUpForm = () => {
                         placeholder='At least 6 characters'
                         onChange={(e) => setPassword(e.currentTarget.value)}
                         required
+                        style={{ borderColor: passError ? "red" : "", boxShadow: passError ? ('0 0 3px 1px #C40000') : '' }}  // Change the border when error exists  
+
                     />
 
-                    <br />
-                    <label htmlFor="cofirmPassword" id="confirmPasswordLabel">Re-enter password</label>
+                    {passError ? <li id='error' key={passError}><i className="fa-sharp fa-solid fa-triangle-exclamation"></i>{passError}</li> : <li id='infoLi'><i className="fa-solid fa-circle-info"></i><p id='infoP'>Passwords must be at least 6 characters.</p></li>}
+
+                    <label htmlFor="confirmPassword" id="confirmPasswordLabel">Re-enter password</label>
                     <br />
                     <input
+                        ref={inputRef}
                         id="confirmPassword"
                         type={'password'}
                         value={confirmPassword}
                         onChange={(e) => setConfirmPassword(e.currentTarget.value)}
                         required
+                        style={{ borderColor: matchError ? "red" : "", boxShadow: matchError ? ('0 0 3px 1px #C40000') : '' }}  // Change the border when error exists  
+                        onPaste={(e)=>{e.preventDefault();}}
                     />
 
-                    <br />
-                    <button id="signUpButton">Sign Up</button>
+                    {matchError ? <li id='error' key={matchError}><i className="fa-sharp fa-solid fa-triangle-exclamation"></i>{matchError}</li> : <br />}
+
+                    <button id="signUpButton">Sign Up </button>
 
                 </form>
-                <p id="signInPTag">Already have an account? <Link to={'/login'} id='signInLink'> Sign in </Link> </p>
+                <p id="signInPTag">Already have an account? <Link to={'/login'} id='signInLink'> Sign in <i className="fa-solid fa-caret-right"></i> </Link> </p>
             </div>
         </div>
     )

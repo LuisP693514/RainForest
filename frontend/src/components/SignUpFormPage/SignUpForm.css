@@ -48,8 +48,11 @@
 
 #signUpForm h1 {
     font-family: emberthin;
-    font-size: 30px;
+    font-size: 28px;
     text-align: start;
+    margin: 0 0 10px;
+    padding: 0 0 4px;
+    font-weight: 1000000;
 }
 
 input {
@@ -62,7 +65,7 @@ input {
     line-height: 19px;
     display: inline-block;
     user-select: none;
-    width: 250px;
+    width: 312px;
     padding: 3px 7px;
     transition: all 0.1s linear;
 }
@@ -72,21 +75,50 @@ input:focus {
     box-shadow: 0 0 3px 2px rgb(228 121 17 / 50%);
 }
 
-#error {
+#infoLi {
+    display: flex;
     list-style-type: none;
+    font-size: 12px;
+}
+
+#infoLi i {
+    margin-top: 6px;
+    margin-right: 6px;
+    color: rgb(71, 166, 255);
+}
+
+#infoP {
+    display: flex;
+    margin:0;
+    margin-top: 6px;
+}
+#error {
+    display:flex;
+    list-style-type: none;
+    font-family: ember;
+    font-size: 12px;
+    margin-top: 10px;
+    color: #C40000;
+}
+
+#error i {
+    margin-right: 6px;
 }
 
 label {
     display: inline-block;
-    width: 256px;
+    width: 312px;
     font-family: ember, Arial, Helvetica, sans-serif ;
     font-size: 13px;
     text-align: start;
+    margin-top: 13px;
+    transition: all 0.1s linear;
 }
 
 #signInPTag {
+    margin-top: 26px;
     font-family: ember;
-    font-size: medium;
+    font-size: 10px;
 }
 
 #signUpButton {
@@ -101,8 +133,8 @@ label {
     background: #f0c14b;
     display: inline-block;
     box-sizing: border-box;
-    width: 265px;
-    margin-top: 16px;
+    width: 328px;
+    margin-top: 26px;
     box-shadow: 0px 5px 10px gray;
     transition: all 0.1s linear;
 }
