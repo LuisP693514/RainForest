@@ -50,9 +50,10 @@
     font-family: emberthin;
     font-size: 28px;
     text-align: start;
-    margin: 0 0 10px;
+    margin: 0 0px 10px 0;
     padding: 0 0 4px;
     font-weight: 1000000;
+    width: 296px;
 }
 
 input {
@@ -65,7 +66,7 @@ input {
     line-height: 19px;
     display: inline-block;
     user-select: none;
-    width: 312px;
+    width: 294px;
     padding: 3px 7px;
     transition: all 0.1s linear;
 }
@@ -107,7 +108,7 @@ input:focus {
 
 label {
     display: inline-block;
-    width: 312px;
+    width: 294px!important;
     font-family: ember, Arial, Helvetica, sans-serif ;
     font-size: 13px;
     text-align: start;
@@ -119,6 +120,7 @@ label {
     margin-top: 26px;
     font-family: ember;
     font-size: 10px;
+    width: 294px;
 }
 
 #signUpButton {
@@ -133,10 +135,11 @@ label {
     background: #f0c14b;
     display: inline-block;
     box-sizing: border-box;
-    width: 328px;
+    width: 294px;
     margin-top: 26px;
     box-shadow: 0px 5px 10px gray;
     transition: all 0.1s linear;
+    cursor: pointer;
 }
 
 #signUpButton:focus {

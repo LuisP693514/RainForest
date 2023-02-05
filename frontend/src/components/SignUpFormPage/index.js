@@ -63,8 +63,7 @@ const SignUpForm = () => {
                         value={email}
                         placeholder='Your email'
                         onChange={(e) => setEmail(e.currentTarget.value)}
-                        required
-                        style={{ borderColor: emailError ? "red" : "", boxShadow: emailError ? ('0 0 3px 1px #C40000') : '' }}  // Change the border when error exists  
+                        style={{ borderColor: emailError ? "red" : "", boxShadow: emailError ? ('0 0 3px 1px #C40000') : '' }}
                     />
                     {/* Render error if it exists, otherwise break to new line */}
                     {emailError ? <li id='error' key={emailError}><i className="fa-sharp fa-solid fa-triangle-exclamation"></i> {emailError}</li> : <br />}
@@ -77,8 +76,7 @@ const SignUpForm = () => {
                         value={name}
                         placeholder='Your name'
                         onChange={(e) => setName(e.currentTarget.value)}
-                        required
-                        style={{ borderColor: nameError ? "red" : "", boxShadow: nameError ? ('0 0 3px 1px #C40000') : '' }}  // Change the border when error exists  
+                        style={{ borderColor: nameError ? "red" : "", boxShadow: nameError ? ('0 0 3px 1px #C40000') : '' }}
                     />
 
                     {nameError ? <li id='error' key={nameError}><i className="fa-sharp fa-solid fa-triangle-exclamation"></i> {nameError}</li> : <br />}
@@ -91,8 +89,7 @@ const SignUpForm = () => {
                         value={password}
                         placeholder='At least 6 characters'
                         onChange={(e) => setPassword(e.currentTarget.value)}
-                        required
-                        style={{ borderColor: passError ? "red" : "", boxShadow: passError ? ('0 0 3px 1px #C40000') : '' }}  // Change the border when error exists  
+                        style={{ borderColor: passError ? "red" : "", boxShadow: passError ? ('0 0 3px 1px #C40000') : '' }}
 
                     />
 
@@ -106,9 +103,8 @@ const SignUpForm = () => {
                         type={'password'}
                         value={confirmPassword}
                         onChange={(e) => setConfirmPassword(e.currentTarget.value)}
-                        required
-                        style={{ borderColor: matchError ? "red" : "", boxShadow: matchError ? ('0 0 3px 1px #C40000') : '' }}  // Change the border when error exists  
-                        onPaste={(e)=>{e.preventDefault();}}
+                        style={{ borderColor: matchError ? "red" : "", boxShadow: matchError ? ('0 0 3px 1px #C40000') : '' }}
+                        onPaste={(e) => { e.preventDefault(); }}
                     />
 
                     {matchError ? <li id='error' key={matchError}><i className="fa-sharp fa-solid fa-triangle-exclamation"></i>{matchError}</li> : <br />}
