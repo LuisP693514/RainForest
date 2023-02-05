@@ -1,0 +1,25 @@
+#navBar {
+    display: flex;
+    height: 60px;
+    width: 100%;
+    position: absolute;
+    float: none;
+    z-index: 0;
+    font-size: 14px;
+    box-sizing: border-box;
+    font-family: inherit;
+    line-height: 1em;
+    -webkit-text-size-adjust: 100%;
+    background-color: #131921;
+    top: 0;
+    left: 0;
+}
+
+#navBar nav {
+    display: inline-flex;
+    z-index: 1;
+}
+
+#nav-right {
+    margin-left: auto;
+}

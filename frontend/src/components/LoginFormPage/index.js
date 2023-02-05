@@ -38,13 +38,15 @@ const LoginFormPage = () => {
         return dispatch(sessionActions.fetchSession({ credential: 'demo@user.io', password: 'password' }))
     }
 
-    const emailError = errors.find(error => error.toLowerCase().startsWith('email'))
+    const emailError = errors.find(error => error.toLowerCase().includes('email'))
     const passError = errors.find(error => error.toLowerCase().startsWith('password '))
 
     return (
         <div id="outerDiv">
             <div id="titleHeader">
-                <img src={(LOGO)} alt='' />
+                <a href="/">
+                    <img id='rainForestLogo' src={(LOGO)} alt='' />
+                </a>
             </div>
             <div id="logInFormDiv">
                 <h1>Sign in</h1>

@@ -1,17 +1,3 @@
-@font-face {
-    src: url(../../fonts/Ember/Amazon-Ember-Medium.ttf);
-    font-family: ember;
-}
-
-@font-face {
-    src: url(../../fonts/Ember/AmazonEmber_Th.ttf);
-    font-family: emberthin;
-}
-
-@font-face {
-    src: url(../../fonts/Ember/AmazonEmber_Lt.ttf);
-    font-family: emberheavyli;
-}
 
 #root {
     justify-content: center;
@@ -103,6 +89,7 @@ input:focus {
     font-size: 12px;
     margin-top: 10px;
     color: #C40000;
+    max-width: 294px;
 }
 
 #error i {

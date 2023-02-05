@@ -48,8 +48,9 @@ const SignUpForm = () => {
     return (
         <div id="outerDiv">
             <div id="titleHeader">
-                <img src={(LOGO)} alt='' />
-
+                <a href="/">
+                    <img id='rainForestLogo' src={(LOGO)} alt='RainForest' />
+                </a>
             </div>
             <div id="signUpForm">
                 <h1>Create account</h1>

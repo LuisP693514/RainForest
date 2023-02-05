@@ -30,7 +30,6 @@ export const signUp = (user) => async dispatch => {
 }
 
 export const fetchSession = (user) => async dispatch => {
-    // debugger
     const { credential, password } = user
     const res = await csrfFetch('/api/session', {
         method: 'POST',

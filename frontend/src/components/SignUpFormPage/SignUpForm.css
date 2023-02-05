@@ -1,11 +1,3 @@
-@font-face {
-    src: url(../../fonts/Ember/Amazon-Ember-Medium.ttf);
-    font-family: ember;
-}
-@font-face {
-    src: url(../../fonts/Ember/AmazonEmber_Th.ttf);
-    font-family: emberthin;
-}
 
 #root {
     justify-content: center;

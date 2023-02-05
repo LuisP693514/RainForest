@@ -17,9 +17,9 @@ class Api::SessionsController < ApplicationController
        render 'api/users/show'
      else
        if User.find_by(email: params[:credential])
-        render json: {errors: ['Password was incorrect.']}, status: :unauthorized
+        render json: {errors: ['Password was incorrect']}, status: :unauthorized
        else
-        render json: {errors: ['Email not found.']}, status: :unauthorized
+        render json: {errors: ['We cannot find an account with that email address.']}, status: :unauthorized
        end
      end
    end
