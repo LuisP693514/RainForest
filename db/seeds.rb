@@ -9,7 +9,7 @@ ApplicationRecord.transaction do
     # For easy testing, so that after seeding, the first `User` has `id` of 1
     ApplicationRecord.connection.reset_pk_sequence!('users')
   
-    puts "Creating users..."
+    # puts "Creating users..."
 
     # demo user for demo login
     User.create!(
@@ -27,16 +27,16 @@ ApplicationRecord.transaction do
     #   }) 
     # end
     
-    puts "Creating products..."
-    
-    Product.create!(
-      name: 'Big Leaf',
-      amount: 200000,
-      price: 40.52,
-      description: "A really big leaf",
-      bullet_desc: ['it is large', 'it is green', "it is drawn by yours truly :)"]
-    )
-    puts "Done!"
+    # puts "Creating products..."
+
+    # Product.create!(
+    #   name: 'Big Leaf',
+    #   amount: 200000,
+    #   price: 40.52,
+    #   description: "A really big leaf",
+    #   bullet_desc: ['it is large', 'it is green', "it is drawn by yours truly :)"]
+    # )
+    # puts "Done!"
 end
 
 # ----------------------------- Products ----------------------------- #
