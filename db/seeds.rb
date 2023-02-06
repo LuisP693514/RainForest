@@ -26,7 +26,16 @@ ApplicationRecord.transaction do
     #     password: 'password'
     #   }) 
     # end
-  
+    
+    puts "Creating products..."
+    
+    Product.create!(
+      name: 'Big Leaf',
+      amount: 200000,
+      price: 40.52,
+      description: "A really big leaf",
+      bullet_desc: ['it is large', 'it is green', "it is drawn by yours truly :)"]
+    )
     puts "Done!"
 end
 
@@ -42,11 +51,4 @@ end
 #  description :text             not null
 #  bullet_desc :text             default([]), not null, is an Array
 
-Product.create!(
-  name: 'Big Leaf',
-  amount: 200000,
-  price: 40.52,
-  description: "A really big leaf",
-  bullet_desc: ['it is large', 'it is green', "it is drawn by yours truly :)"]
-)
 
