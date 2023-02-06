@@ -1,10 +1,4 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
-#   Character.create(name: "Luke", movie: movies.first)
+# ----------------------------- Users ----------------------------- #
 
 ApplicationRecord.transaction do 
     puts "Destroying tables..."
@@ -16,7 +10,8 @@ ApplicationRecord.transaction do
     ApplicationRecord.connection.reset_pk_sequence!('users')
   
     puts "Creating users..."
-    # Create one user with an easy to remember name, email, and password:
+
+    # demo user for demo login
     User.create!(
       name: 'Demo-lition', 
       email: 'demo@user.io', 
@@ -33,4 +28,25 @@ ApplicationRecord.transaction do
     end
   
     puts "Done!"
-  end
+end
+
+# ----------------------------- Products ----------------------------- #
+
+# == Schema Information
+#
+#  Table name: products
+#
+#  name        :string           not null
+#  amount      :integer          not null
+#  price       :decimal(, )      not null
+#  description :text             not null
+#  bullet_desc :text             default([]), not null, is an Array
+
+Product.create!(
+  name: 'Big Leaf',
+  amount: 200000,
+  price: 40.52,
+  description: "A really big leaf",
+  bullet_desc: ['it is large', 'it is green', "it is drawn by yours truly :)"]
+)
+
