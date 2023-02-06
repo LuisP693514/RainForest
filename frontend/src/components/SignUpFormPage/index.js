@@ -113,7 +113,7 @@ const SignUpForm = () => {
                     <button id="signUpButton">Sign Up </button>
 
                 </form>
-                <p id="signInPTag">Already have an account? <Link to={'/login'} id='signInLink'> Sign in <i className="fa-solid fa-caret-right"></i> </Link> </p>
+                <p id="signInPTag">Already have an account? <Link to={'/login'} id='signInLink'>Sign in </Link> <Link to={'/login'} id='signInLink'><i className="fa-solid fa-caret-right"></i> </Link> </p>
             </div>
         </div>
     )

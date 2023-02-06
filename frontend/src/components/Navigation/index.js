@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import { getSessionUser, logout } from '../../store/session';
 import './Navigation.css'
+import LOGO from '../../images/logo.png'
 
 const Navigation = () => {
 
@@ -12,7 +13,7 @@ const Navigation = () => {
     
     const signedIn = !!session
     const displaySignOut = (
-        <button id='signOutButtonNav' onClick={(e)=>{
+        <button id='signInButtonNav' onClick={(e)=>{
             e.preventDefault();
             dispatch(logout());
         }}>Sign out</button>
@@ -24,17 +25,21 @@ const Navigation = () => {
         }}>Sign in</button>
     )
     return (
-        <header id='navBar'>
-            <nav id='nav-left'>
-
-            </nav>
-            <nav id='nav-fill'>
-
-            </nav>
-            <nav id='nav-right'>
+        <nav id='navBar'>
+            <div id='nav-left'>
+                <a href='/'>
+                    <img id='navLogoImage' src={LOGO} alt='Logo'/>
+                </a>
+            </div>
+            <div id='nav-fill'>
+                <div id='mid-nav-test'>
+                    hello
+                </div>
+            </div>
+            <div id='nav-right'>
                 {signedIn ? displaySignOut : displaySignIn}
-            </nav>
-        </header>
+            </div>
+        </nav>
     )
 }
 

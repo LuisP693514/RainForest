@@ -111,7 +111,7 @@ label {
 #signInPTag {
     margin-top: 26px;
     font-family: ember;
-    font-size: 10px;
+    font-size: 13px;
     width: 294px;
 }
 
@@ -124,12 +124,12 @@ label {
     border-style: solid;
     border-radius: 3px;
     border-color: #a88734 #9c7e31 #846a29;
-    background: #f0c14b;
+    background: linear-gradient(to bottom,#f8e3ad,#EEBA37);
     display: inline-block;
     box-sizing: border-box;
     width: 294px;
     margin-top: 26px;
-    box-shadow: 0px 5px 10px gray;
+    box-shadow: 0px 1px 1px gray;
     transition: all 0.1s linear;
     cursor: pointer;
 }
@@ -142,6 +142,20 @@ label {
 #signUpButton:hover {
     box-shadow: 0px 1px 1px gray;
 }
+
+#signUpButton:active {
+    background: linear-gradient(to top,#f8e3ad,#EEBA37);
+}
+
+#signInLink{
+    text-decoration: none;
+    color: rgb(0, 136, 226);
+}
+
+#signInLink:hover {
+    text-decoration: underline;
+}
+
 
 
 

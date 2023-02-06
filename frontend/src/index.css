@@ -13,3 +13,8 @@
     src: url(./fonts/Ember/AmazonEmber_Lt.ttf);
     font-family: emberheavyli;
 }
+
+@font-face {
+    font-family: rg-ember;
+    src: url(./fonts/Ember/AmazonEmber_Rg.ttf);
+}
