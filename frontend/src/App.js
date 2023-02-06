@@ -5,8 +5,6 @@ import Navigation from './components/Navigation';
 import PageNotFound from './components/PageNotFound';
 import SignUpFormPage from './components/SignUpFormPage';
 
-
-
 function App() {
   return (
     <Switch>

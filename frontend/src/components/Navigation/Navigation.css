@@ -71,3 +71,9 @@
     float: left;
     height: 60px;
 }
+
+#helloMessage {
+    color: #fff;
+    font-family: rg-ember;
+    font-size: 18px;
+}

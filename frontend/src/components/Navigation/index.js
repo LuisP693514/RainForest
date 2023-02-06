@@ -8,10 +8,10 @@ const Navigation = () => {
 
     const dispatch = useDispatch();
     const history = useHistory();
-    const session = useSelector(getSessionUser)
-    const userName = session?.user
+    const user = useSelector(getSessionUser)
+    const userName = user?.name
     
-    const signedIn = !!session
+    const signedIn = !!user
     const displaySignOut = (
         <button id='signInButtonNav' onClick={(e)=>{
             e.preventDefault();
@@ -37,6 +37,7 @@ const Navigation = () => {
                 </div>
             </div>
             <div id='nav-right'>
+                <p id='helloMessage'>Hello { user ? userName : 'sign in'}</p>
                 {signedIn ? displaySignOut : displaySignIn}
             </div>
         </nav>
