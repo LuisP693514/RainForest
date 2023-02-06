@@ -64,7 +64,12 @@ const storeCurrentUser = user => {
 export const restoreSession = () => async dispatch => {
     const response = await csrfFetch("/api/session");
     storeCSRFToken(response);
-    const data = await response.json();
+    let data;
+    try{
+        data = await response.json();
+    } catch {
+        window.location.reload(true);
+    }
     storeCurrentUser(data.user);
     dispatch(receiveSession(data.user));
     return response;
@@ -81,7 +86,6 @@ const sessionReducer = (state = initialState, action) => {
 
     switch (action.type) {
         case RECEIVE_SESSION:
-            // debugger
             nextState.user = action.payload
             return nextState;
         case REMOVE_SESSION:

@@ -20,10 +20,4 @@ export const storeCSRFToken = (res) => {
     if (csrfToken) sessionStorage.setItem('X-CSRF-Token', csrfToken)
 }
 
-export const restoreCSRF = async () => {
-    const res = await csrfFetch('/api/session')
-    storeCSRFToken(res)
-    return res;
-}
-
 export default csrfFetch;
