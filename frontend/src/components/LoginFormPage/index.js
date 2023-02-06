@@ -88,7 +88,7 @@ const LoginFormPage = () => {
                 <div id='logInPTagContainer'>
                     <h3 id="logInPTag">New to RainForest?</h3>
                 </div>
-                <button id='createAccountButton' onClick={(e)=>{
+                <button id='createAccountButton' onClick={(e) => {
                     history.push('/signup')
                 }}>Create your RainForest account</button>
             </div>

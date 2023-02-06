@@ -1,8 +1,12 @@
 class Api::SessionsController < ApplicationController
   def show
     @user = current_user
-   
-    render 'api/users/show' if @user
+    
+    if @user
+      render 'api/users/show'
+    else
+      render json: {user: nil}
+    end
      # current_user ? render json: {user: current_user} :  render json: {user: nil}
  
    end
