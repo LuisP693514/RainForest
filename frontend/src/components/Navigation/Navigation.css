@@ -24,7 +24,6 @@
     display: flex;
     z-index: 1;
     height: 60px;
-    width: 100%;
 }
 
 #nav-right {
@@ -36,16 +35,20 @@
 #nav-left {
     
     height: 60px;
+    width: max-content;
     /* justify-content: space-between; */
 }
 
 #nav-fill {
     display: flex;
+    flex: 1 1 auto;
     position: static;
     float: none;
     width: auto;
+    min-width: 300px;
 }
 #mid-nav-test {
+    flex: 1;
     white-space: nowrap;
     overflow: hidden;
     display: flex;
@@ -55,8 +58,9 @@
     height: 60px;
     text-align: center;
     box-sizing: border-box;
-    width: auto;
+    width: fit-content;
     overflow: visible;
+    flex: 1 1 auto;
 }
 
 #signInButtonNav {
@@ -75,7 +79,7 @@
     display: block;
     height: 40px;
     top:10px;
-    flex: 1 1 auto;
+    
 }
 
 #signInButtonNav:active {

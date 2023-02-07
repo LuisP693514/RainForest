@@ -11,10 +11,11 @@
     line-height: 1em;
     color: #0F1111;
     -webkit-text-size-adjust: 100%;
-    width: max-content;
+    width: 100%
 }
 
 #searchBarInput {
     overflow: hidden;
     width: 100%;
+    flex: 1 1 auto;
 }
