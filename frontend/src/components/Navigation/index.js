@@ -4,6 +4,7 @@ import { getSessionUser, logout } from '../../store/session';
 import './Navigation.css'
 import LOGO from '../../images/logoWhite.png'
 import SearchBar from '../SearchBar';
+import FitText from '../FitText';
 
 const Navigation = () => {
 
@@ -25,6 +26,8 @@ const Navigation = () => {
             history.push('/login');
         }}>Sign in</button>
     )
+
+    const welcomeName = user ? userName : 'sign in'
     return (
         <nav id='navBar'>
             <div id='nav-left'>
@@ -38,7 +41,7 @@ const Navigation = () => {
                 </div>
             </div>
             <div id='nav-right'>
-                <p id='helloMessage'>Hello { user ? userName : 'sign in'}</p>
+                <FitText idParam={'helloMessage'} maxWidth={200} text={`Hello ${welcomeName}`}/>
                 {signedIn ? displaySignOut : displaySignIn}
             </div>
         </nav>
