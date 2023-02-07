@@ -35,8 +35,8 @@
     text-align: start;
 }
 
-#logInFormDiv h1 {
-    font-family: emberthin;
+#logInFormH1 {
+    font-family: rg-ember;
     font-size: 28px;
     text-align: start;
     margin: 0 0 10px;
@@ -206,7 +206,7 @@
     background-color: white;
     display: block;
     text-align: center;
-    font-family: emberthin;
+    font-family: rg-ember;
     font-size: 16px;
     margin: 0 auto;
     padding: 10px;

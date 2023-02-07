@@ -49,7 +49,7 @@ const LoginFormPage = () => {
                 </a>
             </div>
             <div id="logInFormDiv">
-                <h1>Sign in</h1>
+                <h1 id='logInFormH1'>Sign in</h1>
                 <form onSubmit={handleSubmit} id='loginForm'>
                     <label className='logInFormLabel' id="credLabel">Email</label>
                     <br />

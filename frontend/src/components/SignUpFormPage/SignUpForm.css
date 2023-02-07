@@ -38,13 +38,12 @@
     text-align: start;
 }
 
-#signUpForm h1 {
-    font-family: emberthin;
+#signUpFormH1 {
+    font-family: rg-ember;
     font-size: 28px;
     text-align: start;
     margin: 0 0px 10px 0;
     padding: 0 0 4px;
-    font-weight: 1000000;
     width: 296px;
 }
 

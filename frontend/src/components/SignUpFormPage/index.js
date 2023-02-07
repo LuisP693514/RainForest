@@ -53,7 +53,7 @@ const SignUpForm = () => {
                 </a>
             </div>
             <div id="signUpForm">
-                <h1>Create account</h1>
+                <h1 id='signUpFormH1'>Create account</h1>
                 <form onSubmit={handleSubmit} id='suForm'>
 
                     <label className='signUpFormLabel' htmlFor="email" id="emailLabel">Email</label>
