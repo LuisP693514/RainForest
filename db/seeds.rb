@@ -1,4 +1,4 @@
-# ----------------------------- Users ----------------------------- #
+
 
 ApplicationRecord.transaction do 
     puts "Destroying tables..."
@@ -11,7 +11,7 @@ ApplicationRecord.transaction do
     ApplicationRecord.connection.reset_pk_sequence!('users')
     ApplicationRecord.connection.reset_pk_sequence!('products')
 
-  
+# ----------------------------- Users ----------------------------- #
     puts "Creating users..."
 
     # demo user for demo login
@@ -30,20 +30,7 @@ ApplicationRecord.transaction do
       }) 
     end
     
-    puts "Creating products..."
-
-    Product.create!(
-      name: 'Big Leaf',
-      amount: 200000,
-      price: 40.52,
-      description: "A really big leaf",
-      bullet_desc: ['it is large', 'it is green', "it is drawn by yours truly :)"]
-    )
-    puts "Done!"
-end
-
 # ----------------------------- Products ----------------------------- #
-
 # == Schema Information
 #
 #  Table name: products
@@ -54,4 +41,16 @@ end
 #  description :text             not null
 #  bullet_desc :text             default([]), not null, is an Array
 
+    puts "Creating products..."
 
+    Product.create!(
+      name: 'Big Leaf',
+      amount: 200000,
+      price: 40.52,
+      description: "A really big leaf",
+      bullet_desc: ['it is large', 'it is green', "it is drawn by yours truly :)"],
+      image: 'amazonLeaf.png',
+      category: 'trees'
+    )
+    puts "Done!"
+end
