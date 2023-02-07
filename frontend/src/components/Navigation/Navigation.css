@@ -1,6 +1,7 @@
 
 
 #navBar {
+    color: rgb(255, 255, 255);
     display: flex;
     width: 100%;
     position: fixed;
@@ -23,24 +24,39 @@
     display: flex;
     z-index: 1;
     height: 60px;
+    width: 100%;
 }
 
 #nav-right {
     height: 60px;
-    margin-left: auto;
-    justify-content: space-between;
-    min-width: auto;
+    /* justify-content: space-between; */
+    /* min-width: auto; */
 }
 
 #nav-left {
     
     height: 60px;
-    margin-right: auto;
-    justify-content: space-between;
+    /* justify-content: space-between; */
 }
 
 #nav-fill {
-    margin: 0 auto;
+    display: flex;
+    position: static;
+    float: none;
+    width: auto;
+}
+#mid-nav-test {
+    white-space: nowrap;
+    overflow: hidden;
+    display: flex;
+    position: static;
+    float: none;
+    padding: 10px 4px 10px 3px;
+    height: 60px;
+    text-align: center;
+    box-sizing: border-box;
+    width: auto;
+    overflow: visible;
 }
 
 #signInButtonNav {
@@ -59,6 +75,7 @@
     display: block;
     height: 40px;
     top:10px;
+    flex: 1 1 auto;
 }
 
 #signInButtonNav:active {
@@ -73,7 +90,6 @@
 }
 
 #helloMessage {
-    color: #fff;
     font-family: rg-ember;
     font-size: 18px;
 }

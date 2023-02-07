@@ -64,20 +64,15 @@ const storeCurrentUser = user => {
 export const restoreSession = () => async dispatch => {
     const response = await csrfFetch("/api/session");
     storeCSRFToken(response);
-    let data;
-    try{
-        data = await response.json();
-    } catch {
-        window.location.reload(true);
-    }
+    const data = await response.json();
     storeCurrentUser(data.user);
     dispatch(receiveSession(data.user));
     return response;
-  };
+};
 
-const initialState = { 
+const initialState = {
     user: JSON.parse(sessionStorage.getItem("currentUser"))
-  };
+};
 
 const sessionReducer = (state = initialState, action) => {
     Object.freeze(state)

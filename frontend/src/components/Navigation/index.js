@@ -2,7 +2,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import { getSessionUser, logout } from '../../store/session';
 import './Navigation.css'
-import LOGO from '../../images/logo.png'
+import LOGO from '../../images/logoWhite.png'
+import SearchBar from '../SearchBar';
 
 const Navigation = () => {
 
@@ -33,7 +34,7 @@ const Navigation = () => {
             </div>
             <div id='nav-fill'>
                 <div id='mid-nav-test'>
-                    hello
+                    <SearchBar />
                 </div>
             </div>
             <div id='nav-right'>

@@ -48,7 +48,7 @@
     width: 296px;
 }
 
-input {
+.signUpFormInput {
     font-family: ember;
     box-shadow: 0 1px 0 rgb(255 255 255 / 50%), 0 1px 0 rgb(0 0 0 / 7%) inset;
     border-radius: 3px;
@@ -58,12 +58,12 @@ input {
     line-height: 19px;
     display: inline-block;
     user-select: none;
-    width: 294px;
+    width: 278px;
     padding: 3px 7px;
     transition: all 0.1s linear;
 }
 
-input:focus {
+.signUpFormInput:focus {
     border-color: #e77600;
     box-shadow: 0 0 3px 2px rgb(228 121 17 / 50%);
 }
@@ -98,7 +98,7 @@ input:focus {
     margin-right: 6px;
 }
 
-label {
+.signUpFormLabel {
     display: inline-block;
     width: 294px!important;
     font-family: ember, Arial, Helvetica, sans-serif ;

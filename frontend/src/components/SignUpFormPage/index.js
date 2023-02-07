@@ -56,10 +56,11 @@ const SignUpForm = () => {
                 <h1>Create account</h1>
                 <form onSubmit={handleSubmit} id='suForm'>
 
-                    <label htmlFor="email" id="emailLabel">Email</label>
+                    <label className='signUpFormLabel' htmlFor="email" id="emailLabel">Email</label>
                     <br />
                     <input
                         id="email"
+                        className='signUpFormInput'
                         type='text'
                         value={email}
                         placeholder='Your email'
@@ -69,10 +70,11 @@ const SignUpForm = () => {
                     {/* Render error if it exists, otherwise break to new line */}
                     {emailError ? <li id='error' key={emailError}><i className="fa-sharp fa-solid fa-triangle-exclamation"></i> {emailError}</li> : <br />}
 
-                    <label htmlFor="name" id="nameLabel">Name</label>
+                    <label className='signUpFormLabel' htmlFor="name" id="nameLabel">Name</label>
                     <br />
                     <input
                         id="name"
+                        className='signUpFormInput'
                         type={'text'}
                         value={name}
                         placeholder='Your name'
@@ -82,10 +84,11 @@ const SignUpForm = () => {
 
                     {nameError ? <li id='error' key={nameError}><i className="fa-sharp fa-solid fa-triangle-exclamation"></i> {nameError}</li> : <br />}
 
-                    <label htmlFor="password" id="passwordLabel">Password</label>
+                    <label className='signUpFormLabel' htmlFor="password" id="passwordLabel">Password</label>
                     <br />
                     <input
                         id="password"
+                        className='signUpFormInput'
                         type={'password'}
                         value={password}
                         placeholder='At least 6 characters'
@@ -96,10 +99,11 @@ const SignUpForm = () => {
 
                     {passError ? <li id='error' key={passError}><i className="fa-sharp fa-solid fa-triangle-exclamation"></i>{passError}</li> : <li id='infoLi'><i className="fa-solid fa-circle-info"></i><p id='infoP'>Passwords must be at least 6 characters.</p></li>}
 
-                    <label htmlFor="confirmPassword" id="confirmPasswordLabel">Re-enter password</label>
+                    <label className='signUpFormLabel' htmlFor="confirmPassword" id="confirmPasswordLabel">Re-enter password</label>
                     <br />
                     <input
                         ref={inputRef}
+                        className='signUpFormInput'
                         id="confirmPassword"
                         type={'password'}
                         value={confirmPassword}

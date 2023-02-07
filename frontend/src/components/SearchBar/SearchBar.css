@@ -1,0 +1,20 @@
+#searchBarForm {
+    display: flex;
+    position: static;
+    float: none;
+    height: 40px;
+    margin-bottom: 0;
+    margin-top: 0em;
+    white-space: nowrap;
+    font-size: 14px;
+    font-family: rg-ember;
+    line-height: 1em;
+    color: #0F1111;
+    -webkit-text-size-adjust: 100%;
+    width: max-content;
+}
+
+#searchBarInput {
+    overflow: hidden;
+    width: 100%;
+}

@@ -51,9 +51,10 @@ const LoginFormPage = () => {
             <div id="logInFormDiv">
                 <h1>Sign in</h1>
                 <form onSubmit={handleSubmit} id='loginForm'>
-                    <label id="credLabel">Email</label>
+                    <label className='logInFormLabel' id="credLabel">Email</label>
                     <br />
                     <input
+                        className="logInInputField"
                         id="credInput"
                         type="text"
                         value={credential}
@@ -63,9 +64,10 @@ const LoginFormPage = () => {
 
                     {emailError ? <li id='error' key={emailError}><i className="fa-sharp fa-solid fa-triangle-exclamation"></i> {emailError}</li> : <br />}
 
-                    <label id="passLabel">Password</label>
+                    <label className='logInFormLabel' id="passLabel">Password</label>
                     <br />
                     <input
+                        className="logInInputField"
                         id="passInput"
                         type="password"
                         value={password}
