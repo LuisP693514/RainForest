@@ -5,11 +5,14 @@ ApplicationRecord.transaction do
     # Unnecessary if using `rails db:seed:replant`
     User.destroy_all
     Product.destroy_all
+    Category.destroy_all
   
     puts "Resetting primary keys..."
     # For easy testing, so that after seeding, the first `User` has `id` of 1
     ApplicationRecord.connection.reset_pk_sequence!('users')
     ApplicationRecord.connection.reset_pk_sequence!('products')
+    ApplicationRecord.connection.reset_pk_sequence!('categories')
+
 
 # ----------------------------- Users ----------------------------- #
     puts "Creating users..."
@@ -30,16 +33,41 @@ ApplicationRecord.transaction do
       }) 
     end
     
-# ----------------------------- Products ----------------------------- #
+# ----------------------------- Categories ----------------------------- #
+
 # == Schema Information
 #
-#  Table name: products
+# Table name: categories
 #
-#  name        :string           not null
-#  amount      :integer          not null
-#  price       :decimal(, )      not null
-#  description :text             not null
-#  bullet_desc :text             default([]), not null, is an Array
+#  id         :bigint           not null, primary key
+#  category   :string           not null
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+
+    puts "Creating categories"
+    
+    Category.create!(category: 'leaves')
+    Category.create!(category: 'trees')
+    Category.create!(category: 'water')
+    Category.create!(category: 'fish')
+    Category.create!(category: 'cats')
+    Category.create!(category: 'dirt')
+    Category.create!(category: 'wood')
+    Category.create!(category: 'rain')
+    
+    puts "Done!"
+    
+    
+# ----------------------------- Products ----------------------------- #
+    # == Schema Information
+    #
+    #  Table name: products
+    #
+    #  name        :string           not null
+    #  amount      :integer          not null
+    #  price       :decimal(, )      not null
+    #  description :text             not null
+    #  bullet_desc :text             default([]), not null, is an Array
 
     puts "Creating products..."
 
@@ -50,7 +78,7 @@ ApplicationRecord.transaction do
       description: "A really big leaf",
       bullet_desc: ['it is large', 'it is green', "it is drawn by yours truly :)"],
       image: 'amazonLeaf.png',
-      category: 'trees'
+      category_id: 1
     )
     puts "Done!"
 end

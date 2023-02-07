@@ -11,7 +11,7 @@
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #  image       :string           default(""), not null
-#  category    :string           default(""), not null
+#  category_id :bigint           not null
 #
 class Product < ApplicationRecord
 
@@ -23,15 +23,18 @@ class Product < ApplicationRecord
     validates :bullet_desc, presence: true
     validates :name, presence: true, uniqueness: true
     validate :bullet_desc_is_array
-    validate :image_category_not_empty
+    validate :image_not_empty
 
-    def image_category_not_empty
+    def image_not_empty
         errors.add(:image, 'must have image') unless image.length > 0
-        errors.add(:category, 'must have a category') unless category.length > 0
     end
 
     def bullet_desc_is_array
         errors.add(:bullet_desc, "must be an array") unless bullet_desc.is_a?(Array)
     end
+
+    belongs_to :category,
+        foreign_key: :category_id,
+        class_name: :Category
 
 end
