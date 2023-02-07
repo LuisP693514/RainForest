@@ -19,8 +19,7 @@ class Product < ApplicationRecord
         format: {with: /\A\d+(?:\.\d{0,2})?\z/,  message: "must be a decimal with 2 decimal places or less" },
         presence: true
         
-    validates :amount, :description, presence: true
-    validates :bullet_desc, presence: true
+    validates :amount, :description, :bullet_desc, :category_id, presence: true
     validates :name, presence: true, uniqueness: true
     validate :bullet_desc_is_array
     validate :image_not_empty

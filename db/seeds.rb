@@ -54,6 +54,10 @@ ApplicationRecord.transaction do
     Category.create!(category: 'dirt')
     Category.create!(category: 'wood')
     Category.create!(category: 'rain')
+    Category.create!(category: 'wheel')
+    Category.create!(category: 'camping')
+
+
     
     puts "Done!"
     
@@ -68,6 +72,8 @@ ApplicationRecord.transaction do
     #  price       :decimal(, )      not null
     #  description :text             not null
     #  bullet_desc :text             default([]), not null, is an Array
+    #  image       :string           default(""), not null
+    #  category_id :bigint           not null
 
     puts "Creating products..."
 
