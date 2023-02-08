@@ -1,13 +1,41 @@
 
-
+#topOfPage {
+    width: 100%;
+    border-radius: 4px;
+    border: 1px solid black;
+    margin-top: 1px;
+    display: flex;
+    box-sizing: border-box;
+    height: auto;
+    text-align: center;
+}
 #imageDivLeftSide {
-    top:500px;
-    left: 500px;
-    width: 200px;
-    height: 200px;
+    display: inline-flex;
+    min-width: 30%;
+    margin-left: 3%;
+    height: auto;
+    float: left;
+}
+#midDivForTitleAndStuff{
+    width: 30%;
+    text-align: start;
+    min-width: 300px;
+    clear: both;
+    
+}
+
+#productNameH1{
+    font-size: 24px;
+    font-family: rg-ember;
+}
+
+#bulletDesc{
+    list-style: circle;
+    padding-left: 20px;
 }
 #productImage {
-    top: 300px;
-    width: 200px;
-    height: 200px;
+    height: auto;
+    width: 100%;
+    max-width: 300px;
+    min-width: 200px;
 }

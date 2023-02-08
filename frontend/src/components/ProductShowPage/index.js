@@ -31,6 +31,7 @@ const ProductShowPage = () => {
                 </div>
                 <div id='midDivForTitleAndStuff'>
                     <h1 id='productNameH1'>{product.name}</h1>
+                    <h3 id='price'>{`$${product.price}`}</h3>
                     <ul id='bulletDesc'>
                         {product.bulletDesc.map((bullet, i) => <li key={`bullet-${i}`}>{bullet}</li>)}
                     </ul>
