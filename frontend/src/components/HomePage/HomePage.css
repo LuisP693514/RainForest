@@ -1,0 +1,15 @@
+#backgroundDiv {
+    background-image: url(../../images/rainforestbg.jpg);
+    width: 100vw;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 0;
+}
+
+#gridDiv {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+    width: fit-content;
+}

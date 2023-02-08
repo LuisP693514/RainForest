@@ -17,6 +17,11 @@ const ProductShowPage = () => {
             .then(() => setIsLoading(false))
     }, [dispatch, productId])
 
+    const handleFormSubmit = (e) => {
+        e.preventDefault();
+
+    }
+
 
     if (isLoading) return <h1>Loading...</h1>
     if (!isLoading && !product) return <Redirect to='/product_does_not_exist' />
@@ -31,20 +36,31 @@ const ProductShowPage = () => {
                 </div>
                 <div id='midDivForTitleAndStuff'>
                     <h1 id='productNameH1'>{product.name}</h1>
-                    <h3 id='price'>{`$${product.price}`}</h3>
+                    <div id='priceDiv'>
+                        <p id='dollarSign'>$</p>
+                        <p id='priceH3'>{` ${Math.floor(product.price)}`}</p>
+                        <p id='priceCents'>{`${Math.floor((product.price % 1) * 100) === 0 ? '00' : Math.floor((product.price % 1) * 100) }`}</p>
+                    </div>
                     <ul id='bulletDesc'>
                         {product.bulletDesc.map((bullet, i) => <li key={`bullet-${i}`}>{bullet}</li>)}
                     </ul>
                 </div>
                 <div id='rightDivCart'>
-                    
+                    <form id='addToCartForm' onSubmit={handleFormSubmit}>
+                        <div id='priceDivCart'>
+                            <p id='dollarSignCart'>$</p>
+                            <p id='priceH3Cart'>{` ${Math.floor(product.price)}`}</p>
+                            <p id='priceCentsCart'>{`${Math.floor((product.price % 1) * 100) === 0 ? '00' : Math.floor((product.price % 1) * 100) }`}</p>
+                        </div>
+                        <button id='addToCartButton'>Add to cart</button>
+                    </form>
                 </div>
             </div>
             <div id='productDescriptionDiv'>
+                <h2 id='productDescription'>Product Description</h2>
                 <p id='productDescriptionPTag'>{product.description}</p>
             </div>
             <div id='ReviewsDiv'>
-
             </div>
         </>
     )

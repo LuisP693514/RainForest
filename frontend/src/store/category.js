@@ -38,7 +38,6 @@ export const getCategories = state => {
 
 export const fetchCategories = () => async dispatch =>{
     const res = await csrfFetch(`/api/categories`)
-
     if (res.ok) {
         const categories = await res.json()
         dispatch(receiveCategories(categories))

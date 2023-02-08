@@ -1,0 +1,9 @@
+#containerBox {
+    display: flex;
+    width: 300px;
+    height: 400px;
+    z-index: 1;
+    background-color: white;
+    flex-wrap: wrap;
+    margin: 0;
+}
