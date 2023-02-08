@@ -1,7 +1,9 @@
 
 
-h1 {
+#h1-404 {
     display: block;
     z-index: 0;
-    margin: 60px auto 0px;
+    margin: 0px auto 0px;
+    font-size: 80px;
+    font-family: ember;
 }
