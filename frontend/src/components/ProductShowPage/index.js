@@ -11,6 +11,9 @@ const ProductShowPage = () => {
     const { productId } = useParams()
     const dispatch = useDispatch();
     const product = useSelector(getProduct(productId)) || {}
+    // const amountArr = [...Array(product?.amount+1).keys].splice(0,1)
+
+
 
     useEffect(() => {
         dispatch(fetchProduct(productId))
@@ -22,8 +25,6 @@ const ProductShowPage = () => {
 
     }
 
-    let instock = true;
-
     const stock = () => {
         if (product.amount < 1) {
             return (
@@ -34,7 +35,7 @@ const ProductShowPage = () => {
         } else if (product.amount < 21) {
             return (
                 <p id='almostOutPTag'>
-                    {`Only ${product.amount} left - order soon!`}
+                    {`Only ${product.amount} left in stock - order soon!`}
                 </p>
             )
 
