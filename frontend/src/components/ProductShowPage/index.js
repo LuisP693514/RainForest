@@ -10,7 +10,7 @@ const ProductShowPage = () => {
 
     const { productId } = useParams()
     const dispatch = useDispatch();
-    const product = useSelector(getProduct(productId))
+    const product = useSelector(getProduct(productId)) || {}
 
     useEffect(() => {
         dispatch(fetchProduct(productId))
@@ -20,6 +20,33 @@ const ProductShowPage = () => {
     const handleFormSubmit = (e) => {
         e.preventDefault();
 
+    }
+
+    let instock = true;
+
+    const stock = () => {
+        if (product.amount < 0) {
+            return (
+                <p id='outOfStockPTag'>
+                    {`Out of Stock.`}
+                </p>
+            )
+        } else if (product.amount < 21) {
+            return (
+                <p id='almostOutPTag'>
+                    {`Only ${product.amount} left - order soon!`}
+                </p>
+            )
+
+        } else {
+            return (
+                
+                <p id='inStockPTag'>
+                    {`In Stock.`}
+                </p>
+    
+            )
+        }
     }
 
 
@@ -39,7 +66,7 @@ const ProductShowPage = () => {
                     <div id='priceDiv'>
                         <p id='dollarSign'>$</p>
                         <p id='priceH3'>{` ${Math.floor(product.price)}`}</p>
-                        <p id='priceCents'>{`${Math.floor((product.price % 1) * 100) === 0 ? '00' : Math.floor((product.price % 1) * 100) }`}</p>
+                        <p id='priceCents'>{`${Math.floor((product.price % 1) * 100) === 0 ? '00' : Math.floor((product.price % 1) * 100)}`}</p>
                     </div>
                     <ul id='bulletDesc'>
                         {product.bulletDesc.map((bullet, i) => <li key={`bullet-${i}`}>{bullet}</li>)}
@@ -50,8 +77,9 @@ const ProductShowPage = () => {
                         <div id='priceDivCart'>
                             <p id='dollarSignCart'>$</p>
                             <p id='priceH3Cart'>{` ${Math.floor(product.price)}`}</p>
-                            <p id='priceCentsCart'>{`${Math.floor((product.price % 1) * 100) === 0 ? '00' : Math.floor((product.price % 1) * 100) }`}</p>
+                            <p id='priceCentsCart'>{`${Math.floor((product.price % 1) * 100) === 0 ? '00' : Math.floor((product.price % 1) * 100)}`}</p>
                         </div>
+                        {stock()}
                         <button id='addToCartButton'>Add to cart</button>
                     </form>
                 </div>
