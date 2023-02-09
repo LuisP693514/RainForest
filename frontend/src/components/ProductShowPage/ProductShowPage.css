@@ -7,7 +7,6 @@
     box-sizing: border-box;
     height: auto;
     text-align: center;
-    
 }
 #imageDivLeftSide {
     float:none;
@@ -166,3 +165,21 @@
     background: #F0B800;
 
 }
+#inStockPTag, #almostOutPTag, #outOfStockPTag {
+    font-family: rg-ember;
+    font-size: 24px;
+    text-align: start;
+    margin: 30px 0;
+
+}
+
+#inStockPTag {
+    color: rgb(95, 158, 0);
+}
+#almostOutPTag {
+    color: orangered;
+}
+#outOfStockPTag {
+    color: red;
+}
+

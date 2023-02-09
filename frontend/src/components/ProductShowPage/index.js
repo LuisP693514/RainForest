@@ -25,7 +25,7 @@ const ProductShowPage = () => {
     let instock = true;
 
     const stock = () => {
-        if (product.amount < 0) {
+        if (product.amount < 1) {
             return (
                 <p id='outOfStockPTag'>
                     {`Out of Stock.`}
@@ -40,11 +40,9 @@ const ProductShowPage = () => {
 
         } else {
             return (
-                
                 <p id='inStockPTag'>
                     {`In Stock.`}
                 </p>
-    
             )
         }
     }
@@ -65,7 +63,7 @@ const ProductShowPage = () => {
                     <h1 id='productNameH1'>{product.name}</h1>
                     <div id='priceDiv'>
                         <p id='dollarSign'>$</p>
-                        <p id='priceH3'>{` ${Math.floor(product.price)}`}</p>
+                        <p id='priceH3'>{formatWithCommas(Math.floor(product.price))}</p>
                         <p id='priceCents'>{`${Math.floor((product.price % 1) * 100) === 0 ? '00' : Math.floor((product.price % 1) * 100)}`}</p>
                     </div>
                     <ul id='bulletDesc'>
@@ -76,10 +74,13 @@ const ProductShowPage = () => {
                     <form id='addToCartForm' onSubmit={handleFormSubmit}>
                         <div id='priceDivCart'>
                             <p id='dollarSignCart'>$</p>
-                            <p id='priceH3Cart'>{` ${Math.floor(product.price)}`}</p>
+                            <p id='priceH3Cart'>{formatWithCommas(Math.floor(product.price))}</p>
                             <p id='priceCentsCart'>{`${Math.floor((product.price % 1) * 100) === 0 ? '00' : Math.floor((product.price % 1) * 100)}`}</p>
                         </div>
                         {stock()}
+                        <select id='quantitySelect'>
+                            
+                        </select>
                         <button id='addToCartButton'>Add to cart</button>
                     </form>
                 </div>
@@ -89,9 +90,13 @@ const ProductShowPage = () => {
                 <p id='productDescriptionPTag'>{product.description}</p>
             </div>
             <div id='ReviewsDiv'>
+
             </div>
         </>
     )
 }
 
+function formatWithCommas(number) {
+    return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
 export default ProductShowPage;

@@ -1,25 +1,24 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchProducts, getProducts } from '../../store/product';
+import { fetchProduct, getProduct } from '../../store/product';
 import ProductBoxBox from '../ProductBoxBox';
 import './ProductBox.css'
 
-const ProductBox = ({ categoryId }) => {
+const ProductBox = ({ productId }) => {
 // grab 4 products at random that have this category and use their images to link to their product page
 
     const dispatch = useDispatch()
-    const products = useSelector(getProducts)
-    const filtered = filterProducts(products, categoryId)
+    const product = useSelector(getProduct(productId))
 
     useEffect(()=>{
-        dispatch(fetchProducts())
-    }, [dispatch])
+        dispatch(fetchProduct(productId))
+    }, [dispatch, productId])
 
     return (
 
-        <div id='containerBox'>
-            {filtered.map(product => <ProductBoxBox key={`inside-${product.id}`} product={product}/>)}
-        </div>
+       <div id='containerBox'>
+            <ProductBoxBox product={product} />
+       </div>
 
     )
 

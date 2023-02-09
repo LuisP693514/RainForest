@@ -101,10 +101,10 @@ ApplicationRecord.transaction do
       category_id: 2
     )
 
-    Product.create!(
+    Product.create!( 
       name: 'Jaguar',
       amount: 20,
-      price: 40000.00,
+      price: 1000000.00,
       description: "Super predetor Jaguar. Will hunt other predators for you! Who knows, it might see you as a threat, so be careful when purchasing. ",
       bullet_desc: ['Near threatened species (close to extinction)', 'Super predator'],
       image: 'jaguar.png',
@@ -130,6 +130,19 @@ ApplicationRecord.transaction do
       image: 'janiraHat.png',
       category_id: 5
     )
+
+    Product.create!(
+      name: 'Really Good Bug Spray - Outdoors - Camping Trip Bug Spray - Very Good Long Name',
+      amount: 0,
+      price: 2.89,
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc id ex ante. Donec enim mi, ullamcorper vel tortor sit amet, iaculis congue odio. Pellentesque dignissim finibus viverra. Sed maximus sem nec arcu interdum, eget gravida felis molestie. Nulla id vulputate sapien. Suspendisse rutrum pellentesque sapien non pulvinar. Mauris elit eros, fringilla a interdum at, hendrerit viverra neque. Curabitur dictum felis nec sem finibus aliquet. In nec lectus eu sapien auctor mattis non commodo mi. \n \n Phasellus dignissim mauris a velit malesuada tincidunt. Sed maximus at mi nec tempor. Integer gravida nec erat sed molestie. Donec sed congue nibh. Suspendisse non tortor eget magna pellentesque bibendum. Cras placerat elit arcu, sed sagittis metus venenatis ut. Aliquam porttitor gravida ligula lobortis molestie. Pellentesque non lectus sed augue feugiat condimentum. Mauris pulvinar nulla magna, eget scelerisque est tempor sed.",
+      bullet_desc: ['Great for outdoors!', 'Kill those bugs!', 'Is that a cockaroach in your pocket?', 'Extremely effective, 99.9% of bug spray owners recommend!', 'It even works on rats!'],
+      image: 'bugSpray.png',
+      category_id: 4
+    )
+
+
+
     
 
     puts "Done!"
