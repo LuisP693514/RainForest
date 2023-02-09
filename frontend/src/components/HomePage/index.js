@@ -9,7 +9,7 @@ const HomePage = () => {
 
     const dispatch = useDispatch()
     const categoriesArr = useSelector(getCategories)
-    const categories = categoriesArr[categoriesArr.length-1] || []
+    const categories = categoriesArr[categoriesArr.length - 1] || []
 
     useEffect(() => {
         dispatch(fetchCategories())
@@ -18,11 +18,15 @@ const HomePage = () => {
     return (
         <>
             <Navigation />
-            <div id="backgroundDiv">
-                <div id='gridDiv'>
-                    {categories.map(categoryId => <ProductBox key={`outside-${categoryId}`} categoryId={categoryId}/>)}
+            <main id='mainBody'>
+                <div id="backgroundDiv">
+                    <img id='forestImage' src={require('../../images/rainforestbg.jpg')} alt='forest' />
+                    <div id='gridDiv'>
+                        {categories.map(categoryId => <ProductBox key={`outside-${categoryId}`} categoryId={categoryId} />)}
+                    </div>
+
                 </div>
-            </div>
+            </main>
         </>
     )
 }

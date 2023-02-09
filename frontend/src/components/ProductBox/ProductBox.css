@@ -6,4 +6,6 @@
     background-color: white;
     flex-wrap: wrap;
     margin: 0;
+    box-sizing: border-box;
+    padding: 4px;
 }
