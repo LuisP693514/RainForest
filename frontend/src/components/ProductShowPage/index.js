@@ -24,6 +24,11 @@ const ProductShowPage = () => {
         amountArr = [0]
     }
 
+    const otherDiv = (
+        <>
+        </>
+    )
+
     useEffect(() => {
         dispatch(fetchProduct(productId))
             .then(() => setIsLoading(false))
