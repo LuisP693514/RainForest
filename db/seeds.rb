@@ -53,6 +53,7 @@ ApplicationRecord.transaction do
     Category.create!(category: 'Clothing') #5
     Category.create!(category: 'Fish') #6
     Category.create!(category: 'Wood') #7
+    Category.create!(category: 'Vehicles') #8
 
     puts "Done!"
     
@@ -140,6 +141,38 @@ ApplicationRecord.transaction do
       image: 'bugSpray.png',
       category_id: 4
     )
+
+    Product.create!(
+      name: 'Cast Iron - Heavy Duty - 56 ft. radius - Large Cast Iron',
+      amount: 200000,
+      price: 56.56,
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc id ex ante. Donec enim mi, ullamcorper vel tortor sit amet, iaculis congue odio. Pellentesque dignissim finibus viverra. Sed maximus sem nec arcu interdum, eget gravida felis molestie. Nulla id vulputate sapien. Suspendisse rutrum pellentesque sapien non pulvinar. Mauris elit eros, fringilla a interdum at, hendrerit viverra neque. Curabitur dictum felis nec sem finibus aliquet. In nec lectus eu sapien auctor mattis non commodo mi. \n \n Phasellus dignissim mauris a velit malesuada tincidunt. Sed maximus at mi nec tempor. Integer gravida nec erat sed molestie. Donec sed congue nibh. Suspendisse non tortor eget magna pellentesque bibendum. Cras placerat elit arcu, sed sagittis metus venenatis ut. Aliquam porttitor gravida ligula lobortis molestie. Pellentesque non lectus sed augue feugiat condimentum. Mauris pulvinar nulla magna, eget scelerisque est tempor sed.",
+      bullet_desc: ['Great for outdoors!', 'Can cook enough food for a section of the forest', 'Can keep food cooked for hours', 'Will not burn your food!', 'Doubles as a giant arena!', 'Image is not to scale'],
+      image: 'castIron.png',
+      category_id: 4
+    )
+
+    Product.create!(
+      name: 'Charcoal - Fire fuel - 200lbs of Cooking Rocks - 100hr lifetime',
+      amount: 300000,
+      price: 13.29,
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc id ex ante. Donec enim mi, ullamcorper vel tortor sit amet, iaculis congue odio. Pellentesque dignissim finibus viverra. Sed maximus sem nec arcu interdum, eget gravida felis molestie. Nulla id vulputate sapien. Suspendisse rutrum pellentesque sapien non pulvinar. Mauris elit eros, fringilla a interdum at, hendrerit viverra neque. Curabitur dictum felis nec sem finibus aliquet. In nec lectus eu sapien auctor mattis non commodo mi. \n \n Phasellus dignissim mauris a velit malesuada tincidunt. Sed maximus at mi nec tempor. Integer gravida nec erat sed molestie. Donec sed congue nibh. Suspendisse non tortor eget magna pellentesque bibendum. Cras placerat elit arcu, sed sagittis metus venenatis ut. Aliquam porttitor gravida ligula lobortis molestie. Pellentesque non lectus sed augue feugiat condimentum. Mauris pulvinar nulla magna, eget scelerisque est tempor sed.",
+      bullet_desc: ['Charcoal used for camping, cookouts, bonfires, train fuel', 'Can last as long as 100hrs', 'With 200lbs you can\'t go wrong!', 'Extremely effective, 99.9% of charcoal owners recommend!', 'Bring your friends to the cookout!'],
+      image: 'charcoal.png',
+      category_id: 3
+    )
+
+    Product.create!(
+      name: 'Charcoal Liquid Fuel - Keeps the Fire Going - 3KL Pure Diesel' ,
+      amount: 300000,
+      price: 132.00,
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc id ex ante. Donec enim mi, ullamcorper vel tortor sit amet, iaculis congue odio. Pellentesque dignissim finibus viverra. Sed maximus sem nec arcu interdum, eget gravida felis molestie. Nulla id vulputate sapien. Suspendisse rutrum pellentesque sapien non pulvinar. Mauris elit eros, fringilla a interdum at, hendrerit viverra neque. Curabitur dictum felis nec sem finibus aliquet. In nec lectus eu sapien auctor mattis non commodo mi. \n \n Phasellus dignissim mauris a velit malesuada tincidunt. Sed maximus at mi nec tempor. Integer gravida nec erat sed molestie. Donec sed congue nibh. Suspendisse non tortor eget magna pellentesque bibendum. Cras placerat elit arcu, sed sagittis metus venenatis ut. Aliquam porttitor gravida ligula lobortis molestie. Pellentesque non lectus sed augue feugiat condimentum. Mauris pulvinar nulla magna, eget scelerisque est tempor sed.",
+      bullet_desc: ['Each milliliter of this fuel can keep a fire going for 12 hours.', 'Sealed container prevents leaks', 'Water proof caps so that you can use it in the rain!', '100% real diesel!', 'It even doubles as car fuel'],
+      image: 'charcoalFuel.png',
+      category_id: 3
+    )
+
+
 
 
 

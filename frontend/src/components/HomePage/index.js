@@ -15,7 +15,7 @@ const HomePage = () => {
     const productsArr = useSelector(getProducts)
     const products = productsArr[productsArr.length - 1] || []
     const productsShuffled = shuffleArray(products)
-    productsShuffled.splice(4)
+    productsShuffled.splice(8)
     useEffect(() => {
         dispatch(fetchCategories())
         dispatch(fetchProducts())

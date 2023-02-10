@@ -13,7 +13,6 @@ const ProductShowPage = () => {
     const product = useSelector(getProduct(productId)) || {}
     product.amount = product.amount || 0
     let amountArr = []
-    let selectedValue = 0;
 
     if (product.amount > 30) {
         amountArr = [...Array(31).keys()]
@@ -42,7 +41,7 @@ const ProductShowPage = () => {
                     {`Out of Stock.`}
                 </p>
             )
-        } else if (product.amount < 21) {
+        } else if (product.amount < 31) {
             return (
                 <p id='almostOutPTag'>
                     {`Only ${product.amount} left in stock - order soon!`}
