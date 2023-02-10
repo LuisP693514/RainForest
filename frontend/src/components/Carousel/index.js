@@ -7,20 +7,24 @@ import ProductBox from '../ProductBox';
 const Carousel = ({ products }) => {
 
     const productsArr = [...products] || []
-    productsArr.splice(productsArr.length-1, 1)
+    productsArr.splice(productsArr.length - 1, 1)
 
     return (
-        <CarouselProvider 
+        <CarouselProvider
             id='daddyCarouselContainer'
-            naturalSlideWidth={1440}
-            naturalSlideHeight={400}
-            totalSlides={3}
+            naturalSlideWidth={150}
+            naturalSlideHeight={100}
+            totalSlides={2}
+            style={{ background: '#e7e7e7' }}
         >
+            <ButtonBack id='backButtonCarousel'>{"<"}</ButtonBack>
             <Slider id='sliderContaier'>
-                {productsArr.map(product => <Slide><ProductBox key={product.id} productId={product.id}/></Slide>)}
+                {
+                    productsArr.map(product => <Slide key={product.id} style={{ background: 'blue', width: '250px', margin: "0px 20px" }} className='slideBox'><ProductBox key={product.id} productId={product.id} /></Slide>)
+                }
             </Slider>
-            <ButtonBack id='backButtonCarousel'>backButton</ButtonBack>
-            <ButtonNext id='forwardButtonCarousel'>forward!!!!</ButtonNext>
+
+            <ButtonNext id='forwardButtonCarousel'>{">"}</ButtonNext>
         </CarouselProvider>
     )
 

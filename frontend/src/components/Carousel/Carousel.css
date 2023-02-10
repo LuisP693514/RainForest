@@ -1,5 +1,27 @@
 #daddyCarouselContainer {
-    display: block;
+    display: flex;
     position: relative;
-    top:600px;
+    width: 1440px;
+    height: 300px;
+}
+
+.slideBox {
+    width: fit-content;
+    height: fit-content;
+}
+
+
+#backButtonCarousel, #forwardButtonCarousel {
+    background: transparent;
+    border-radius: 6px;
+    box-shadow: none;
+    width: 60px;
+    height: 100%;
+}
+
+#forwardButtonCarousel {
+    float: right;
+}
+#backButtonCarousel {
+    float: left;
 }
