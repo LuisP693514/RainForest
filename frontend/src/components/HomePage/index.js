@@ -24,11 +24,12 @@ const HomePage = () => {
     return (
         <>
             <Navigation />
-            <main id='mainBody'>
+            <main id='mainBody'
+                style={{height: window.innerHeight}}>
                 <div id="backgroundDiv">
                     <img id='forestImage' src={require('../../images/rainforestbg.jpg')} alt='forest' />
                     <div id='gridDiv'>
-
+                        {productsShuffled.map(pId => <ProductBox productId={pId} key={pId} />)}
                     </div>
 
                 </div>

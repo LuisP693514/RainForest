@@ -16,6 +16,7 @@
     margin-top: 0;
     margin-bottom: 1 ;
     /* align-items: baseline; */
+    min-width: 1440px;
 }
 
 #navBar div {

@@ -1,5 +1,15 @@
-#productImageForInnerBox {
+#innerDivHolds2 {
     width: inherit;
-    height: auto;
+    box-sizing: border-box;
+    height: inherit;
     
+}
+
+#productImageForInnerBox {
+    width: 100%;
+    height: auto;
+    max-width: 200px;
+    max-height: 200px;
+    position: relative;
+    margin: auto;
 }

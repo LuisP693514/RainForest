@@ -11,9 +11,19 @@ const ProductShowPage = () => {
     const { productId } = useParams()
     const dispatch = useDispatch();
     const product = useSelector(getProduct(productId)) || {}
-    // const amountArr = [...Array(product?.amount+1).keys].splice(0,1)
+    product.amount = product.amount || 0
+    let amountArr = []
+    let selectedValue = 0;
 
-
+    if (product.amount > 30) {
+        amountArr = [...Array(31).keys()]
+        amountArr.splice(0,1)
+    } else if (product.amount > 0) {
+        amountArr = [...Array(product.amount + 1).keys()]
+        amountArr.splice(0,1)
+    } else {
+        amountArr = [0]
+    }
 
     useEffect(() => {
         dispatch(fetchProduct(productId))
@@ -79,8 +89,8 @@ const ProductShowPage = () => {
                             <p id='priceCentsCart'>{`${Math.floor((product.price % 1) * 100) === 0 ? '00' : Math.floor((product.price % 1) * 100)}`}</p>
                         </div>
                         {stock()}
-                        <select id='quantitySelect'>
-                            
+                        <select id='quantitySelect'> 
+                            {amountArr.map(num => <option key={num} className={`quantityOption`} value={num}>{`Qnt. ${num}`}</option>)}
                         </select>
                         <button id='addToCartButton'>Add to cart</button>
                     </form>
