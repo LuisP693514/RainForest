@@ -33,16 +33,17 @@ ApplicationRecord.transaction do
       }) 
     end
     
-# ----------------------------- Categories ----------------------------- #
+# ----------------------------- Categories --------------------------- #
+    #
+    # == Schema Information
+    #
+    # Table name: categories
+    #
+    #  id         :bigint           not null, primary key
+    #  category   :string           not null
+    #  created_at :datetime         not null
+    #  updated_at :datetime         not null
 
-# == Schema Information
-#
-# Table name: categories
-#
-#  id         :bigint           not null, primary key
-#  category   :string           not null
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
 
     puts "Creating categories"
     
@@ -72,6 +73,7 @@ ApplicationRecord.transaction do
 
     puts "Creating products..."
 
+    #big leaf
     Product.create!(
       name: 'Big Leaf',
       amount: 200000,
@@ -82,6 +84,7 @@ ApplicationRecord.transaction do
       category_id: 1
     )
 
+    #big leag HD
     Product.create!(
       name: 'Big Leaf HD',
       amount: 200000,
@@ -92,6 +95,7 @@ ApplicationRecord.transaction do
       category_id: 1
     )
 
+    #tiger
     Product.create!(
       name: 'Tigers',
       amount: 10,
@@ -102,6 +106,7 @@ ApplicationRecord.transaction do
       category_id: 2
     )
 
+    #jaguar
     Product.create!( 
       name: 'Jaguar',
       amount: 20,
@@ -112,6 +117,7 @@ ApplicationRecord.transaction do
       category_id: 2
     )
 
+    #janira beanie
     Product.create!(
       name: 'Silk Reine Mulberry Silk Lined Beanie (Unisex) – Black Knitted Hat with Pure Silk Lining – Warm – Soft & Slouchy/Suitable for All Seasons – Giftable Beanie for Men & Women',
       amount: 20000,
@@ -132,6 +138,7 @@ ApplicationRecord.transaction do
       category_id: 5
     )
 
+    #bug spray
     Product.create!(
       name: 'Really Good Bug Spray - Outdoors - Camping Trip Bug Spray - Very Good Long Name',
       amount: 0,
@@ -142,6 +149,7 @@ ApplicationRecord.transaction do
       category_id: 4
     )
 
+    #cast iron
     Product.create!(
       name: 'Cast Iron - Heavy Duty - 56 ft. radius - Large Cast Iron',
       amount: 200000,
@@ -152,6 +160,7 @@ ApplicationRecord.transaction do
       category_id: 4
     )
 
+    #charcoal
     Product.create!(
       name: 'Charcoal - Fire fuel - 200lbs of Cooking Rocks - 100hr lifetime',
       amount: 300000,
@@ -162,6 +171,7 @@ ApplicationRecord.transaction do
       category_id: 3
     )
 
+    #charcoalFuel
     Product.create!(
       name: 'Charcoal Liquid Fuel - Keeps the Fire Going - 3KL Pure Diesel' ,
       amount: 300000,
@@ -171,12 +181,6 @@ ApplicationRecord.transaction do
       image: 'charcoalFuel.png',
       category_id: 3
     )
-
-
-
-
-
-    
 
     puts "Done!"
 end

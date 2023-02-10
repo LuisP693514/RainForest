@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getCategories, fetchCategories } from "../../store/category";
 import { fetchProducts, getProducts } from "../../store/product";
+import Carousel from "../Carousel";
 import Navigation from "../Navigation";
 import ProductBox from "../ProductBox";
 import "./HomePage.css"
@@ -25,13 +26,18 @@ const HomePage = () => {
         <>
             <Navigation />
             <main id='mainBody'
-                style={{height: window.innerHeight}}>
+                style={{ height: window.innerHeight }}>
                 <div id="backgroundDiv">
-                    <img id='forestImage' src={require('../../images/rainforestbg.jpg')} alt='forest' />
-                    <div id='gridDiv'>
-                        {productsShuffled.map(pId => <ProductBox productId={pId} key={pId} />)}
-                    </div>
+                    <div id="topPartOfBG">
 
+                        <img id='forestImage' src={require('../../images/rainforestbg.jpg')} alt='forest' />
+                        <div id='gridDiv'>
+                            {productsShuffled.map(pId => <ProductBox productId={pId} key={pId} />)}
+                        </div>
+                    </div>
+                    <div id='cat1Carousel'>
+                        <Carousel products={productsArr} />
+                    </div>
                 </div>
             </main>
         </>
