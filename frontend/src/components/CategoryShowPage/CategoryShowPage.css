@@ -19,8 +19,15 @@
     gap: 40px;
     padding-left: 150px;
     place-items: center;
+    grid-template-rows: 350px;
+}
+#productInsideTheCategory {
+    width: 300px;
+    height: 300px;
+    display: flex;
 }
 
+/* Accommodate for smaller screen sizes */
 @media (max-width: 1400px) {
     #motherOfAllDivs {
         grid-template-columns: repeat(4, 1fr);
@@ -43,10 +50,4 @@
     #motherOfAllDivs {
         grid-template-columns: repeat(1, 1fr);
     }
-}
-
-#productInsideTheCategory {
-    width: 250px;
-    height: 300px;
-    background-color: red;
 }

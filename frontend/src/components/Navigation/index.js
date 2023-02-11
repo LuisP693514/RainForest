@@ -42,7 +42,7 @@ const Navigation = () => {
                 </div>
             </div>
             <div id='nav-right'>
-                <FitText idParam={'helloMessage'} maxWidth={200} text={`Hello ${welcomeName}`}/>
+                <FitText idParam={'helloMessage'} maxWidth={200} text={`Hello ${welcomeName}`} font={16}/>
                 {signedIn ? displaySignOut : displaySignIn}
             </div>
         </nav>

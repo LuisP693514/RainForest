@@ -24,7 +24,7 @@ const HomePage = () => {
     }, [dispatch])
 
     return (
-        <>
+        <div id="pleasejustfixbgcolor">
             <Navigation />
             <CategoryHeader/>
             <main id='mainBody'
@@ -42,7 +42,7 @@ const HomePage = () => {
                     </div>
                 </div>
             </main>
-        </>
+        </div>
     )
 }
 

@@ -2,8 +2,8 @@ import './FitText.css'
 
 import React, { useState, useEffect, useRef } from "react";
 
-const FitText = ({ text, maxWidth, idParam }) => {
-  const [fontSize, setFontSize] = useState(16);
+const FitText = ({ text, maxWidth, idParam, font }) => {
+  const [fontSize, setFontSize] = useState(font);
   const textRef = useRef(null);
 
   useEffect(() => {

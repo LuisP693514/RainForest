@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
+import { Redirect, useParams } from 'react-router-dom/cjs/react-router-dom.min';
 import { fetchCategories, fetchCategory, getCategory } from '../../store/category';
 import { fetchProducts, getProducts } from '../../store/product';
 import CategoryHeader from '../CategoryHeader';
+import CategoryProductBox from '../CategoryProductBox';
 import Navigation from '../Navigation';
 import './CategoryShowPage.css'
 
@@ -31,6 +32,7 @@ const CategoryShowPage = () => {
     }, [dispatch, categoryId])
 
     if (loadingCats || loadingProds) return <p>Loading...</p>
+    if (!loadingProds && !loadingCats && !category) return <Redirect to='/category_does_not_exist' />
 
     const filteredProds = filterProducts(productsCopy, categoryId)
     return (
@@ -42,7 +44,7 @@ const CategoryShowPage = () => {
                 {filteredProds.map(prodObj =>
 
                     <div id='productInsideTheCategory' key={`product-${prodObj.id}`}>
-                        {prodObj.name}
+                        <CategoryProductBox product={prodObj}/>
                     </div>
                 )}
             </div>

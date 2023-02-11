@@ -14,9 +14,8 @@ const Carousel = ({ products }) => {
             id='daddyCarouselContainer'
             naturalSlideWidth={150}
             naturalSlideHeight={100}
-            totalSlides={2}
-            infinite={true}
-            style={{ background: '#e7e7e7' }}
+            totalSlides={3}
+            style={{ background: '#f7f7f7' }}
         >
             <ButtonBack id='backButtonCarousel'>{"<"}</ButtonBack>
             <Slider id='sliderContaier'>

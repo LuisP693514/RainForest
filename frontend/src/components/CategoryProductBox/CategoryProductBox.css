@@ -1,0 +1,41 @@
+#categoryProductMotherDiv {
+    box-sizing: border-box;
+    padding: 5px 10px;
+}
+
+#imageInsideTheCatBox {
+    height: 50%;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 5px;
+}
+
+#priceOfTheCatItem {
+    display: flex;
+    font-family: rg-ember;
+    color: #b12704;
+    font-size: 24px;
+    text-align: start;
+    margin-top: 4px;
+    box-sizing: border-box;
+    padding: 0 30px;
+}
+
+
+#dollarSignCat {
+    font-size: 12px;
+    display: inline-block;
+    top: -0.1px;
+    position: relative;
+}
+
+#priceDivCat * {
+    display: inline-flex;
+}
+
+#priceCentsCat {
+    display: inline-block;
+    font-size: 12px;
+    top: -0.1px;
+    position: relative;
+}

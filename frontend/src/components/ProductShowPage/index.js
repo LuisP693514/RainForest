@@ -5,6 +5,7 @@ import { fetchProduct, getProduct } from '../../store/product';
 import CategoryHeader from '../CategoryHeader';
 import Navigation from '../Navigation';
 import './ProductShowPage.css'
+import { formatWithCommas } from '../../utils/helperFunctions';
 
 const ProductShowPage = () => {
     const [isLoading, setIsLoading] = useState(true);
@@ -115,7 +116,4 @@ const ProductShowPage = () => {
     )
 }
 
-function formatWithCommas(number) {
-    return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-}
 export default ProductShowPage;

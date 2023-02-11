@@ -19,7 +19,7 @@ ApplicationRecord.transaction do
 
     # demo user for demo login
     User.create!(
-      name: 'Demo-lition', 
+      name: 'Demo User', 
       email: 'demo@user.io', 
       password: 'password'
     )
@@ -98,21 +98,21 @@ ApplicationRecord.transaction do
     #tiger
     Product.create!(
       name: 'Tigers',
-      amount: 10,
-      price: 40000.00,
+      amount: 0,
+      price: 50.00,
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc id ex ante. Donec enim mi, ullamcorper vel tortor sit amet, iaculis congue odio. Pellentesque dignissim finibus viverra. Sed maximus sem nec arcu interdum, eget gravida felis molestie. Nulla id vulputate sapien. Suspendisse rutrum pellentesque sapien non pulvinar. Mauris elit eros, fringilla a interdum at, hendrerit viverra neque. Curabitur dictum felis nec sem finibus aliquet. In nec lectus eu sapien auctor mattis non commodo mi. \n \n Phasellus dignissim mauris a velit malesuada tincidunt. Sed maximus at mi nec tempor. Integer gravida nec erat sed molestie. Donec sed congue nibh. Suspendisse non tortor eget magna pellentesque bibendum. Cras placerat elit arcu, sed sagittis metus venenatis ut. Aliquam porttitor gravida ligula lobortis molestie. Pellentesque non lectus sed augue feugiat condimentum. Mauris pulvinar nulla magna, eget scelerisque est tempor sed.",
-      bullet_desc: ['They have big teeth', 'Occasionally angry', "Loves eating fish!"],
+      bullet_desc: ['They have big teeth', 'Occasionally angry', "Loves eating fish!", 'Get them out of here, foreign species shouldn\'t be here', ],
       image: 'tigers.jpg',
       category_id: 2
     )
 
     #jaguar
     Product.create!( 
-      name: 'Jaguar',
+      name: 'Jaguar - 96 kg (212 lb) - 1.85 m Long (6 ft)',
       amount: 20,
       price: 1000000.00,
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc id ex ante. Donec enim mi, ullamcorper vel tortor sit amet, iaculis congue odio. Pellentesque dignissim finibus viverra. Sed maximus sem nec arcu interdum, eget gravida felis molestie. Nulla id vulputate sapien. Suspendisse rutrum pellentesque sapien non pulvinar. Mauris elit eros, fringilla a interdum at, hendrerit viverra neque. Curabitur dictum felis nec sem finibus aliquet. In nec lectus eu sapien auctor mattis non commodo mi. \n \n Phasellus dignissim mauris a velit malesuada tincidunt. Sed maximus at mi nec tempor. Integer gravida nec erat sed molestie. Donec sed congue nibh. Suspendisse non tortor eget magna pellentesque bibendum. Cras placerat elit arcu, sed sagittis metus venenatis ut. Aliquam porttitor gravida ligula lobortis molestie. Pellentesque non lectus sed augue feugiat condimentum. Mauris pulvinar nulla magna, eget scelerisque est tempor sed.",
-      bullet_desc: ['Near threatened species (close to extinction)', 'Super predator'],
+      bullet_desc: ['Will eat almost any wild animal in sight', 'Super predator', 'Really strong jaw can bite into most skulls', 'Do not buy unless you know what you\'re doing', 'A native species to the Amazon'],
       image: 'jaguar.png',
       category_id: 2
     )
@@ -199,10 +199,26 @@ ApplicationRecord.transaction do
       amount: 300000,
       price: 963212.31,
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc id ex ante. Donec enim mi, ullamcorper vel tortor sit amet, iaculis congue odio. Pellentesque dignissim finibus viverra. Sed maximus sem nec arcu interdum, eget gravida felis molestie. Nulla id vulputate sapien. Suspendisse rutrum pellentesque sapien non pulvinar. Mauris elit eros, fringilla a interdum at, hendrerit viverra neque. Curabitur dictum felis nec sem finibus aliquet. In nec lectus eu sapien auctor mattis non commodo mi. \n \n Phasellus dignissim mauris a velit malesuada tincidunt. Sed maximus at mi nec tempor. Integer gravida nec erat sed molestie. Donec sed congue nibh. Suspendisse non tortor eget magna pellentesque bibendum. Cras placerat elit arcu, sed sagittis metus venenatis ut. Aliquam porttitor gravida ligula lobortis molestie. Pellentesque non lectus sed augue feugiat condimentum. Mauris pulvinar nulla magna, eget scelerisque est tempor sed.",
-      bullet_desc: ['Can chop trees', 'Gather that wood around the forest', 'Proven to work on any tree of any size.', 'REAL STEEL (not fake)'],
+      bullet_desc: ['Super cute', 'Will take your cookie', 'TINY: their small size are proven expand on their cuteness ', 'Can be trained to be annoying'],
       image: 'squirrelMonkey.png',
       category_id: 2
     )
+
+    #giant catfish
+    Product.create!(
+      name: 'Arapaima Gigas - Large Catfish - 100 kg (220 lb) - 3 m Long (9.8 ft)' ,
+      amount: 5,
+      price: 100220.98,
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc id ex ante. Donec enim mi, ullamcorper vel tortor sit amet, iaculis congue odio. Pellentesque dignissim finibus viverra. Sed maximus sem nec arcu interdum, eget gravida felis molestie. Nulla id vulputate sapien. Suspendisse rutrum pellentesque sapien non pulvinar. Mauris elit eros, fringilla a interdum at, hendrerit viverra neque. Curabitur dictum felis nec sem finibus aliquet. In nec lectus eu sapien auctor mattis non commodo mi. \n \n Phasellus dignissim mauris a velit malesuada tincidunt. Sed maximus at mi nec tempor. Integer gravida nec erat sed molestie. Donec sed congue nibh. Suspendisse non tortor eget magna pellentesque bibendum. Cras placerat elit arcu, sed sagittis metus venenatis ut. Aliquam porttitor gravida ligula lobortis molestie. Pellentesque non lectus sed augue feugiat condimentum. Mauris pulvinar nulla magna, eget scelerisque est tempor sed.",
+      bullet_desc: ['Can breathe air!', 'Thrives in oxygen-deprived waters like the Amazon River', 'Eats fruits, insects, seeds, and small land animals', 'The TOP predetor in oxbow lakes! (During low water season)', 'IMAGE: By Shizhao - Own work, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=7755863', 'Learn more at https://en.wikipedia.org/wiki/Arapaima'],
+      image: 'giantCatfish.jpg',
+      category_id: 6
+    )
+
+
+
+
+    
 
     puts "Done!"
 end
