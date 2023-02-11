@@ -11,6 +11,6 @@
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #  image       :string           default(""), not null
+#  category_id :bigint           not null
 
-
- json.extract! @product, :id, :name, :price, :amount, :description, :bullet_desc, :image
+ json.extract! @product, :id, :name, :price, :amount, :description, :bullet_desc, :image, :category_id

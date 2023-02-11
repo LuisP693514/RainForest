@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Redirect, useParams } from 'react-router-dom/cjs/react-router-dom.min';
 import { fetchProduct, getProduct } from '../../store/product';
+import CategoryHeader from '../CategoryHeader';
 import Navigation from '../Navigation';
 import './ProductShowPage.css'
 
@@ -70,6 +71,7 @@ const ProductShowPage = () => {
     return (
         <>
             <Navigation />
+            <CategoryHeader/>
             <div id='megaContainer'>
                 <div id='topOfPage'>
                     <div id='imageDivLeftSide'>

@@ -10,9 +10,11 @@ const CategoryHeader = () => {
     const categoriesArr = useSelector(getCategories)
     const categories = categoriesArr[categoriesArr.length - 1] || []
     const [loading, setLoading] = useState(true)
+    
     const categoryObjs = categories.map(catId => {
         return categoriesArr[catId - 1]
     });
+    
     useEffect(() => {
         dispatch(fetchCategories())
             .then(() => {

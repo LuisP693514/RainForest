@@ -188,9 +188,20 @@ ApplicationRecord.transaction do
       amount: 300000,
       price: 34.95,
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc id ex ante. Donec enim mi, ullamcorper vel tortor sit amet, iaculis congue odio. Pellentesque dignissim finibus viverra. Sed maximus sem nec arcu interdum, eget gravida felis molestie. Nulla id vulputate sapien. Suspendisse rutrum pellentesque sapien non pulvinar. Mauris elit eros, fringilla a interdum at, hendrerit viverra neque. Curabitur dictum felis nec sem finibus aliquet. In nec lectus eu sapien auctor mattis non commodo mi. \n \n Phasellus dignissim mauris a velit malesuada tincidunt. Sed maximus at mi nec tempor. Integer gravida nec erat sed molestie. Donec sed congue nibh. Suspendisse non tortor eget magna pellentesque bibendum. Cras placerat elit arcu, sed sagittis metus venenatis ut. Aliquam porttitor gravida ligula lobortis molestie. Pellentesque non lectus sed augue feugiat condimentum. Mauris pulvinar nulla magna, eget scelerisque est tempor sed.",
-      bullet_desc: ['Can chop trees', 'Gather that wood around the forest', 'Proven to work on any tree of any size.', 'REAL STEEL (not fake)', ''],
+      bullet_desc: ['Can chop trees', 'Gather that wood around the forest', 'Proven to work on any tree of any size.', 'REAL STEEL (not fake)'],
       image: 'hatchet.png',
       category_id: 3
+    )
+
+    #squirrelMonkey
+    Product.create!(
+      name: 'Squirrel Monkey - Very Cute & Tiny - 963g (2.12 lbs) - 310mm Tall (1 ft.)' ,
+      amount: 300000,
+      price: 963212.31,
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc id ex ante. Donec enim mi, ullamcorper vel tortor sit amet, iaculis congue odio. Pellentesque dignissim finibus viverra. Sed maximus sem nec arcu interdum, eget gravida felis molestie. Nulla id vulputate sapien. Suspendisse rutrum pellentesque sapien non pulvinar. Mauris elit eros, fringilla a interdum at, hendrerit viverra neque. Curabitur dictum felis nec sem finibus aliquet. In nec lectus eu sapien auctor mattis non commodo mi. \n \n Phasellus dignissim mauris a velit malesuada tincidunt. Sed maximus at mi nec tempor. Integer gravida nec erat sed molestie. Donec sed congue nibh. Suspendisse non tortor eget magna pellentesque bibendum. Cras placerat elit arcu, sed sagittis metus venenatis ut. Aliquam porttitor gravida ligula lobortis molestie. Pellentesque non lectus sed augue feugiat condimentum. Mauris pulvinar nulla magna, eget scelerisque est tempor sed.",
+      bullet_desc: ['Can chop trees', 'Gather that wood around the forest', 'Proven to work on any tree of any size.', 'REAL STEEL (not fake)'],
+      image: 'squirrelMonkey.png',
+      category_id: 2
     )
 
     puts "Done!"

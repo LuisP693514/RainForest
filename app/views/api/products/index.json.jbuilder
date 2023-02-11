@@ -15,7 +15,7 @@
 
 @products.each do |product|
     json.set! product.id do
-        json.extract! product, :id, :name, :price, :amount, :description, :bullet_desc, :image
+        json.extract! product, :id, :name, :price, :amount, :description, :bullet_desc, :image, :category_id
     end
 end
 
