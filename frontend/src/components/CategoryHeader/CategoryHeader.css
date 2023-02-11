@@ -1,0 +1,39 @@
+#entireBar {
+    height: 40px;
+    font-family: rg-ember;
+    background-color: #232f3e;
+    min-width: 1320px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.categoryNav {
+    color: #fff;
+    font-size: 14px;
+    width: 100%;
+    display: inline-flex;
+    flex-direction: row;
+    border: none;
+    text-align: center;
+    justify-content: space-around;
+    border: none;
+    box-sizing: border-box;
+    height: 40px;
+    text-decoration: none;
+    align-items: center;
+    margin: 0 2px;
+}
+
+
+.categoryNav:focus-visible {
+    box-shadow: 0 0 0 2px #f90;
+    border: none;
+}
+.categoryNav:hover {
+    border-style: inset;
+    border: 1px solid #fff;
+}
+
+.categoryNav:active {
+    color: #ccc;
+}

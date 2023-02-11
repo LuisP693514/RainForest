@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getCategories, fetchCategories } from "../../store/category";
 import { fetchProducts, getProducts } from "../../store/product";
 import Carousel from "../Carousel";
+import CategoryHeader from "../CategoryHeader";
 import Navigation from "../Navigation";
 import ProductBox from "../ProductBox";
 import "./HomePage.css"
@@ -25,6 +26,7 @@ const HomePage = () => {
     return (
         <>
             <Navigation />
+            <CategoryHeader/>
             <main id='mainBody'
                 style={{ height: window.innerHeight }}>
                 <div id="backgroundDiv">

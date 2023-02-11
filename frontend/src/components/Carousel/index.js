@@ -15,6 +15,7 @@ const Carousel = ({ products }) => {
             naturalSlideWidth={150}
             naturalSlideHeight={100}
             totalSlides={2}
+            infinite={true}
             style={{ background: '#e7e7e7' }}
         >
             <ButtonBack id='backButtonCarousel'>{"<"}</ButtonBack>

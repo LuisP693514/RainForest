@@ -16,10 +16,10 @@ const ProductShowPage = () => {
 
     if (product.amount > 30) {
         amountArr = [...Array(31).keys()]
-        amountArr.splice(0,1)
+        amountArr.splice(0, 1)
     } else if (product.amount > 0) {
         amountArr = [...Array(product.amount + 1).keys()]
-        amountArr.splice(0,1)
+        amountArr.splice(0, 1)
     } else {
         amountArr = [0]
     }
@@ -70,42 +70,44 @@ const ProductShowPage = () => {
     return (
         <>
             <Navigation />
-            <div id='topOfPage'>
-                <div id='imageDivLeftSide'>
-                    {imageSrc ? <img id='productImage' src={imageSrc} alt='no img :(' /> : <img src='https://nyc3.digitaloceanspaces.com/memecreator-cdn/media/__processed__/e37/template-fairly-odd-parents-987-0c6db91aec9c.jpeg' alt='this Is not it' />}
-                </div>
-                <div id='midDivForTitleAndStuff'>
-                    <h1 id='productNameH1'>{product.name}</h1>
-                    <div id='priceDiv'>
-                        <p id='dollarSign'>$</p>
-                        <p id='priceH3'>{formatWithCommas(Math.floor(product.price))}</p>
-                        <p id='priceCents'>{`${Math.floor((product.price % 1) * 100) === 0 ? '00' : Math.floor((product.price % 1) * 100)}`}</p>
+            <div id='megaContainer'>
+                <div id='topOfPage'>
+                    <div id='imageDivLeftSide'>
+                        {imageSrc ? <img id='productImage' src={imageSrc} alt='no img :(' /> : <img src='https://nyc3.digitaloceanspaces.com/memecreator-cdn/media/__processed__/e37/template-fairly-odd-parents-987-0c6db91aec9c.jpeg' alt='this Is not it' />}
                     </div>
-                    <ul id='bulletDesc'>
-                        {product.bulletDesc.map((bullet, i) => <li key={`bullet-${i}`}>{bullet}</li>)}
-                    </ul>
-                </div>
-                <div id='rightDivCart'>
-                    <form id='addToCartForm' onSubmit={handleFormSubmit}>
-                        <div id='priceDivCart'>
-                            <p id='dollarSignCart'>$</p>
-                            <p id='priceH3Cart'>{formatWithCommas(Math.floor(product.price))}</p>
-                            <p id='priceCentsCart'>{`${Math.floor((product.price % 1) * 100) === 0 ? '00' : Math.floor((product.price % 1) * 100)}`}</p>
+                    <div id='midDivForTitleAndStuff'>
+                        <h1 id='productNameH1'>{product.name}</h1>
+                        <div id='priceDiv'>
+                            <p id='dollarSign'>$</p>
+                            <p id='priceH3'>{formatWithCommas(Math.floor(product.price))}</p>
+                            <p id='priceCents'>{`${Math.floor((product.price % 1) * 100) === 0 ? '00' : Math.floor((product.price % 1) * 100)}`}</p>
                         </div>
-                        {stock()}
-                        <select id='quantitySelect'> 
-                            {amountArr.map(num => <option key={num} className={`quantityOption`} value={num}>{`Qnt. ${num}`}</option>)}
-                        </select>
-                        <button id='addToCartButton'>Add to cart</button>
-                    </form>
+                        <ul id='bulletDesc'>
+                            {product.bulletDesc.map((bullet, i) => <li key={`bullet-${i}`}>{bullet}</li>)}
+                        </ul>
+                    </div>
+                    <div id='rightDivCart'>
+                        <form id='addToCartForm' onSubmit={handleFormSubmit}>
+                            <div id='priceDivCart'>
+                                <p id='dollarSignCart'>$</p>
+                                <p id='priceH3Cart'>{formatWithCommas(Math.floor(product.price))}</p>
+                                <p id='priceCentsCart'>{`${Math.floor((product.price % 1) * 100) === 0 ? '00' : Math.floor((product.price % 1) * 100)}`}</p>
+                            </div>
+                            {stock()}
+                            <select id='quantitySelect'>
+                                {amountArr.map(num => <option key={num} className={`quantityOption`} value={num}>{`Qnt. ${num}`}</option>)}
+                            </select>
+                            <button id='addToCartButton'>Add to cart</button>
+                        </form>
+                    </div>
                 </div>
-            </div>
-            <div id='productDescriptionDiv'>
-                <h2 id='productDescription'>Product Description</h2>
-                <p id='productDescriptionPTag'>{product.description}</p>
-            </div>
-            <div id='ReviewsDiv'>
+                <div id='productDescriptionDiv'>
+                    <h2 id='productDescription'>Product Description</h2>
+                    <p id='productDescriptionPTag'>{product.description}</p>
+                </div>
+                <div id='ReviewsDiv'>
 
+                </div>
             </div>
         </>
     )

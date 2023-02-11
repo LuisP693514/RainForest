@@ -15,6 +15,7 @@ const Navigation = () => {
     
     const signedIn = !!user
     const displaySignOut = (
+        
         <button id='signInButtonNav' onClick={(e)=>{
             e.preventDefault();
             dispatch(logout());
