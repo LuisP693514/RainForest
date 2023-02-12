@@ -40,6 +40,16 @@ class User < ApplicationRecord
     self.session_token
   end
 
+  has_one :cart,
+    foreign_key: :user_id,
+    class_name: :Cart,
+    dependent: :destroy
+
+
+  has_many :products,
+    through: :cart,
+    source: :products
+
 
   private
 

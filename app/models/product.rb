@@ -36,4 +36,8 @@ class Product < ApplicationRecord
         foreign_key: :category_id,
         class_name: :Category
 
+    has_many :carts,
+        foreign_key: :product_id,
+        class_name: :Cart
+
 end
