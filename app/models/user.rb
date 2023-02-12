@@ -46,10 +46,10 @@ class User < ApplicationRecord
     dependent: :destroy
 
 
-  has_many :products,
+  has_many :cart_items,
     through: :cart,
-    source: :products
-
+    source: :cart_items,
+    dependent: :destroy
 
   private
 

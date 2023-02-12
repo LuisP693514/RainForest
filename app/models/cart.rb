@@ -4,8 +4,6 @@
 #
 #  id         :bigint           not null, primary key
 #  user_id    :bigint
-#  product_id :bigint
-#  quantity   :integer          default(0), not null
 #  session    :string           not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
@@ -20,10 +18,10 @@ class Cart < ApplicationRecord
         class_name: :User,
         optional: true
 
-    belongs_to :product,
-        foreign_key: :product_id,
-        class_name: :Product,
-        optional: true
+    has_many :cart_items,
+        foreign_key: :cart_id,
+        class_name: :CartItem,
+        dependent: :destroy
 
     private
 
