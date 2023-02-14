@@ -37,7 +37,7 @@ const CategoryShowPage = () => {
 
     const filteredProds = filterProducts(productsCopy, categoryId)
     return (
-        <>
+        <div id='theWholeBackground'>
             <Navigation />
             <CategoryHeader />
             <h1 id='catHeaderH1'>{category.category}</h1>
@@ -49,7 +49,7 @@ const CategoryShowPage = () => {
                     </div>
                 )}
             </div>
-        </>
+        </div>
     )
 }
 

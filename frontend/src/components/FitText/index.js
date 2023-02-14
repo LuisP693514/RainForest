@@ -14,7 +14,7 @@ const FitText = ({ text, maxWidth, idParam, font }) => {
   }, [text, maxWidth, fontSize]);
 
   return (
-    <div style={{ maxWidth }}>
+    <div style={{ maxWidth }} id='containerforTheBox'>
       <p id={idParam} ref={textRef} style={{ fontSize }}>
         {text}
       </p>

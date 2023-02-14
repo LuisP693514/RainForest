@@ -3,6 +3,7 @@
     box-sizing: border-box;
     padding: 5px 10px;
     width: 100%;
+    background-color: white;
 }
 
 #imageInsideTheCatBox {

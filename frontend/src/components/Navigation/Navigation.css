@@ -19,17 +19,11 @@
     min-width: 1340px;
 }
 
-#navBar div {
-    top: 0;
-    display: flex;
-    z-index: 1;
-    height: 60px;
-}
-
 #nav-right {
     height: 60px;
     /* justify-content: space-between; */
     /* min-width: auto; */
+    display: flex;
 }
 
 #nav-left {
@@ -84,13 +78,14 @@
 
 #signInButtonNav:active {
     background: linear-gradient(to top,#f8e3ad,#EEBA37);
-
 }
 
 #navLogoImage {
     display: flex;
     float: left;
     height: 60px;
+    box-sizing: border-box;
+    padding: 5px;
 }
 
 #helloMessage {
@@ -99,4 +94,80 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
 }
+
+#containerForThingy {
+    width: 200px;
+    justify-content: center;
+    height: inherit;
+    position: relative;
+    display: flex;
+    text-align: center;
+}
+
+#containerForSignInButton {
+    position: absolute;
+    background-color: white;
+    width: 150px;
+    height: 60px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    top: 100%;
+    right: 50%;
+    transform: translateX(50%);
+    justify-content: center;
+    display: none;
+    z-index: 10;
+}
+
+#cartDisplayingNumber {
+    display: flex;
+    width: 150px;
+    height: 60px;
+    position: relative;
+    box-sizing: border-box;
+    align-content: center;
+}
+
+#numberOfItemsInCart {
+    color: orange;
+    font-family: rg-ember;
+    font-size: 22px;
+    position: relative;
+    left: 48%;
+    z-index: 30;
+    top: 5px;
+    transform: translateX(-50%);
+}
+
+#cartIconInTheNav {
+    font-size: 41px;
+    top: 70%;
+    left: 22%;
+    transform: translateY(-50%);
+    position: relative;
+    text-align: center;
+}
+
+#cartDisplayingNumber:hover {
+    border: 1px solid white;
+    border-radius: 4px;
+}
+
+#linkTagFixColor {
+    text-decoration: none;
+    color: white;
+}
+
+#containerForThingy:hover {
+    border: 1px solid white;
+    border-radius: 4px;
+} 
+
+#navLogoImage:hover {
+    border: 1px solid white;
+    border-radius: 4px;
+} 
