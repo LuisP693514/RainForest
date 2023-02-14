@@ -10,9 +10,6 @@
 #
 class Cart < ApplicationRecord
 
-    before_validation :ensure_session
-    validates :session, presence: true, uniqueness: true
-
     belongs_to :user,
         foreign_key: :user_id,
         class_name: :User,
@@ -23,9 +20,4 @@ class Cart < ApplicationRecord
         class_name: :CartItem,
         dependent: :destroy
 
-    private
-
-    def ensure_session
-        self.session ||= SecureRandom::urlsafe_base64
-    end
 end

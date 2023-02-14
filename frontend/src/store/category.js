@@ -30,10 +30,8 @@ export const getCategories = state => {
 // thunk actions
 
 /*
-
     fetchCategories()
     fetchCategory(category)
-
 */
 
 export const fetchCategories = () => async dispatch =>{

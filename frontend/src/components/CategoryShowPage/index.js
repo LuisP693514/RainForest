@@ -7,13 +7,14 @@ import CategoryHeader from '../CategoryHeader';
 import CategoryProductBox from '../CategoryProductBox';
 import Navigation from '../Navigation';
 import './CategoryShowPage.css'
+import { filterProducts } from '../../utils/helperFunctions.js';
 
 const CategoryShowPage = () => {
 
     const dispatch = useDispatch();
     const products = useSelector(getProducts);
     const productsCopy = products ? [...products] : []
-    const productsArr = productsCopy.splice(productsCopy.length - 1, 1)
+    // const productsArr = productsCopy.splice(productsCopy.length - 1, 1)
 
     const { categoryId } = useParams();
     const category = useSelector(getCategory(categoryId))
@@ -51,18 +52,5 @@ const CategoryShowPage = () => {
         </>
     )
 }
-
-const filterProducts = (arr, catId) => {
-    Object.freeze(arr)
-    const arrCopy = []
-
-    for (let i = 0; i < arr.length; i++) {
-        const element = arr[i];
-        if (element.categoryId == catId) arrCopy.push(element);
-    }
-    return arrCopy;
-}
-
-
 
 export default CategoryShowPage;

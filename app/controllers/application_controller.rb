@@ -20,6 +20,26 @@ class ApplicationController < ActionController::API
     def login!(user)
         session[:session_token] = user.reset_session_token!
         @current_user = user
+        persist_cart
+    end
+
+    def persist_cart
+        if session[:cart]
+            guest_cart = Cart.find(session[:cart])
+            if current_user.cart == nil
+                new_cart = Cart.create!(user_id: current_user.id)
+            else
+                new_cart = current_user.cart
+            end
+            guest_cart.cart_items.each {|item| CartItem.create(
+                cart_id: new_cart.id,
+                product_id: item.id
+            )}
+            cart_items = CartItem.all
+            cart_items.each {|item| item.delete if item.user == nil}
+            guest_cart.destroy
+            session[:cart] = nil
+        end
     end
 
     def logout!

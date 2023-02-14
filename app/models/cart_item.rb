@@ -11,7 +11,7 @@
 #
 class CartItem < ApplicationRecord
 
-    validates :quality, presence: true
+    validates :quantity, presence: true
 
     belongs_to :cart,
         foreign_key: :cart_id,

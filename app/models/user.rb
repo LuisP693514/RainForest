@@ -48,12 +48,12 @@ class User < ApplicationRecord
 
   has_many :cart_items,
     through: :cart,
-    source: :cart_items,
-    dependent: :destroy
+    source: :cart_items
 
   private
 
   def ensure_session_token
     self.session_token ||= SecureRandom::urlsafe_base64
   end
+  
 end

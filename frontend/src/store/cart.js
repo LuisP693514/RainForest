@@ -9,26 +9,26 @@ const receiveCart = (cart) =>({
     cart
 })
 
+
 // selectors
 
-export const getCart = (cartId) => state => {
-    return state?.carts ? state.carts[cartId] : null
+export const getCart = () => state => {
+    return state?.cart ? state.cart : null
 }
 
 //thunk action
 
-export const fetchCart = (session) => async dispatch => {
-    const res = await csrfFetch(`/api/cart?session=${session}`)
+export const fetchCart = () => async dispatch => {
+    const res = await csrfFetch(`/api/cart`)
 
     if (res.ok) {
         const cart = await res.json()
         dispatch(receiveCart(cart))
     }
 }
-
 // reducer
 
-const initialState = {cart : null}
+const initialState = {}
 
 export const cartsReducer = (state = initialState, action) => {
     Object.freeze(state);
@@ -36,8 +36,8 @@ export const cartsReducer = (state = initialState, action) => {
 
     switch (action.type) {
         case RECEIVE_CART:
-            nextState[action.cart.id] = action.cart
-            return nextState;
+            
+            return {...nextState, ...action.cart};
         default:
             return state;
     }
