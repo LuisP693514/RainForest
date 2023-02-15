@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
+import { Redirect, useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import { getSessionUser, logout } from '../../store/session';
 import './Navigation.css'
 import LOGO from '../../images/logoWhite.png'
@@ -8,6 +8,7 @@ import FitText from '../FitText';
 import { useEffect, useState } from 'react';
 import { fetchCartItems, getCartItems } from '../../store/cartItems';
 import { Link } from 'react-router-dom';
+import { fetchCart, getCart } from '../../store/cart';
 
 const Navigation = () => {
 
@@ -16,8 +17,18 @@ const Navigation = () => {
     const user = useSelector(getSessionUser)
     const userName = user?.name
     const cartItems = useSelector(getCartItems)
-    const cartItemsLength = cartItems?.length ? cartItems[cartItems.length - 1].length : 0
     const [hover, setHover] = useState(false)
+
+    const realCartItemsLength = () => {
+        const temp = cartItems?.length ? cartItems.slice(0, cartItems.length-1) : [];
+        let count = 0;
+        if (temp.length) {
+            temp.forEach(item => {
+                count += item.quantity
+            });
+        }
+        return count;
+    }
 
     const signedIn = !!user
     const displaySignOut = (
@@ -25,6 +36,7 @@ const Navigation = () => {
         <button id='signInButtonNav' onClick={(e) => {
             e.preventDefault();
             dispatch(logout());
+            history.push('/');
         }}>Sign out</button>
     )
     const displaySignIn = (
@@ -35,6 +47,7 @@ const Navigation = () => {
     )
 
     useEffect(() => {
+        dispatch(fetchCart())
         dispatch(fetchCartItems())
     }, [dispatch])
 
@@ -72,7 +85,7 @@ const Navigation = () => {
                 </div>
                 <Link id='linkTagFixColor' to='/cart'>
                     <div id='cartDisplayingNumber' >
-                        <p id='numberOfItemsInCart'>{cartItemsLength}</p>
+                        <p id='numberOfItemsInCart'>{realCartItemsLength()}</p>
                         <i id='cartIconInTheNav' className="fa-solid fa-cart-shopping"></i>
                     </div>
                 </Link>

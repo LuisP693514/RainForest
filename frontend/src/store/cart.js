@@ -12,7 +12,7 @@ const receiveCart = (cart) =>({
 
 // selectors
 
-export const getCart = () => state => {
+export const getCart = state => {
     return state?.cart ? state.cart : null
 }
 

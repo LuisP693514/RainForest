@@ -139,16 +139,16 @@
     position: relative;
     left: 48%;
     z-index: 30;
-    top: 5px;
+    top: 15px;
     transform: translateX(-50%);
 }
 
 #cartIconInTheNav {
     font-size: 41px;
-    top: 70%;
-    left: 22%;
+    top: 57%;
+    left: 30%;
     transform: translateY(-50%);
-    position: relative;
+    position: absolute;
     text-align: center;
 }
 

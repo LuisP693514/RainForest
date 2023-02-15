@@ -1,6 +1,8 @@
 
 #pleasejustfixbgcolor {
     background-color: #f7f7f7;
+    height: 100%;
+    height: max-content;
 }
 
 #mainBody {
@@ -23,14 +25,13 @@
 }
 #backgroundDiv {
     width: 1440px;
-    height: fit-content;
+    height: max-content;
     background-repeat: no-repeat;
     background-size: inherit;
     z-index: 0;
     position: absolute;
     display: flex;
     margin: 0 auto;
-
     animation: linear 0.1s step-end 0.1s 0 forwards none;
 }
 
@@ -55,7 +56,7 @@
     padding: 0 5%;
     place-items: center;
     box-sizing: border-box;
-    margin: 50px 0px;
+    margin: 300px 0px 50px;
 }
 
 #cat1Carousel {

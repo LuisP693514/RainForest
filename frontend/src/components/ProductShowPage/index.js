@@ -6,6 +6,8 @@ import CategoryHeader from '../CategoryHeader';
 import Navigation from '../Navigation';
 import './ProductShowPage.css'
 import { formatWithCommas } from '../../utils/helperFunctions';
+import { addCartItem } from '../../store/cartItems';
+import { fetchCart, getCart } from '../../store/cart';
 
 const ProductShowPage = () => {
     const [isLoading, setIsLoading] = useState(true);
@@ -13,6 +15,7 @@ const ProductShowPage = () => {
     const { productId } = useParams()
     const dispatch = useDispatch();
     const product = useSelector(getProduct(productId)) || {}
+    const cart = useSelector(getCart)
     product.amount = product.amount || 0
     let amountArr = []
 
@@ -34,12 +37,27 @@ const ProductShowPage = () => {
     useEffect(() => {
         dispatch(fetchProduct(productId))
             .then(() => setIsLoading(false))
+        dispatch(fetchCart())
     }, [dispatch, productId])
 
     const handleFormSubmit = (e) => {
         e.preventDefault();
+        const amount = e.target.querySelector('select');
+        const value = amount.value;
 
+        debugger
+
+        if (value > 0) {
+
+            dispatch(addCartItem({ quantity: value, productId: productId, cartId: cart.id }));
+        }
     }
+
+    const inStock = (
+        <select id='quantitySelect'>
+            {amountArr.map(num => <option key={num} className={`quantityOption`} value={num}>{`Qnt. ${num}`}</option>)}
+        </select>
+    )
 
     const stock = () => {
         if (product.amount < 1) {
@@ -72,7 +90,7 @@ const ProductShowPage = () => {
     return (
         <>
             <Navigation />
-            <CategoryHeader/>
+            <CategoryHeader />
             <div id='megaContainer'>
                 <div id='topOfPage'>
                     <div id='imageDivLeftSide'>
@@ -97,10 +115,8 @@ const ProductShowPage = () => {
                                 <p id='priceCentsCart'>{`${Math.floor((product.price % 1) * 100) === 0 ? '00' : Math.floor((product.price % 1) * 100)}`}</p>
                             </div>
                             {stock()}
-                            <select id='quantitySelect'>
-                                {amountArr.map(num => <option key={num} className={`quantityOption`} value={num}>{`Qnt. ${num}`}</option>)}
-                            </select>
-                            <button id='addToCartButton'>Add to cart</button>
+                            {product?.amount > 0 ? inStock : ''}
+                            {product?.amount > 0 ? <button id='addToCartButton'>Add to cart</button> : <div id='addToCartButton2'>Check back another time!</div>}
                         </form>
                     </div>
                 </div>

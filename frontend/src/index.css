@@ -68,3 +68,7 @@ table {
     font-family: rg-ember;
     src: url(./fonts/Ember/AmazonEmber_Rg.ttf);
 }
+
+html body #root {
+	height: 100%;
+}

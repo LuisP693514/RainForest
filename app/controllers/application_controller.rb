@@ -33,10 +33,11 @@ class ApplicationController < ActionController::API
             end
             guest_cart.cart_items.each {|item| CartItem.create(
                 cart_id: new_cart.id,
-                product_id: item.id
+                product_id: item.id,
+                quantity: item.quantity
             )}
             cart_items = CartItem.all
-            cart_items.each {|item| item.delete if item.user == nil}
+            cart_items.each {|item| item.delete if item.cart.user_id == nil}
             guest_cart.destroy
             session[:cart] = nil
         end
