@@ -8,7 +8,7 @@ import FitText from '../FitText';
 import { useEffect, useState } from 'react';
 import { fetchCartItems, getCartItems } from '../../store/cartItems';
 import { Link } from 'react-router-dom';
-import { fetchCart, getCart } from '../../store/cart';
+import { fetchCart} from '../../store/cart';
 
 const Navigation = () => {
 
@@ -16,6 +16,7 @@ const Navigation = () => {
     const history = useHistory();
     const user = useSelector(getSessionUser)
     const userName = user?.name
+    const [count, setCount] = useState(0)
     const cartItems = useSelector(getCartItems)
     const [hover, setHover] = useState(false)
 
@@ -27,6 +28,7 @@ const Navigation = () => {
                 count += item.quantity
             });
         }
+
         return count;
     }
 

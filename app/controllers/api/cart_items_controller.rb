@@ -27,7 +27,7 @@ class Api::CartItemsController < ApplicationController
    end
 
    def destroy
-        @cart_item = CartItem.find_by(id: cart_item_params[:id])
+        @cart_item = CartItem.find_by(id: params[:id])
 
         if @cart_item&.delete
             render json: "Successfully deleted the cart item"
@@ -37,7 +37,7 @@ class Api::CartItemsController < ApplicationController
    end
 
    def update
-        @cart_item = CartItem.find_by(id: cart_item_params[:id])
+        @cart_item = CartItem.find_by(id: params[:id])
 
         if @cart_item&.update(cart_item_params)
             render 'api/cart_items/show'

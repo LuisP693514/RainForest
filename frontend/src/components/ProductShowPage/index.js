@@ -1,23 +1,33 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Redirect, useParams } from 'react-router-dom/cjs/react-router-dom.min';
+import { Redirect, useHistory, useParams } from 'react-router-dom/cjs/react-router-dom.min';
 import { fetchProduct, getProduct } from '../../store/product';
 import CategoryHeader from '../CategoryHeader';
 import Navigation from '../Navigation';
 import './ProductShowPage.css'
 import { formatWithCommas } from '../../utils/helperFunctions';
-import { addCartItem } from '../../store/cartItems';
+import { addCartItem, fetchCartItems, getCartItems } from '../../store/cartItems';
 import { fetchCart, getCart } from '../../store/cart';
 
 const ProductShowPage = () => {
     const [isLoading, setIsLoading] = useState(true);
-
+    const history = useHistory();
     const { productId } = useParams()
     const dispatch = useDispatch();
     const product = useSelector(getProduct(productId)) || {}
     const cart = useSelector(getCart)
     product.amount = product.amount || 0
+
+    const cartItems = useSelector(getCartItems)
+    const allCartItems = cartItems?.length ? cartItems.slice(0, -1) : [];
+
     let amountArr = []
+    useEffect(() => {
+        dispatch(fetchProduct(productId))
+            .then(() => setIsLoading(false))
+        dispatch(fetchCart())
+        dispatch(fetchCartItems())
+    }, [dispatch, productId])
 
     if (product.amount > 30) {
         amountArr = [...Array(31).keys()]
@@ -34,22 +44,19 @@ const ProductShowPage = () => {
         </>
     )
 
-    useEffect(() => {
-        dispatch(fetchProduct(productId))
-            .then(() => setIsLoading(false))
-        dispatch(fetchCart())
-    }, [dispatch, productId])
 
     const handleFormSubmit = (e) => {
         e.preventDefault();
         const amount = e.target.querySelector('select');
         const value = amount.value;
 
-        debugger
-
         if (value > 0) {
-
-            dispatch(addCartItem({ quantity: value, productId: productId, cartId: cart.id }));
+            if (allCartItems.some(item => item.productId == productId)) {
+                history.push('/cart')
+            } else {
+                dispatch(addCartItem({ quantity: value, productId: productId, cartId: cart.id }));
+                history.push('/cart')
+            }
         }
     }
 
