@@ -38,7 +38,9 @@ const Navigation = () => {
         <button id='signInButtonNav' onClick={(e) => {
             e.preventDefault();
             dispatch(logout());
-            history.push('/');
+            setTimeout(()=>{
+                history.push('/login');
+            }, 200) 
         }}>Sign out</button>
     )
     const displaySignIn = (
