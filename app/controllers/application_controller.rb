@@ -33,7 +33,7 @@ class ApplicationController < ActionController::API
             end
             guest_cart.cart_items.each {|item| CartItem.create(
                 cart_id: new_cart.id,
-                product_id: item.id,
+                product_id: item.product_id,
                 quantity: item.quantity
             )}
             cart_items = CartItem.all

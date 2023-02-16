@@ -4,3 +4,34 @@
     background-color: #e7e7e7;
     
 }
+
+#itemsInCart {
+    width: 80%;
+    position: relative;
+    height: fit-content;
+    box-sizing: border-box;
+    padding: 5px;
+    margin-top: 20px;
+    background-color: white;
+    margin-left: 1%;
+}
+
+#headerShop {
+    font-size: 28px;
+    font-family: ember;
+    text-align: start;
+    padding-left: 2%;
+    box-sizing: border-box;
+    margin-top: 5px;
+    color: orange;
+}
+
+#smallPriceText {
+    border-bottom: 1px solid black;
+    text-align: end;
+    align-self: baseline;
+    box-sizing: border-box;
+    font-family: rg-ember;
+    font-size: 16px;
+    padding-right: 15px;
+}

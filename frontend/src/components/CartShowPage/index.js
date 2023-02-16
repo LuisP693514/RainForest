@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchCartItems, getCartItems } from '../../store/cartItems';
 import { fetchCart } from '../../store/cart';
@@ -11,13 +11,16 @@ const CartShowPage = () => {
 
     const dispatch = useDispatch();
     const cartItems = useSelector(getCartItems)
-    const cartItemsIds = cartItems?.length ? cartItems[cartItems.length -1] : []
+    const cartItemsIds = cartItems?.length ? cartItems[cartItems.length - 1] : []
     const realCartItems = cartItems?.length ? cartItems.slice(0, -1) : []
+    const [loading, setLoading] = useState(true)
 
     useEffect(() => {
-        dispatch(fetchCart());
-        dispatch(fetchCartItems());
-    }, [dispatch])
+        dispatch(fetchCartItems())
+            .then(() => setLoading(false));
+    }, [dispatch, cartItems])
+
+    if (loading) return <h1>Loading...</h1>;
 
     const noItems = (
         <div id='noItemsInCartDiv'>
@@ -28,7 +31,8 @@ const CartShowPage = () => {
     const items = (
         <div id='itemsInCart'>
             <h1 id='headerShop'>Your Cart</h1>
-            {realCartItems.map(item => <CartItemBox key={item.id} cartItem={item}/>)}
+            <p id='smallPriceText'>Price</p>
+            {realCartItems.map(item => <CartItemBox key={item.id} cartItem={item} />)}
         </div>
     )
 

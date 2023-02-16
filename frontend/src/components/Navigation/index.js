@@ -16,7 +16,6 @@ const Navigation = () => {
     const history = useHistory();
     const user = useSelector(getSessionUser)
     const userName = user?.name
-    const [count, setCount] = useState(0)
     const cartItems = useSelector(getCartItems)
     const [hover, setHover] = useState(false)
 
@@ -28,7 +27,6 @@ const Navigation = () => {
                 count += item.quantity
             });
         }
-
         return count;
     }
 
@@ -40,7 +38,7 @@ const Navigation = () => {
             dispatch(logout());
             setTimeout(()=>{
                 history.push('/login');
-            }, 200) 
+            }, 400) 
         }}>Sign out</button>
     )
     const displaySignIn = (
@@ -87,12 +85,12 @@ const Navigation = () => {
                         {signedIn ? displaySignOut : displaySignIn}
                     </div>
                 </div>
-                <Link id='linkTagFixColor' to='/cart'>
+                <a id='linkTagFixColor' href='/cart'>
                     <div id='cartDisplayingNumber' >
                         <p id='numberOfItemsInCart'>{realCartItemsLength()}</p>
                         <i id='cartIconInTheNav' className="fa-solid fa-cart-shopping"></i>
                     </div>
-                </Link>
+                </a>
             </div>
         </nav>
     )

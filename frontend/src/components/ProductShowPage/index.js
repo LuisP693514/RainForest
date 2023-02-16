@@ -38,13 +38,7 @@ const ProductShowPage = () => {
     } else {
         amountArr = [0]
     }
-
-    const otherDiv = (
-        <>
-        </>
-    )
-
-
+    
     const handleFormSubmit = (e) => {
         e.preventDefault();
         const amount = e.target.querySelector('select');

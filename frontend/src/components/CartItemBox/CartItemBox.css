@@ -1,6 +1,76 @@
 #containerForCartItemCartPage {
     width: 100%;
     height: 300px;
+    box-sizing: border-box;
+    padding: 1px;
+    display: flex;
+    border-bottom: 1px solid black;
 
+}
 
+#imageOnCartPage {
+    max-height: 250px;
+    max-width: 250px;
+    align-self: center;
+    margin: 0 auto;
+}
+
+#right-side-box {
+    width: calc(100% - 260px);
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+#productTitle {
+    font-family: ember;
+    font-size: 20px;
+    text-align: start;
+    box-sizing: border-box;
+    margin-top: 10px;
+    padding: 5px;
+
+}
+
+#priceDivCartPage {
+    display: flex;
+    margin-left:auto;
+    margin-top: 10px;
+    font-family: ember;
+    font-size: 22px;
+}
+
+#dollarSignCartPage, #priceCentsCartPage {
+    font-size: 13px;
+    top: -0.1em;
+}
+
+#outOfStockPTagCart, #almostOutPTagCart, #inStockPTagCart {
+    font-size: 18px;
+    font-family: rg-ember;
+    text-align: start;
+    margin-top: 20px;
+    box-sizing: border-box;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+#outOfStockPTagCart{
+    color: red;
+}
+
+#almostOutPTagCart {
+    color: orange;
+}
+
+#inStockPTagCart {
+    color: rgb(95, 158, 0);
+}
+
+#crudButtons {
+    display: flex;
+    box-sizing: border-box;
+    padding: 5px;
+    margin-top: auto;
 }
