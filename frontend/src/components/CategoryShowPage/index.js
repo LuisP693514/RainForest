@@ -8,6 +8,7 @@ import CategoryProductBox from '../CategoryProductBox';
 import Navigation from '../Navigation';
 import './CategoryShowPage.css'
 import { filterProducts } from '../../utils/helperFunctions.js';
+import FooterNav from '../FooterNav';
 
 const CategoryShowPage = () => {
 
@@ -37,19 +38,22 @@ const CategoryShowPage = () => {
 
     const filteredProds = filterProducts(productsCopy, categoryId)
     return (
-        <div id='theWholeBackground'>
+        <>
             <Navigation />
             <CategoryHeader />
-            <h1 id='catHeaderH1'>{category.category}</h1>
-            <div id='motherOfAllDivs'>
-                {filteredProds.map(prodObj =>
-
-                    <div id='productInsideTheCategory' key={`product-${prodObj.id}`}>
-                        <CategoryProductBox product={prodObj}/>
-                    </div>
-                )}
+            <div id='theWholeBackground'>
+                <h1 id='catHeaderH1'>{category.category}</h1>
+                <div id='motherOfAllDivs'>
+                    {filteredProds.map(prodObj =>
+                        <div id='productInsideTheCategory' key={`product-${prodObj.id}`}>
+                            <CategoryProductBox product={prodObj} />
+                        </div>
+                    )}
+                </div>
             </div>
-        </div>
+            <FooterNav />
+
+        </>
     )
 }
 

@@ -54,10 +54,6 @@ const HomePage = () => {
                         <div id='gridDiv'>
                             {productsShuffled.map(pId => <ProductBox productId={pId} key={pId} />)}
                         </div>
-                        <h2 id='exploreOurCatalog'>Explore the Catalog</h2>
-                        <div id='cat1Carousel'>
-                            <Carousel products={products2} />
-                        </div>
                         <h2 id='exploreOurCatalog'>Explore the Forest</h2>
                         <div id='cat1Carousel'>
                             <Carousel products={arrId1Id2Id6Id7} />
