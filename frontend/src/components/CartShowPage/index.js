@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchCartItems, getCartItems } from '../../store/cartItems';
-import { fetchCart } from '../../store/cart';
 import './CartShowPage.css'
 import Navigation from '../Navigation';
 import CategoryHeader from '../CategoryHeader';
 import CartItemBox from '../CartItemBox';
+import { Link } from 'react-router-dom';
+import FooterNav from '../FooterNav';
 
 const CartShowPage = () => {
 
@@ -24,7 +25,8 @@ const CartShowPage = () => {
 
     const noItems = (
         <div id='noItemsInCartDiv'>
-            <h1 id='headerShop'>Your Cart is empty!</h1>
+            <h1 id='headerShop2'>Your Cart is empty!</h1>
+            <Link to='/' id='redirectText'>Let's start here!</Link>
         </div>
     )
 
@@ -41,6 +43,7 @@ const CartShowPage = () => {
             <Navigation />
             <CategoryHeader />
             {cartItemsIds?.length === 0 ? noItems : items}
+            <FooterNav />
         </div>
     )
 

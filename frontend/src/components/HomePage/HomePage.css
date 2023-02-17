@@ -7,32 +7,23 @@
 
 #mainBody {
     width: 1440px;
-    height: 100%;
     margin: 0 auto;
+    display: inline-block;
 }
 
 #topPartOfBG {
     width: 1440px;
     height: fit-content;
-    background-repeat: no-repeat;
-    background-size: inherit;
-    z-index: 0;
-    position: absolute;
     display: flex;
     margin: 0 auto;
     flex-direction: column;
-    animation: linear 0.1s step-end 0.1s 0 forwards none;
 }
 #backgroundDiv {
     width: 1440px;
     height: max-content;
-    background-repeat: no-repeat;
-    background-size: inherit;
     z-index: 0;
-    position: absolute;
     display: flex;
     margin: 0 auto;
-    animation: linear 0.1s step-end 0.1s 0 forwards none;
 }
 
 #forestImage {
@@ -40,8 +31,6 @@
     position: absolute;
     height: auto;
     margin: 0 auto;
-    left: -9999px;
-    right: -9999px;
     width: 1440px;
     min-width: 1440px;
 }
@@ -56,11 +45,23 @@
     padding: 0 5%;
     place-items: center;
     box-sizing: border-box;
-    margin: 300px 0px 50px;
+    margin:0px 0px 50px;
 }
 
 #cat1Carousel {
     display: flex;
 
 }
+
+#top8random, #exploreOurCatalog {
+    color: rgb(0, 0, 0);
+    z-index: 11;
+    box-sizing: border-box;
+    padding: 50px 5px;
+    font-size: 32px;
+    font-family: ember;
+
+}
+
+
 

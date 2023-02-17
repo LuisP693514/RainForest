@@ -35,3 +35,39 @@
     font-size: 16px;
     padding-right: 15px;
 }
+
+#noItemsInCartDiv {
+    background-color: white;
+    width: 30%;
+    margin: 0 auto;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    box-sizing: border-box;
+    padding: 5px;
+}
+
+#headerShop2 {
+    font-family: ember;
+    font-size: 28px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+#redirectText {
+    text-decoration: none;
+    color: rgb(0, 152, 228);
+    font-size: 16px;
+    font-family: rg-ember;
+    margin: auto 0;
+}
+
+#redirectText:hover {
+    color: rgb(255, 200, 50);
+}
+
+#redirectText:active {
+    color:rgb(0, 106, 159)
+}

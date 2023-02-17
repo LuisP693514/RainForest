@@ -7,14 +7,13 @@ import ProductBox from '../ProductBox';
 const Carousel = ({ products }) => {
 
     const productsArr = [...products] || []
-    productsArr.splice(productsArr.length - 1, 1)
 
     return (
         <CarouselProvider
             id='daddyCarouselContainer'
             naturalSlideWidth={150}
             naturalSlideHeight={100}
-            totalSlides={3}
+            totalSlides={Math.ceil(products.length / 5)}
             style={{ background: '#f7f7f7' }}
         >
             <ButtonBack id='backButtonCarousel'>{"<"}</ButtonBack>
