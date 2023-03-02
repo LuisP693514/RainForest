@@ -1,6 +1,6 @@
 class Api::CartItemsController < ApplicationController
    def index
-        if current_user
+        if current_user&.cart
             @cart_items = current_user.cart.cart_items
             render 'api/cart_items/index'
         else
