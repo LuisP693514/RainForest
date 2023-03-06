@@ -5,7 +5,7 @@ import { fetchProducts, getProduct } from '../../store/product';
 import { formatWithCommas } from '../../utils/helperFunctions';
 import './CartItemBox.css'
 
-const CartItemBox = ({ cartItem }) => {
+const CartItemBox = ({ cartItem, setClickedDel }) => {
 
     const [loading, setLoading] = useState(true)
     const dispatch = useDispatch();
@@ -67,8 +67,8 @@ const CartItemBox = ({ cartItem }) => {
             {amountArr.map(num => <option key={num} className={`quantityOption`} value={num}>{`Qnt. ${num}`}</option>)}
         </select>
     )
-    const total = parseInt(product.price) * parseInt(cartItem.quantity)
-
+    const total = parseFloat(product.price) * parseInt(cartItem.quantity)
+    
     return (
         <div id='containerForCartItemCartPage'>
             <img id='imageOnCartPage' src={require(`../../images/${product.image}`)} alt={`${product.name}`} />
@@ -85,6 +85,7 @@ const CartItemBox = ({ cartItem }) => {
 
                     <button id='deleteItem' onClick={() => {
                         dispatch(deleteCartItem(cartItem.id))
+                        setClickedDel(true)
                     }}>Delete</button>
                 </div>
             </div>
