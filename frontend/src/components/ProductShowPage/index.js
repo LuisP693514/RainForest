@@ -8,6 +8,7 @@ import './ProductShowPage.css'
 import { formatWithCommas } from '../../utils/helperFunctions';
 import { addCartItem, fetchCartItems, getCartItems } from '../../store/cartItems';
 import { fetchCart, getCart } from '../../store/cart';
+import FooterNav from '../FooterNav';
 
 const ProductShowPage = () => {
     const [isLoading, setIsLoading] = useState(true);
