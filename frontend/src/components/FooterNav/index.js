@@ -8,12 +8,12 @@ const FooterNav = () => {
         <div id='bottomOfTheBarrel'>
             <div id='inBetweenTags'>
 
-                <Link id='footerLinkTags' to='/'>
+                <a id='footerLinkTags' href='https://www.linkedin.com/in/luis-perez-5baa4695/'>
                     <img id='gitHubHomePage' src={require(`../../images/linkedInLogo.png`)} alt=''/>
-                </Link>
-                <Link id='footerLinkTags' to='/'>
+                </a>
+                <a id='footerLinkTags' href='https://github.com/LuisP693514/RainForest'>
                     <img id='gitHubHomePage' src={require(`../../images/gitHubLogo.png`)} alt=''/>
-                </Link>
+                </a>
                 {/* <Link id='footerLinkTags' to='/'>
                     <img id='gitHubHomePage' src={require(`../../images/linkedInLogo.png`)} alt=''/>
                 </Link> */}

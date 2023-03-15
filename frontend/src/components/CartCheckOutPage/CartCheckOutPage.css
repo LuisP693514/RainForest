@@ -1,9 +1,10 @@
 #entireCheckOutPage {
     min-width: 800px;
     min-height: min-content;
-    width: 75%;
+    width: 80%;
     height: 75%;
-    margin: 10% auto;
+    margin: 5% auto;
+    font-family: rg-ember;
 }
 
 #checkoutHeader {
