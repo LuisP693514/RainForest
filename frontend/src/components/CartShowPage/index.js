@@ -46,7 +46,10 @@ const CartShowPage = () => {
     const checkout = (
         <div id='checkOutBox'>
             <div id='subtotal'>{`Subtotal (${cartItems?.length ? cartItems.length - 1 : 0} item${cartItems?.length-1 === 1 ? '' : 's'}): $${totalPrice()}`}</div>
-            <button id='checkout'>Proceed to checkout</button>
+            <button onClick={()=>{
+                history.push('/checkout', {totalPrice: totalPrice(), cart: cartItems, user: user});
+                window.location.reload();
+            }}  id='checkout'>Proceed to checkout</button>
         </div>
     )
 

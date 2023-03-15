@@ -29,6 +29,8 @@ export const getProducts = state => {
 /*
     fetchProducts()
     fetchProduct(productId)
+    updteProduct(product)
+
 */
 
 export const fetchProducts = () => async dispatch => {
@@ -47,6 +49,19 @@ export const fetchProduct = (productId) => async dispatch => {
         dispatch(receiveProduct(product))
     }
 
+}
+
+export const updateProduct = (product) => async dispatch => {
+    
+    const res = await csrfFetch(`/api/products/${product.id}`, {
+        method: 'PATCH',
+        body: JSON.stringify({product: product})
+    })
+
+    if (res.ok) {
+        const product = await res.json();
+        dispatch(receiveProduct(product))
+    }
 }
 
 // Reducer
