@@ -3,7 +3,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import { Redirect, useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import CartCheckOutPageItem from '../CartCheckOutPageItem';
 import { useEffect } from 'react';
-import { fetchProduct, getProducts } from '../../store/product';
+import { fetchProduct, getProducts, updateProduct } from '../../store/product';
+import { deleteCartItem } from '../../store/cartItems';
 
 
 const CartCheckOutPage = () => {
@@ -48,8 +49,19 @@ const CartCheckOutPage = () => {
         })
     });
 
+    // update the product count in the backend
     const handlePurchase = (e) => {
-
+        realProducts.forEach(product => {
+            dispatch(updateProduct({
+                ...product,
+                amount: product.amount - product.quantity
+            }))
+        })
+        realCartItems.forEach(cartItem => {
+            dispatch(deleteCartItem(cartItem.id));
+        })
+        history.push('/checkout', {});
+        window.location.reload();
     }
 
     return (
@@ -57,6 +69,7 @@ const CartCheckOutPage = () => {
             <header id='checkoutHeader'>
                 <a href='/'><img id='checkoutLogo' src={require('../../images/logo.png')} alt={'RainForest logo'} /></a>
                 <div id='amountOfItems'>{`Checkout (${cartItems?.length ? cartItems.length - 1 : 0} item${cartItems?.length - 1 === 1 ? '' : 's'})`}</div>
+                <div id='lock'><i className="fa-solid fa-lock"></i></div>
             </header>
             <main id='body'>
                 {/* Address, payment, list of items */}
@@ -116,7 +129,10 @@ const CartCheckOutPage = () => {
                             <p>$0.00</p>
                         </div>
                     </div>
-                    <strong id='orderTotalPrice'>{`Order total: $${totalPrice}`}</strong>
+                    <div id='orderTotalPriceDiv'>
+                        <strong id='orderTotalPrice'>{`Order total:`}</strong>
+                        <strong id='totalPriceNumber'>{`$${totalPrice}`}</strong>
+                    </div>
                 </div>
             </main>
         </div>

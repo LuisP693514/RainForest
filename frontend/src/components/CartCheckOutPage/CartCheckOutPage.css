@@ -1,5 +1,5 @@
 #entireCheckOutPage {
-    min-width: 800px;
+    min-width: 1400px;
     min-height: min-content;
     width: 80%;
     height: 75%;
@@ -9,16 +9,17 @@
 
 #checkoutHeader {
     display: flex;
-    align-content: space-around;
+    justify-content: space-around;
     width: 100%;
     flex-wrap: wrap;
     background: linear-gradient(to bottom,#ffffff,#e6e6e6);
     border: 1px solid rgb(215, 215, 215);
-
+    align-items: center;
+    height: 60px;
 }
 
 #checkoutLogo {
-    max-height: 80px;
+    max-height: 60px;
 }
 
 #body {
@@ -53,6 +54,10 @@
     text-align: start;
     box-sizing: border-box;
     padding: 5px;
+    border-top: 1px solid rgb(216, 216, 216);
+    margin-top: 4px;
+    padding-top: 20px;
+    padding-bottom: 15px;
 }
 
 #checkoutButtonRightSide {
@@ -79,4 +84,41 @@
 
 #placeOrderButton:active {
     background: linear-gradient(to top, #f8e3ad,#EEBA37);
+}
+
+#checkoutButtonRightSide > #placeOrderButton {
+    height: 25px;
+    width: 85%;
+    margin: 8px 0px 20px;
+}
+
+#taxPrice {
+    margin-top: 10px;
+}
+
+#actualTax {
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgb(226, 226, 226); 
+}
+
+#orderTotalPriceDiv {
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 8px;
+    color: rgb(255, 88, 10);
+}
+
+#Address {
+    display: flex;
+}
+
+.numbered {
+    margin: 10px 15px;
+    font-weight: bold;
+}
+
+#shippingAddress {
+    margin: 10px 20px;
+    font-weight: bold;
 }
