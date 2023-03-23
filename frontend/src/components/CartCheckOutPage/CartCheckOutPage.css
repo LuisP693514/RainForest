@@ -12,7 +12,7 @@
     justify-content: space-around;
     width: 100%;
     flex-wrap: wrap;
-    background: linear-gradient(to bottom,#ffffff,#e6e6e6);
+    background: linear-gradient(to bottom, #ffffff, #e6e6e6);
     border: 1px solid rgb(215, 215, 215);
     align-items: center;
     height: 60px;
@@ -71,7 +71,7 @@
 }
 
 #placeOrderButton {
-    background: linear-gradient(to bottom, #f8e3ad,#EEBA37);
+    background: linear-gradient(to bottom, #f8e3ad, #EEBA37);
     border-color: rgba(255, 214, 214, 0.923);
     border-radius: 3px;
     box-sizing: border-box;
@@ -83,10 +83,10 @@
 }
 
 #placeOrderButton:active {
-    background: linear-gradient(to top, #f8e3ad,#EEBA37);
+    background: linear-gradient(to top, #f8e3ad, #EEBA37);
 }
 
-#checkoutButtonRightSide > #placeOrderButton {
+#checkoutButtonRightSide>#placeOrderButton {
     height: 25px;
     width: 85%;
     margin: 8px 0px 20px;
@@ -98,7 +98,11 @@
 
 #actualTax {
     margin-bottom: 20px;
-    border-bottom: 1px solid rgb(226, 226, 226); 
+    border-bottom: 1px solid rgb(226, 226, 226);
+}
+
+#flex-direction-row {
+    border-top: 1px solid rgb(222, 222, 222);
 }
 
 #orderTotalPriceDiv {
@@ -106,19 +110,93 @@
     justify-content: space-between;
     box-sizing: border-box;
     padding: 8px;
-    color: rgb(255, 88, 10);
+    color: rgb(186, 43, 0);
 }
 
-#Address {
+#Address,
+#Payment,
+#flex-direction-row {
     display: flex;
 }
 
 .numbered {
-    margin: 10px 15px;
+    margin: 20px 15px 20px 16%;
     font-weight: bold;
 }
 
-#shippingAddress {
-    margin: 10px 20px;
+#shippingAddress,
+#paymentMethod,
+#review {
+    margin: 20px 20px;
     font-weight: bold;
+}
+
+#actualAddress,
+#paymentWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin-left: 50px;
+    box-sizing: border-box;
+    padding: 5px;
+    margin-top: 15px;
+    margin-bottom: 6px;
+}
+
+#actualAddress *,
+#paymentWrapper * {
+    box-sizing: border-box;
+    padding: 3px;
+}
+
+strong {
+    font-weight: bold;
+}
+
+#boxHoldingOrder,
+#boxToPlaceOrder {
+    border: 1px solid rgb(219, 219, 219);
+    width: 80%;
+    position: relative;
+    margin-right: 0px;
+    margin-left: auto;
+    margin-top: 20px;
+}
+
+#deliveryDate {
+    color: rgb(10, 154, 0);
+    font-size: 18px;
+    box-sizing: border-box;
+    padding: 20px;
+    text-align: start;
+}
+
+#boxToPlaceOrder {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    height: 60px;
+}
+
+#boxToPlaceOrder #placeOrderButton {
+    height: 30px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+#orderTotalPrice {
+    color: rgb(186, 43, 0);
+}
+
+#amountOfItems {
+    text-decoration: none;
+    color: rgb(0, 166, 255);
+}
+
+#amountOfItems:hover {
+    color: orange;
+}
+
+#amountOfItems:active {
+    color: rgb(170, 110, 0);
 }

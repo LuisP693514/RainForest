@@ -2,3 +2,20 @@
     width: 75px;
     height: 75px;
 }
+
+#listOfCartItemsInCheckout {
+    display: flex;
+    box-sizing: border-box;
+    padding: 10px;
+    padding-left: 20px;
+}
+
+#nameOfTheProductInCheckout {
+    height: min-content;
+    width: 35%;
+}
+
+#priceInside{
+    align-self: flex-start;
+    margin: 10px 20px 0 auto;
+}

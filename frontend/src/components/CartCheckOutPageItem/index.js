@@ -9,8 +9,8 @@ const CartCheckOutPageItem = ({ product }) => {
     return (
         <div id='listOfCartItemsInCheckout'>
             <img id='cartItemCheckOutImageThing' src={require(`../../images/${product.image}`)} alt={`${product.name}`} />
-            <div id='nameOfTheProductInCheckout'>{product.name}</div>
-            <div>{price % 1 === 0 ? `$${price}0` : `$${price}`}</div>
+            <strong id='nameOfTheProductInCheckout'>{product.name}</strong>
+            <div id='priceInside'>{price % 1 === 0 ? `$${price}0` : `$${price}`}</div>
         </div>
     )
 

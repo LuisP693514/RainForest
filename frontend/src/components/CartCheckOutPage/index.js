@@ -5,6 +5,7 @@ import CartCheckOutPageItem from '../CartCheckOutPageItem';
 import { useEffect } from 'react';
 import { fetchProduct, getProducts, updateProduct } from '../../store/product';
 import { deleteCartItem } from '../../store/cartItems';
+import { Link } from 'react-router-dom';
 
 
 const CartCheckOutPage = () => {
@@ -68,7 +69,11 @@ const CartCheckOutPage = () => {
         <div id='entireCheckOutPage'>
             <header id='checkoutHeader'>
                 <a href='/'><img id='checkoutLogo' src={require('../../images/logo.png')} alt={'RainForest logo'} /></a>
-                <div id='amountOfItems'>{`Checkout (${cartItems?.length ? cartItems.length - 1 : 0} item${cartItems?.length - 1 === 1 ? '' : 's'})`}</div>
+                <div>
+                    {`Cart ( `}
+                    <Link to={'cart'} id='amountOfItems'>{`${cartItems?.length ? cartItems.length - 1 : 0} item${cartItems?.length - 1 === 1 ? '' : 's'}`}</Link>
+                    {` )`}
+                </div>
                 <div id='lock'><i className="fa-solid fa-lock"></i></div>
             </header>
             <main id='body'>
@@ -76,7 +81,7 @@ const CartCheckOutPage = () => {
                 <div id='leftSideOfCheckOut'>
                     <div id='Address'>
                         <div id='theOne' className='numbered'>1</div>
-                        <div id='shippingAddress'>Shipping Address</div>
+                        <div id='shippingAddress'>Shipping address</div>
                         <div id='actualAddress'>
                             <div id='nameAddress' className='RealAddress'>{user?.name}</div>
                             <div id='middleAddress' className='RealAddress'>123 Earth Ave.</div>
@@ -87,8 +92,8 @@ const CartCheckOutPage = () => {
                         <div id='theTwo' className='numbered'>2</div>
                         <div id='paymentMethod'>Payment method</div>
                         <div id='paymentWrapper'>
-                            <div id='visa'>Visa ending in 0000</div>
-                            <div id='billingAddress'>Billing Address: 123 Earth Ave. Atlantic Ocean, 00000-0000</div>
+                            <div id='visa'><strong>Visa</strong> ending in <strong>0000</strong></div>
+                            <div id='billingAddress'>{`Billing Address: ${user?.name}, 123 Earth Ave. Atlantic Ocean, 00000-0000`}</div>
                         </div>
                     </div>
                     <div id='orderItems'>
@@ -102,14 +107,14 @@ const CartCheckOutPage = () => {
                             {realProducts?.map(product => <CartCheckOutPageItem key={product.id} product={product} />)}
                         </div>
                         <div id='boxToPlaceOrder'>
-                            <button id='placeOrderButton' onClick={handlePurchase}>Place Order</button>
+                            <button id='placeOrderButton' onClick={handlePurchase}>Place your order</button>
                             <strong id='orderTotalPrice'>{`Order total: $${totalPrice}`}</strong>
                         </div>
                     </div>
                 </div>
                 {/* Checkout button on the right */}
                 <div id='checkoutButtonRightSide'>
-                    <button onClick={handlePurchase} id='placeOrderButton'>Place Order</button>
+                    <button onClick={handlePurchase} id='placeOrderButton'>Place your order</button>
                     <div id='orderSummary'>
                         <div id='orderSummaryText'>Order Summary</div>
                         <div id='itemsThingyHolder' className='flexRow'>
