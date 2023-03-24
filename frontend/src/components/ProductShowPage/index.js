@@ -8,8 +8,9 @@ import './ProductShowPage.css'
 import { formatWithCommas } from '../../utils/helperFunctions';
 import { addCartItem, fetchCartItems, getCartItems } from '../../store/cartItems';
 import { fetchCart, getCart } from '../../store/cart';
-import { fetchProductReviews, getReviews } from '../../store/review';
+import { createReview, fetchProductReviews, getReviews, updateReview } from '../../store/review';
 import Review from '../Review';
+import { getSessionUser } from '../../store/session';
 
 const ProductShowPage = () => {
     const [isLoading, setIsLoading] = useState(true);
@@ -20,10 +21,27 @@ const ProductShowPage = () => {
     const cart = useSelector(getCart)
     product.amount = product.amount || 0
 
+    const user = useSelector(getSessionUser)
     const reviews = useSelector(getReviews)
     const realReviews = reviews?.length ? reviews.slice(0, -1) : [];
     const cartItems = useSelector(getCartItems)
     const allCartItems = cartItems?.length ? cartItems.slice(0, -1) : [];
+
+    const [reviewBody, setReviewBody] = useState('');
+
+    let includedInList = false;
+    let averageScore = 5;
+    if (realReviews.length) {
+        let sum = 0;
+        for (let i = 0; i < realReviews.length; i++) {
+            const review = realReviews[i];
+            sum += review.score;
+            if (user) {
+                if (review.userId === user.id) includedInList = true;
+            }
+        }
+        averageScore = sum / realReviews.length;
+    }
 
     let amountArr = []
     useEffect(() => {
@@ -87,7 +105,55 @@ const ProductShowPage = () => {
             )
         }
     }
+    const handleReviewSubmit = (e) => {
+        e.preventDefault();
+        const amount = e.target.querySelector('select');
+        const value = amount.value;
 
+        dispatch(createReview({
+            score: value,
+            userId: user.id,
+            productId: productId,
+            body: reviewBody
+        }))
+        setReviewBody('');
+    }
+
+    const createReviewForm = (
+        <form id='createReview' onSubmit={handleReviewSubmit}>
+            <textarea
+                id='textareaReview'
+                placeholder='Write a review'
+                onChange={(e) => setReviewBody(e.target.value)}
+                value={reviewBody}
+            />
+            <div id='selectContainerReview'>
+                <p id='selectContainerReviewPTag'>Score: </p>
+                <select id='reviewScoreOption'>
+                    <option value={0}>0</option>
+                    <option value={1}>1</option>
+                    <option value={2}>2</option>
+                    <option value={3}>3</option>
+                    <option value={4}>4</option>
+                    <option value={5}>5</option>
+                </select>
+                <input id='submitReviewButtonInput' type='submit' value='Create review' />
+            </div>
+        </form>
+    )
+
+    const handleEditReviewSubmit = (e) => {
+        e.preventDefault();
+        const amount = e.target.querySelector('select');
+        const value = amount.value;
+
+        dispatch(updateReview({
+            score: value,
+            userId: user.id,
+            productId: productId,
+            body: reviewBody
+        }))
+    }
 
     if (isLoading) return <h1>Loading...</h1>
     if (!isLoading && !product) return <Redirect to='/product_does_not_exist' />
@@ -104,6 +170,7 @@ const ProductShowPage = () => {
                     </div>
                     <div id='midDivForTitleAndStuff'>
                         <h1 id='productNameH1'>{product.name}</h1>
+                        <div id="reviewScoreUnderTitle">Reviews: {averageScore} / 5</div>
                         <div id='priceDiv'>
                             <p id='dollarSign'>$</p>
                             <p id='priceH3'>{formatWithCommas(Math.floor(product.price))}</p>
@@ -131,9 +198,13 @@ const ProductShowPage = () => {
                     <p id='productDescriptionPTag'>{product.description}</p>
                 </div>
                 <div id='ReviewsDiv'>
+                    <div id='productDescription'>Reviews</div>
                     {realReviews.map(review => {
-                        return (<Review key={review.id} review={review}/>)
+                        return (<Review key={review.id} review={review} />)
                     })}
+                    {user ? (includedInList ? (<></>) : createReviewForm)
+                        :
+                        <></>}
                 </div>
             </div>
         </>

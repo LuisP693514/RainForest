@@ -1,0 +1,60 @@
+#reviewContainer {
+    display: flex;
+    flex-direction: row;
+    width: 70%;
+    margin: 0 auto;
+    border: 1px solid rgb(237, 237, 237);
+}
+
+#reviewAuthor {
+    width: 150px;
+    font-weight: bold;
+    font-size: 20px;
+    font-family: ember;
+    box-sizing: border-box;
+    text-align: left;
+}
+
+#reviewBody {
+    font-size: 16px;
+    font-family: rg-ember;
+    min-height: 100px;
+    box-sizing: border-box;
+    padding: 10px;
+    text-align: start;
+    margin-left: 20px;
+}
+
+#reviewScore {
+    font-family: rg-ember;
+    font-size: 18px;
+    text-align: left;
+    box-sizing: border-box;
+    padding: 5px;
+    margin-top: 3px;
+    margin-left: 20px;
+}
+
+#reviewScoreUnderTitle {
+    font-family: rg-ember;
+    font-size: 18px;
+}
+
+#editReviewButton, #deleteReviewButton {
+    background: none;
+    border: none;
+    height: max-content;
+    color:rgb(0, 144, 222);
+}
+
+#editReviewButton {
+    margin-left: auto;
+}
+
+#editReviewButton:hover, #deleteReviewButton:hover {
+    color: orange;
+}
+
+#editReviewButton:active, #deleteReviewButton:active {
+    color: rgb(183, 119, 0);
+}

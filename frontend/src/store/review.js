@@ -5,6 +5,7 @@ import csrfFetch from "./csrf"
 const RECEIVE_REVIEWS = 'RECEIVE_REVIEWS'
 const RECEIVE_REVIEW = 'RECEIVE_REVIEW'
 const REMOVE_REVIEW = 'REMOVE_REVIEW'
+const REMOVE_ALL = 'REMOVE_ALL'
 
 // Actions
 
@@ -21,6 +22,10 @@ const receiveReviews = reviews => ({
 const removeReview = reviewId => ({
     type: REMOVE_REVIEW,
     reviewId
+})
+
+export const removeAllReviews = () => ({
+    type: REMOVE_ALL
 })
 
 // selectors
@@ -125,6 +130,8 @@ const reviewsReducer = (state = {}, action) => {
         case REMOVE_REVIEW:
             delete newState[action.reviewId]
             return newState;
+        case REMOVE_ALL:
+            return {};
         default:
             return state;
     }

@@ -11,7 +11,7 @@ class Api::ReviewsController < ApplicationController
     end
 
     def product_reviews_index
-        @reviews = User.find_by(id: params[:product_id])&.reviews
+        @reviews = Product.find_by(id: params[:product_id])&.reviews
 
         if @reviews
             render 'api/reviews/index'
@@ -41,7 +41,13 @@ class Api::ReviewsController < ApplicationController
     end
 
     def create 
+        @review = Review.new(review_params)
 
+        if @review.save
+            render 'api/reviews/show'
+        else
+            render json: {errors: [@review.errors]}
+        end
     end
 
     private
