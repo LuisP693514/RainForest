@@ -4,14 +4,18 @@ import { cartsReducer } from './cart';
 import { cartItemsReducer } from './cartItems';
 import categoriesReducer from './category';
 import productsReducer from './product';
+import reviewsReducer from './review';
 import sessionReducer from './session';
+import usersReducer from './user';
 
 export const rootReducer = combineReducers({
     session: sessionReducer,
     products: productsReducer,
     categories: categoriesReducer,
     cart: cartsReducer,
-    cartItems: cartItemsReducer
+    cartItems: cartItemsReducer,
+    reviews: reviewsReducer,
+    users: usersReducer
 })
 
 let enhancer;

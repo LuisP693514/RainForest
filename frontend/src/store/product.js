@@ -29,7 +29,7 @@ export const getProducts = state => {
 /*
     fetchProducts()
     fetchProduct(productId)
-    updteProduct(product)
+    updateProduct(product)
 
 */
 
