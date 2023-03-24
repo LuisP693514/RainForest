@@ -50,6 +50,11 @@ class User < ApplicationRecord
     through: :cart,
     source: :cart_items
 
+  has_many :reviews,
+    foreign_key: :user_id,
+    class_name: :Review,
+    dependent: :destroy
+
   private
 
   def ensure_session_token

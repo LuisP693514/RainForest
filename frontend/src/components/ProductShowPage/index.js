@@ -8,7 +8,8 @@ import './ProductShowPage.css'
 import { formatWithCommas } from '../../utils/helperFunctions';
 import { addCartItem, fetchCartItems, getCartItems } from '../../store/cartItems';
 import { fetchCart, getCart } from '../../store/cart';
-import FooterNav from '../FooterNav';
+import { fetchProductReviews, getReviews } from '../../store/review';
+import Review from '../Review';
 
 const ProductShowPage = () => {
     const [isLoading, setIsLoading] = useState(true);
@@ -19,6 +20,8 @@ const ProductShowPage = () => {
     const cart = useSelector(getCart)
     product.amount = product.amount || 0
 
+    const reviews = useSelector(getReviews)
+    const realReviews = reviews?.length ? reviews.slice(0, -1) : [];
     const cartItems = useSelector(getCartItems)
     const allCartItems = cartItems?.length ? cartItems.slice(0, -1) : [];
 
@@ -28,6 +31,7 @@ const ProductShowPage = () => {
             .then(() => setIsLoading(false))
         dispatch(fetchCart())
         dispatch(fetchCartItems())
+        dispatch(fetchProductReviews(productId))
     }, [dispatch, productId])
 
     if (product.amount > 30) {
@@ -39,7 +43,7 @@ const ProductShowPage = () => {
     } else {
         amountArr = [0]
     }
-    
+
     const handleFormSubmit = (e) => {
         e.preventDefault();
         const amount = e.target.querySelector('select');
@@ -127,7 +131,9 @@ const ProductShowPage = () => {
                     <p id='productDescriptionPTag'>{product.description}</p>
                 </div>
                 <div id='ReviewsDiv'>
-
+                    {realReviews.map(review => {
+                        return (<Review key={review.id} review={review}/>)
+                    })}
                 </div>
             </div>
         </>

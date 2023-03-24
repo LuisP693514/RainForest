@@ -12,6 +12,16 @@ class Api::UsersController < ApplicationController
     end
 
   end
+
+  def show
+    @user = User.find_by(id: params[:id])
+
+    if @user
+      render 'api/users/single'
+    else
+      render json: {message: "User not found"}, status: 404
+    end
+  end
   
   private
 

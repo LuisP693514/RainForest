@@ -8,6 +8,7 @@ ApplicationRecord.transaction do
     Product.destroy_all
     Category.destroy_all
     CartItem.destroy_all
+    Review.destroy_all
   
     puts "Resetting primary keys..."
     # For easy testing, so that after seeding, the first `User` has `id` of 1
@@ -16,6 +17,7 @@ ApplicationRecord.transaction do
     ApplicationRecord.connection.reset_pk_sequence!('categories')
     ApplicationRecord.connection.reset_pk_sequence!('carts')
     ApplicationRecord.connection.reset_pk_sequence!('cart_items')
+    ApplicationRecord.connection.reset_pk_sequence!('reviews')
 
 
 # ----------------------------- Users ----------------------------- #
@@ -217,12 +219,53 @@ ApplicationRecord.transaction do
       bullet_desc: ['Can breathe air!', 'Thrives in oxygen-deprived waters like the Amazon River', 'Eats fruits, insects, seeds, and small land animals', 'The TOP predetor in oxbow lakes! (During low water season)', 'IMAGE: By Shizhao - Own work, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=7755863', 'Learn more at https://en.wikipedia.org/wiki/Arapaima'],
       image: 'giantCatfish.jpg',
       category_id: 6
+    ) 
+
+# ----------------------------- Reviews ----------------------------- #
+  # == Schema Information
+  #
+  # Table name: reviews
+  #
+  #  id         :bigint           not null, primary key
+  #  body       :string
+  #  user_id    :bigint           not null
+  #  product_id :bigint           not null
+  #  score      :integer          default(5), not null
+  #  created_at :datetime         not null
+  #  updated_at :datetime         not null
+  #
+
+  puts "Generating reviews..."
+
+  #Big leaf reviews (product_id: 1)
+    Review.create!(
+      body: "I really liked this big leaf :)",
+      product_id: 1,
+      score: 4,
+      user_id: 2
     )
 
+    Review.create!(
+      body: "This leaf is not what it looks like when I got it"
+      product_id: 1,
+      score: 1,
+      user_id: 4
+    )
 
+    Review.create!(
+      body: "I bought it for the lols and now I am sad I wasted money on this fake nft :("
+      product_id: 1,
+      score: 1,
+      user_id: 7
+    )
 
+  #Big leaf HD reviews (product_id: 2)
+    Review.create!(
+      body: "Now this is what I'm talking about! A real leaf!!!"
+      product_id: 2,
+      score: 5,
+      user_id: 4
+    )
 
-    
-
-    puts "Done!"
+  puts "Done!"
 end
