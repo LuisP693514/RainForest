@@ -8,6 +8,7 @@ import HomePage from './components/HomePage';
 import CategoryShowPage from './components/CategoryShowPage';
 import CartShowPage from './components/CartShowPage';
 import CartCheckOutPage from './components/CartCheckOutPage';
+import SearchResultPage from './components/SearchResultPage';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Route path='/categories/:categoryId' component={CategoryShowPage}/>
       <Route path='/products/:productId' component={ProductShowPage}/>
       <Route path='/checkout' component={CartCheckOutPage}/>
+      <Route path='/searchResult' component={SearchResultPage}/>
       <Route path='/signup' component={SignUpFormPage}/>
       <Route path="/login" component={LoginFormPage}/>
       <Route path='/cart' component={CartShowPage}/>
