@@ -192,3 +192,37 @@
     color: red;
 }
 
+#productDescriptionPTag {
+    font-size: 16px;
+    border-bottom: 1px solid rgb(226, 226, 226);
+    padding-bottom: 30px;
+}
+
+#createReview {
+    display: flex;
+    width: 70%;
+    margin: 50px auto 0px;
+    flex-direction: column;
+}
+
+#selectContainerReview {
+    display: flex;
+    height: 20px;
+    margin-top: 20px;
+}
+
+#submitReviewButtonInput {
+    margin-left: auto;
+}
+
+#textareaReview {
+    height: 200px;
+}
+
+#reviewScoreOption {
+    margin-left: 10px;
+}
+
+#ReviewsDiv {
+    margin-bottom: 200px;
+}

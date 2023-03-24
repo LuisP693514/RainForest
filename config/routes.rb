@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     resources :categories, only: [:index, :show]
     resource :cart, only: [:show]
     resources :cart_items, only: [:index, :update, :create, :destroy]
-    resources :reviews, only: [:update, :create]
+    resources :reviews, only: [:update, :create, :destroy]
   end
 
   get '/api/reviews/user/:user_id', to: 'api/reviews#user_reviews_index'
