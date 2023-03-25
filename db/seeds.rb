@@ -246,14 +246,14 @@ ApplicationRecord.transaction do
     )
 
     Review.create!(
-      body: "This leaf is not what it looks like when I got it"
+      body: "This leaf is not what it looks like when I got it",
       product_id: 1,
       score: 1,
       user_id: 4
     )
 
     Review.create!(
-      body: "I bought it for the lols and now I am sad I wasted money on this fake nft :("
+      body: "I bought it for the lols and now I am sad I wasted money on this fake nft :(",
       product_id: 1,
       score: 1,
       user_id: 7
@@ -261,7 +261,7 @@ ApplicationRecord.transaction do
 
   #Big leaf HD reviews (product_id: 2)
     Review.create!(
-      body: "Now this is what I'm talking about! A real leaf!!!"
+      body: "Now this is what I'm talking about! A real leaf!!!",
       product_id: 2,
       score: 5,
       user_id: 4
