@@ -35,6 +35,7 @@ const Review = ({ review }) => {
 
         setEdit(false)
     }
+
     return (
         <>
             {!edit ?
@@ -44,13 +45,13 @@ const Review = ({ review }) => {
                         <div id='reviewBody'>{review?.body}</div>
                         <div id='reviewScore'>Score: {review?.score}/5</div>
                     </div>
-                    {user.id === review.userId ? <>
+                    {user?.id === review?.userId ? <>
                         <button id='editReviewButton'
                             onClick={(e) => {
                                 setEdit(true)
                             }}>Edit</button>
                         <button id='deleteReviewButton' onClick={() => {
-                            dispatch(deleteReview(review.id));
+                            dispatch(deleteReview(review?.id));
                         }}>Delete</button>
                     </>
                         : <></>}

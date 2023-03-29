@@ -17,10 +17,12 @@
     margin-bottom: 1 ;
     /* align-items: baseline; */
     min-width: 1340px;
+    box-sizing: border-box;
+    padding: 5px;
 }
 
 #nav-right {
-    height: 60px;
+    height: 50px;
     /* justify-content: space-between; */
     /* min-width: auto; */
     display: flex;
@@ -28,7 +30,7 @@
 
 #nav-left {
     
-    height: 60px;
+    height: 50px;
     width: max-content;
     /* justify-content: space-between; */
 }
