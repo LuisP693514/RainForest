@@ -33,7 +33,7 @@ ApplicationRecord.transaction do
     # More users
     10.times do 
       User.create!({
-        name: Faker::Internet.unique.username(specifier: 3),
+        name: Faker::Name.unique.name,
         email: Faker::Internet.unique.email,
         password: 'password'
       }) 
@@ -84,8 +84,17 @@ ApplicationRecord.transaction do
       name: 'Big Leaf',
       amount: 200000,
       price: 40.52,
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc id ex ante. Donec enim mi, ullamcorper vel tortor sit amet, iaculis congue odio. Pellentesque dignissim finibus viverra. Sed maximus sem nec arcu interdum, eget gravida felis molestie. Nulla id vulputate sapien. Suspendisse rutrum pellentesque sapien non pulvinar. Mauris elit eros, fringilla a interdum at, hendrerit viverra neque. Curabitur dictum felis nec sem finibus aliquet. In nec lectus eu sapien auctor mattis non commodo mi. \n \n Phasellus dignissim mauris a velit malesuada tincidunt. Sed maximus at mi nec tempor. Integer gravida nec erat sed molestie. Donec sed congue nibh. Suspendisse non tortor eget magna pellentesque bibendum. Cras placerat elit arcu, sed sagittis metus venenatis ut. Aliquam porttitor gravida ligula lobortis molestie. Pellentesque non lectus sed augue feugiat condimentum. Mauris pulvinar nulla magna, eget scelerisque est tempor sed.",
-      bullet_desc: ['It is large', 'It is green', "It is drawn by yours truly :)"],
+      description: "Introducing the stunningly large leaf that will captivate your senses and make a bold statement in any setting! This exquisite leaf is truly a marvel of nature, boasting impressive dimensions that are sure to leave you in awe. Measuring in at an impressive size, this leaf is truly a sight to behold, with its rich, verdant hue and intricate veins that lend it a captivating texture and depth. Whether you're looking to add a touch of natural beauty to your home decor or to enhance the visual appeal of your office space, this large leaf is the perfect choice. Its impressive size makes it an ideal focal point, and it can be displayed in a variety of ways to showcase its unique features. From placing it in a decorative vase to mounting it on a wall, this leaf is incredibly versatile and will add a touch of elegance and sophistication to any room. So why settle for ordinary decor when you can elevate your space with this extraordinary leaf? Overall, this large leaf is a must-have for anyone who appreciates the beauty of nature and wants to add a touch of organic elegance to their surroundings. With its impressive size, rich color, and intricate texture, this leaf is truly a work of art that will be the envy of all who behold it. Don't miss your chance to own this stunning piece of nature and enhance the beauty of your home or office today!",
+      bullet_desc: ['Impressive size that makes it a standout piece in any setting',
+        'Rich, verdant hue that adds a pop of color to your decor',
+        "Intricate veins that lend it a captivating texture and depth",
+        "Versatile display options, such as placing it in a decorative vase or mounting it on a wall",
+        "Natural and organic beauty that brings a touch of the outdoors inside",
+        "Durable and long-lasting, requiring minimal maintenance to keep its stunning appearance",
+        "Can be used as a focal point or as part of a larger decorative display",
+        "Adds a touch of elegance and sophistication to any room",
+        "Makes for a unique and thoughtful gift for nature lovers and decor enthusiasts alike"
+      ],
       image: 'amazonLeaf.png',
       category_id: 1
     )
@@ -95,8 +104,19 @@ ApplicationRecord.transaction do
       name: 'Big Leaf HD',
       amount: 200000,
       price: 29.99,
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc id ex ante. Donec enim mi, ullamcorper vel tortor sit amet, iaculis congue odio. Pellentesque dignissim finibus viverra. Sed maximus sem nec arcu interdum, eget gravida felis molestie. Nulla id vulputate sapien. Suspendisse rutrum pellentesque sapien non pulvinar. Mauris elit eros, fringilla a interdum at, hendrerit viverra neque. Curabitur dictum felis nec sem finibus aliquet. In nec lectus eu sapien auctor mattis non commodo mi. \n \n Phasellus dignissim mauris a velit malesuada tincidunt. Sed maximus at mi nec tempor. Integer gravida nec erat sed molestie. Donec sed congue nibh. Suspendisse non tortor eget magna pellentesque bibendum. Cras placerat elit arcu, sed sagittis metus venenatis ut. Aliquam porttitor gravida ligula lobortis molestie. Pellentesque non lectus sed augue feugiat condimentum. Mauris pulvinar nulla magna, eget scelerisque est tempor sed.",
-      bullet_desc: ['It is large', 'It is green', "It is taken with a real camera", "Can't go wrong with a large green HD leaf"],
+      description: "Behold the breathtaking beauty of this stunning leaf captured in an exquisite photograph that will transport you to the heart of nature's splendor. The striking image showcases the intricate details and vibrant hues of the leaf, from its rich green color to its delicate veins that create a captivating texture. The sheer size of the leaf commands attention and draws the eye to its natural beauty, while the background of the image further emphasizes the leaf's organic elegance. This photograph is not just a piece of art, but a window into the world of nature, inviting you to appreciate its complexity and marvel at its intricacy. It is a statement piece that will add a touch of sophistication to any room, and make for a thoughtful and unique gift for nature lovers and photography enthusiasts alike. Whether you're looking to add a touch of natural beauty to your home or office, or simply want to enhance your collection of art, this photograph is the perfect choice.",
+      bullet_desc: [
+        "Exquisite photograph capturing the natural beauty of a stunning leaf",
+        'Rich green color and intricate veins creating a captivating texture',
+        "Large size commanding attention and drawing the eye to its organic elegance", 
+        "Background emphasizing the leaf's natural beauty and complexity",
+        "A window into the world of nature, inviting appreciation of its intricacy",
+        "Sophisticated statement piece adding elegance to any room",
+        "Unique and thoughtful gift for nature lovers and photography enthusiasts",
+        "Versatile decor option that complements a variety of styles and aesthetics",
+        "High-quality print ensuring long-lasting beauty and enjoyment",
+        "Captivating image that can spark conversations and inspire contemplation."
+      ],
       image: 'amazonLeafHD.png',
       category_id: 1
     )
@@ -239,21 +259,27 @@ ApplicationRecord.transaction do
 
   #Big leaf reviews (product_id: 1)
     Review.create!(
-      body: "I really liked this big leaf :)",
+      body: "I recently purchased the large leaf and I am absolutely thrilled with my purchase! The leaf is even more impressive in person, with its vibrant green color and intricate veins creating a texture that is simply breathtaking. The size of the leaf is truly impressive and adds a touch of natural beauty to my home that I didn't even realize was missing until I added it.
+
+      \n\nWhat I love most about the leaf is its versatility. It can be displayed in a variety of ways, from placing it in a decorative vase to mounting it on a wall, which makes it perfect for anyone looking for unique and creative ways to enhance their decor. The leaf is also incredibly durable and long-lasting, requiring minimal maintenance to keep its beauty intact.",
       product_id: 1,
       score: 4,
       user_id: 2
     )
 
     Review.create!(
-      body: "This leaf is not what it looks like when I got it",
+      body: "I recently purchased the large leaf and I have to say, I am disappointed with my purchase. While the size of the leaf is certainly impressive, the overall quality of the product is underwhelming. The color of the leaf is not as rich as I had hoped and the texture is not as intricate as I was expecting. In fact, the veins are barely noticeable, which takes away from the natural beauty of the leaf.
+
+      \n\nAdditionally, the leaf was difficult to display in a way that looked good. It kept drooping and looked awkward no matter how I tried to position it. I was disappointed with the price of the leaf. Given the lack of quality and versatility, I feel that the price point is simply too high. I would not recommend this product to anyone looking for a beautiful and unique addition to their decor, as I feel there are much better options available at a lower cost.",
       product_id: 1,
       score: 1,
       user_id: 4
     )
 
     Review.create!(
-      body: "I bought it for the lols and now I am sad I wasted money on this fake nft :(",
+      body: "I recently purchased the large leaf and while it is certainly a beautiful piece, I can't help feeling a bit sad about my purchase. Unfortunately, the leaf arrived with a few small tears along the edges, which took away from its natural beauty. I was looking forward to displaying it in a prominent spot in my home, but now I'm not sure if I want to showcase it at all.
+
+      \n\nOn top of that, the size of the leaf is almost too large for my home, which has made it difficult to find the perfect spot for it. I feel like I wasted my money on a product that I can't even fully enjoy or appreciate. Overall, I'm just disappointed that my purchase didn't live up to my expectations.",
       product_id: 1,
       score: 1,
       user_id: 7
