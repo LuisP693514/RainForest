@@ -121,14 +121,24 @@ ApplicationRecord.transaction do
       category_id: 1
     )
 
-    #tiger
+    #capybara
     Product.create!(
-      name: 'Tigers',
+      name: 'Capybara',
       amount: 0,
-      price: 50.00,
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc id ex ante. Donec enim mi, ullamcorper vel tortor sit amet, iaculis congue odio. Pellentesque dignissim finibus viverra. Sed maximus sem nec arcu interdum, eget gravida felis molestie. Nulla id vulputate sapien. Suspendisse rutrum pellentesque sapien non pulvinar. Mauris elit eros, fringilla a interdum at, hendrerit viverra neque. Curabitur dictum felis nec sem finibus aliquet. In nec lectus eu sapien auctor mattis non commodo mi. \n \n Phasellus dignissim mauris a velit malesuada tincidunt. Sed maximus at mi nec tempor. Integer gravida nec erat sed molestie. Donec sed congue nibh. Suspendisse non tortor eget magna pellentesque bibendum. Cras placerat elit arcu, sed sagittis metus venenatis ut. Aliquam porttitor gravida ligula lobortis molestie. Pellentesque non lectus sed augue feugiat condimentum. Mauris pulvinar nulla magna, eget scelerisque est tempor sed.",
-      bullet_desc: ['They have big teeth', 'Occasionally angry', "Loves eating fish!", 'Get them out of here, foreign species shouldn\'t be here', ],
-      image: 'tigers.jpg',
+      price: 200,
+      description: "Capybaras, scientifically known as Hydrochoerus hydrochaeris, are the largest rodents in the world, belonging to the family Caviidae. They are native to South America and have a barrel-shaped body with short legs and a small, blunt head. Capybaras have short, rough fur that can range from brown to gray in color, and they have large, expressive eyes and small ears.
+      Capybaras have four toes on their front feet and three toes on their hind feet, which are webbed, making them excellent swimmers. They have scent glands on their nose and anus that they use to communicate with other capybaras, marking their territory and social status. Capybaras are herbivores and feed on a variety of grasses, aquatic plants, and fruits.
+      Capybaras are social animals and typically live in groups of 10-20 individuals, with a dominant male leading the group. They are semi-aquatic and can hold their breath underwater for up to five minutes. Capybaras are an important prey species for a variety of predators, including jaguars, anacondas, and caimans.
+      In terms of conservation, capybaras are classified as \"Least Concern\" by the International Union for Conservation of Nature (IUCN), due to their large population size and widespread distribution throughout South America. However, they are still threatened by habitat loss and hunting for their meat and fur in some regions.",
+      bullet_desc: [
+        "They have a barrel-shaped body with short legs, webbed feet, and a small head with large, expressive eyes and small ears", 
+        "Capybaras have short, rough fur that is usually brown or gray in color, and they have scent glands on their nose and anus that they use to communicate with other capybaras", 
+        "They are social animals and typically live in groups of 10-20 individuals, with a dominant male leading the group", 
+        'Semi-aquatic and can hold their breath underwater for up to five minutes, making them excellent swimmers.',
+        "They are herbivores and primarily feed on grasses, aquatic plants, and fruits.",
+        "They are not typically kept as pets and are protected in many countries due to overhunting in the past"
+       ],
+      image: 'capybara.png',
       category_id: 2
     )
 
@@ -137,8 +147,22 @@ ApplicationRecord.transaction do
       name: 'Jaguar - 96 kg (212 lb) - 1.85 m Long (6 ft)',
       amount: 20,
       price: 1000000.00,
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc id ex ante. Donec enim mi, ullamcorper vel tortor sit amet, iaculis congue odio. Pellentesque dignissim finibus viverra. Sed maximus sem nec arcu interdum, eget gravida felis molestie. Nulla id vulputate sapien. Suspendisse rutrum pellentesque sapien non pulvinar. Mauris elit eros, fringilla a interdum at, hendrerit viverra neque. Curabitur dictum felis nec sem finibus aliquet. In nec lectus eu sapien auctor mattis non commodo mi. \n \n Phasellus dignissim mauris a velit malesuada tincidunt. Sed maximus at mi nec tempor. Integer gravida nec erat sed molestie. Donec sed congue nibh. Suspendisse non tortor eget magna pellentesque bibendum. Cras placerat elit arcu, sed sagittis metus venenatis ut. Aliquam porttitor gravida ligula lobortis molestie. Pellentesque non lectus sed augue feugiat condimentum. Mauris pulvinar nulla magna, eget scelerisque est tempor sed.",
-      bullet_desc: ['Will eat almost any wild animal in sight', 'Super predator', 'Really strong jaw can bite into most skulls', 'Do not buy unless you know what you\'re doing', 'A native species to the Amazon'],
+      description: "The jaguar, scientifically known as Panthera onca, is a large feline predator found in Central and South America. They are the third-largest cat species in the world after tigers and lions, and are known for their powerful build, strong jaws, and distinctive spotted coat.
+
+      Jaguars have a muscular, compact body with short, stocky legs and a large head with powerful jaws. They have a distinctive coat pattern of black spots on a tawny background, with some individuals having a melanistic (all black) coat. Jaguars have excellent eyesight and are solitary hunters, stalking their prey and using their powerful jaws to deliver a lethal bite to the skull or neck.
+      
+      Jaguars are found in a variety of habitats, including tropical rainforests, grasslands, and wetlands. They are apex predators and are known to hunt a variety of prey, including deer, peccaries, monkeys, birds, and fish. They are also strong swimmers and have been known to hunt and kill caimans in the water.
+      
+      In terms of conservation, jaguars are classified as \"Near Threatened\" by the International Union for Conservation of Nature (IUCN) due to habitat loss, fragmentation, and hunting. They are protected in many countries, but populations are still declining in some areas. Conservation efforts are focused on protecting and connecting habitat corridors and reducing human-jaguar conflict."
+      bullet_desc: [
+        'Third-largest cat species in the world after tigers and lions', 
+        'Muscular, compact body with short, stocky legs', 
+        'Large head with powerful jaws', 
+        'Distinctive coat pattern of black spots on a tawny background, with some individuals having a melanistic (all black) coat', 
+        'Excellent eyesight and powerful jaws for delivering a lethal bite to the skull or neck of prey',
+        "Strong swimmers and capable of hunting and killing caimans in the water",
+        "Apex predators known to hunt a variety of prey, including deer, peccaries, monkeys, birds, and fish",
+      ],
       image: 'jaguar.png',
       category_id: 2
     )
@@ -169,19 +193,41 @@ ApplicationRecord.transaction do
       name: 'Really Good Bug Spray - Outdoors - Camping Trip Bug Spray - Very Good Long Name',
       amount: 0,
       price: 2.89,
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc id ex ante. Donec enim mi, ullamcorper vel tortor sit amet, iaculis congue odio. Pellentesque dignissim finibus viverra. Sed maximus sem nec arcu interdum, eget gravida felis molestie. Nulla id vulputate sapien. Suspendisse rutrum pellentesque sapien non pulvinar. Mauris elit eros, fringilla a interdum at, hendrerit viverra neque. Curabitur dictum felis nec sem finibus aliquet. In nec lectus eu sapien auctor mattis non commodo mi. \n \n Phasellus dignissim mauris a velit malesuada tincidunt. Sed maximus at mi nec tempor. Integer gravida nec erat sed molestie. Donec sed congue nibh. Suspendisse non tortor eget magna pellentesque bibendum. Cras placerat elit arcu, sed sagittis metus venenatis ut. Aliquam porttitor gravida ligula lobortis molestie. Pellentesque non lectus sed augue feugiat condimentum. Mauris pulvinar nulla magna, eget scelerisque est tempor sed.",
-      bullet_desc: ['Great for outdoors!', 'Kill those bugs!', 'Is that a cockaroach in your pocket?', 'Extremely effective, 99.9% of bug spray owners recommend!', 'It even works on rats!'],
+      description: "Introducing our premium bug spray - the perfect solution for keeping pesky insects at bay. Our formula is specially designed to repel a wide range of insects, including mosquitoes, flies, ticks, and more. It's easy to use and can be applied directly to the skin or clothing for maximum protection.
+      Our bug spray is made with high-quality, all-natural ingredients that are safe for both adults and children. It contains a blend of essential oils, including citronella, lavender, and peppermint, which are known for their natural insect-repelling properties. Our formula is also free from harsh chemicals and artificial fragrances, making it a safe and eco-friendly choice.
+      Not only does our bug spray keep insects away, but it also has a pleasant, refreshing scent that you'll love. It's perfect for outdoor activities like camping, hiking, and picnics, and can also be used indoors to keep bugs out of your home.
+      With our bug spray, you can enjoy the great outdoors without worrying about pesky insects. It's the perfect addition to your outdoor gear and a must-have for anyone who loves spending time outside. Try it today and experience the difference for yourself!",
+      bullet_desc: [
+        'Repels a wide range of insects, including mosquitoes, flies, ticks, and more', 
+        'Made with high-quality, all-natural ingredients that are safe for both adults and children', 
+        'Contains a blend of essential oils, including citronella, lavender, and peppermint, known for their natural insect-repelling properties', 
+        'Free from harsh chemicals and artificial fragrances, making it a safe and eco-friendly choice', 
+        'Easy to use and can be applied directly to the skin or clothing for maximum protection',
+        "Pleasant and refreshing scent, making it perfect for outdoor activities like camping, hiking, and picnics",
+        "Can also be used indoors to keep bugs out of your home",
+        "Allows you to enjoy the great outdoors without worrying about pesky insects",
+        "A must-have for anyone who loves spending time outside"
+      ],
       image: 'bugSpray.png',
       category_id: 4
     )
 
     #cast iron
     Product.create!(
-      name: 'Cast Iron - Heavy Duty - 56 ft. radius - Large Cast Iron',
+      name: 'Cast Iron - Heavy Duty - 56 ft. diameter - Large Cast Iron',
       amount: 200000,
       price: 56.56,
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc id ex ante. Donec enim mi, ullamcorper vel tortor sit amet, iaculis congue odio. Pellentesque dignissim finibus viverra. Sed maximus sem nec arcu interdum, eget gravida felis molestie. Nulla id vulputate sapien. Suspendisse rutrum pellentesque sapien non pulvinar. Mauris elit eros, fringilla a interdum at, hendrerit viverra neque. Curabitur dictum felis nec sem finibus aliquet. In nec lectus eu sapien auctor mattis non commodo mi. \n \n Phasellus dignissim mauris a velit malesuada tincidunt. Sed maximus at mi nec tempor. Integer gravida nec erat sed molestie. Donec sed congue nibh. Suspendisse non tortor eget magna pellentesque bibendum. Cras placerat elit arcu, sed sagittis metus venenatis ut. Aliquam porttitor gravida ligula lobortis molestie. Pellentesque non lectus sed augue feugiat condimentum. Mauris pulvinar nulla magna, eget scelerisque est tempor sed.",
-      bullet_desc: ['Great for outdoors!', 'Can cook enough food for a section of the forest', 'Can keep food cooked for hours', 'Will not burn your food!', 'Doubles as a giant arena!', 'Image is not to scale'],
+      description: "Imagine standing before a colossal cast iron product, measuring a remarkable 56 feet in diameter. The sheer size and weight of this product would be awe-inspiring, and it would undoubtedly leave a lasting impression on anyone who saw it.
+      As you approach the product, you can feel the heat emanating from its surface, a testament to its exceptional thermal conductivity. Despite its size, the product is beautifully detailed, with intricate designs etched into the cast iron surface. The level of attention to detail is remarkable, and it's clear that a great deal of skill and craftsmanship went into its creation.
+      It's hard to imagine anything of this size and magnitude existing in reality, but the beauty of this cast iron product is that it transcends our normal expectations and limitations. It's a testament to the power of human creativity and imagination, and it stands as a symbol of the limitless potential of our minds. Whether used as a functional element in a large-scale construction project or as an art installation, this cast iron product would be an unforgettable addition to any space."
+      bullet_desc: [
+        'Unique and eye-catching centerpiece: A 56-foot diameter cast iron product would be a show-stopping centerpiece in any setting. Whether used as an art installation, a conversation starter, or a functional element in a large-scale construction project, this product is sure to capture attention.', 
+        'High-quality and durable material: Cast iron is known for its strength and durability, and a product of this size would be no exception. Made from high-quality materials and designed to withstand the test of time, this product would be a long-lasting investment that will continue to impress for generations to come.', 
+        'Versatile uses: Depending on the specific design and construction of the product, it could have a wide range of potential uses. It could serve as the base of a large sculpture or fountain, the centerpiece of a public plaza or park, or even as a structural element in a building or bridge. The possibilities are endless!', 
+        'Customizable design: With a product of this size, there would be plenty of room for customization and personalization. The design could be tailored to fit the specific needs and aesthetic preferences of the buyer, making it a truly one-of-a-kind creation.', 
+        'Symbolic value: A 56-foot diameter cast iron product could hold symbolic value for a community or organization, representing strength, unity, and permanence. Whether used in a public space or in a private collection, this product would be a powerful symbol of resilience and longevity.', 
+        'Image is not to scale.'
+      ],
       image: 'castIron.png',
       category_id: 4
     )
