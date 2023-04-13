@@ -79,7 +79,7 @@ ApplicationRecord.transaction do
 
     puts "Creating products..."
 
-    #big leaf
+    #big leaf 1
     Product.create!(
       name: 'Big Leaf',
       amount: 200000,
@@ -99,7 +99,7 @@ ApplicationRecord.transaction do
       category_id: 1
     )
 
-    #big leag HD
+    #big leag HD 2
     Product.create!(
       name: 'Big Leaf HD',
       amount: 200000,
@@ -121,7 +121,7 @@ ApplicationRecord.transaction do
       category_id: 1
     )
 
-    #capybara
+    #capybara 3
     Product.create!(
       name: 'Capybara',
       amount: 0,
@@ -142,7 +142,7 @@ ApplicationRecord.transaction do
       category_id: 2
     )
 
-    #jaguar
+    #jaguar 4
     Product.create!( 
       name: 'Jaguar - 96 kg (212 lb) - 1.85 m Long (6 ft)',
       amount: 20,
@@ -167,7 +167,7 @@ ApplicationRecord.transaction do
       category_id: 2
     )
 
-    #janira beanie
+    #janira beanie 5
     Product.create!(
       name: 'Silk Reine Mulberry Silk Lined Beanie (Unisex) – Black Knitted Hat with Pure Silk Lining – Warm – Soft & Slouchy/Suitable for All Seasons – Giftable Beanie for Men & Women',
       amount: 20000,
@@ -188,7 +188,7 @@ ApplicationRecord.transaction do
       category_id: 5
     )
 
-    #bug spray
+    #bug spray 6
     Product.create!(
       name: 'Really Good Bug Spray - Outdoors - Camping Trip Bug Spray - Very Good Long Name',
       amount: 0,
@@ -212,7 +212,7 @@ ApplicationRecord.transaction do
       category_id: 4
     )
 
-    #cast iron
+    #cast iron 7
     Product.create!(
       name: 'Cast Iron - Heavy Duty - 56 ft. diameter - Large Cast Iron',
       amount: 200000,
@@ -232,7 +232,7 @@ ApplicationRecord.transaction do
       category_id: 4
     )
 
-    #charcoal
+    #charcoal 8 
     Product.create!(
       name: 'Charcoal - Fire fuel - 200lbs of Cooking Rocks - 100hr lifetime',
       amount: 300000,
@@ -257,7 +257,7 @@ ApplicationRecord.transaction do
       category_id: 3
     )
 
-    #charcoalFuel
+    #charcoalFuel 9
     Product.create!(
       name: 'Extreme Heat Charcoal: The Ultimate High-Performance Fuel for Outdoor Cooking' ,
       amount: 300000,
@@ -281,7 +281,7 @@ ApplicationRecord.transaction do
       category_id: 3
     )
 
-    #hatchet
+    #hatchet 10
     Product.create!(
       name: 'Hatchet - Not the Book - Stainless Steel - Heavy Duty' ,
       amount: 300000,
@@ -303,10 +303,10 @@ ApplicationRecord.transaction do
         "Durable and long-lasting: With their high-quality materials and expert craftsmanship, our hatchets are built to last and provide reliable performance for years to come."
       ],
       image: 'hatchet.png',
-      category_id: 3
+      category_id: 4
     )
 
-    #squirrelMonkey
+    #squirrelMonkey 11
     Product.create!(
       name: 'Squirrel Monkey - Very Cute & Tiny - 963g (2.12 lbs) - 310mm Tall (1 ft.)' ,
       amount: 300000,
@@ -337,7 +337,7 @@ ApplicationRecord.transaction do
       category_id: 2
     )
 
-    #giant catfish
+    #giant catfish 12
     Product.create!(
       name: 'Arapaima Gigas - Large Catfish - 100 kg (220 lb) - 3 m Long (9.8 ft)' ,
       amount: 5,
@@ -366,6 +366,168 @@ ApplicationRecord.transaction do
       image: 'giantCatfish.jpg',
       category_id: 6
     ) 
+
+    #rosewood 13
+    Product.create!(
+      name: 'Brazilian Rosewood (Dalbergia nigra)' ,
+      amount: 30000,
+      price: 999.99,
+      description: "Dalbergia nigra, commonly known as Brazilian Rosewood, is a tropical hardwood tree species native to Brazil. It belongs to the Fabaceae family and is known for its high-quality timber, which has been used for centuries in the construction of fine furniture, musical instruments, and decorative objects.
+
+      Brazilian Rosewood can grow up to 30 meters in height and has a trunk diameter of up to 1 meter. The bark is dark brown and rough, with vertical fissures. The leaves are compound and pinnate, with 5-9 leaflets that are oblong or oval in shape and have a glossy appearance. The flowers are small, white, and fragrant, and are arranged in clusters. The fruit is a legume that is flattened, oblong, and contains 1-2 seeds.
+      
+      The wood of Brazilian Rosewood is prized for its unique reddish-brown color and distinctive grain pattern, which features dark streaks and flecks. It is also known for its hardness, durability, and resonance, which make it a popular choice for musical instruments such as guitars, pianos, and violins. Due to its high demand and slow growth rate, Brazilian Rosewood has become rare and endangered in the wild, and international trade is strictly regulated by CITES to prevent further depletion of the species.",
+      bullet_desc: [
+        "Native to Brazil", 
+        "Belongs to the Fabaceae family", 
+        "Can grow up to 30 meters in height with a trunk diameter of up to 1 meter", 
+        "Bark is dark brown and rough with vertical fissures", 
+        "Leaves are compound and pinnate with 5-9 leaflets",
+        "Flowers are small, white, and fragrant and are arranged in clusters",
+        "Fruit is a legume that is flattened, oblong, and contains 1-2 seeds",
+        "Wood has a unique reddish-brown color and distinctive grain pattern with dark streaks and flecks",
+        "Known for its hardness, durability, and resonance",
+        'Popular choice for musical instruments such as guitars, pianos, and violins', 
+        "Has become rare and endangered in the wild",
+        "International trade is strictly regulated by CITES to prevent further depletion of the species."
+      ],
+      image: 'rosewood.png',
+      category_id: 7
+    )
+
+    #ipe 14
+    Product.create!(
+      name: 'Ipe (Tabebuia spp.)' ,
+      amount: 30000,
+      price: 999.99,
+      description: "Tabebuia spp., commonly known as Ipe, is a group of flowering tree species native to Central and South America. It belongs to the Bignoniaceae family and is known for its dense, durable wood that is prized for outdoor construction and decking.
+
+      Ipe trees can grow up to 45 meters in height and have a trunk diameter of up to 2 meters. The bark is gray and smooth, with shallow fissures. The leaves are deciduous and pinnate, with 5-7 leaflets that are elliptical in shape and have a glossy appearance. The flowers are tubular and trumpet-shaped, and range in color from yellow to pink and purple. The fruit is a woody capsule that contains numerous small seeds.
+      
+      The wood of Ipe is extremely dense, hard, and resistant to decay, insects, and weathering, making it ideal for outdoor applications such as decking, siding, and fencing. It has a dark brown to olive-green color and a fine, straight grain pattern that is sometimes interlocked or irregular. Due to its durability and resistance to rot, Ipe wood has been used for centuries in the construction of docks, bridges, and other marine structures.
+      
+      Ipe is a slow-growing tree and is often harvested from managed forests to ensure sustainable use. It is also a valuable source of food and medicine for local communities, with various parts of the tree being used for traditional remedies and as a food source for wildlife.",
+      bullet_desc: [
+        "Belongs to the Bignoniaceae family of flowering trees", 
+        "Native to Central and South America", 
+        "Can grow up to 45 meters in height and have a trunk diameter of up to 2 meters", 
+        "Has gray, smooth bark with shallow fissures", 
+        "Produces deciduous and pinnate leaves with 5-7 glossy elliptical leaflets",
+        "Flowers are tubular and trumpet-shaped, and range in color from yellow to pink and purple",
+        "Produces a woody capsule fruit containing numerous small seeds",
+        "Wood is extremely dense, hard, and resistant to decay, insects, and weathering",
+        "Ideal for outdoor applications such as decking, siding, and fencing",
+        'Dark brown to olive-green in color with a fine, straight grain pattern that can be interlocked or irregular', 
+        "Used for centuries in the construction of docks, bridges, and other marine structures due to its durability and resistance to rot",
+        "Valuable source of food and medicine for local communities, and provides food for wildlife.",
+        "Harvested from managed forests to ensure sustainable use"
+      ],
+      image: 'ipe.png',
+      category_id: 7
+    )
+
+    #mahogany 15
+    Product.create!(
+      name: 'Mahogany (Swietenia spp.)' ,
+      amount: 30000,
+      price: 999.99,
+      description: "Swietenia spp., commonly known as Mahogany, is a group of tropical hardwood tree species native to Central and South America. It belongs to the Meliaceae family and is known for its reddish-brown wood that is prized for furniture, cabinetry, and musical instruments.
+
+      Mahogany trees can grow up to 30 meters in height and have a trunk diameter of up to 1.5 meters. The bark is gray-brown and relatively smooth, with shallow fissures. The leaves are deciduous and pinnate, with 4-8 pairs of leaflets that are lanceolate in shape and have a shiny surface. The flowers are small, inconspicuous, and range in color from white to pale pink or yellow. The fruit is a large, woody capsule that contains numerous small seeds.
+      
+      The wood of Mahogany is medium to hard in density and has a fine, straight grain pattern that is sometimes interlocked or irregular. It has a reddish-brown color and a high luster when polished. Due to its durability, workability, and attractive appearance, Mahogany wood has been used for centuries in high-quality furniture and cabinetry, as well as in the construction of boats, musical instruments, and decorative objects.
+      
+      Mahogany trees are slow-growing and are often harvested from managed forests to ensure sustainable use. They are also a valuable source of food and shelter for local wildlife, and have cultural and medicinal significance for many indigenous communities. However, the demand for Mahogany wood has led to overexploitation and illegal logging in some regions, leading to conservation concerns and efforts to promote responsible harvesting and trade practices.",
+      bullet_desc: [
+        "Tropical hardwood tree species native to Central and South America", 
+        "Belongs to the Meliaceae family", 
+        "Can grow up to 30 meters in height and have a trunk diameter of up to 1.5 meters", 
+        "Bark is gray-brown and relatively smooth, with shallow fissures", 
+        "Leaves are deciduous and pinnate, with 4-8 pairs of lanceolate-shaped leaflets that have a shiny surface",
+        "Flowers are small and range in color from white to pale pink or yellow",
+        "Fruit is a large, woody capsule that contains numerous small seeds",
+        "Wood is medium to hard in density and has a fine, straight grain pattern that is sometimes interlocked or irregular",
+        "Has a reddish-brown color and a high luster when polished",
+        "Durable, workable, and attractive, it is commonly used for high-quality furniture, cabinetry, boats, musical instruments, and decorative objects", 
+        "Slow-growing and often harvested from managed forests to ensure sustainable use",
+        "Valuable source of food and shelter for local wildlife, and has cultural and medicinal significance for many indigenous communities",
+        "Overexploitation and illegal logging have led to conservation concerns and efforts to promote responsible harvesting and trade practices."
+      ],
+      image: 'mahogany.png',
+      category_id: 7
+    )
+
+    #brazil nut (Bertholletia excelsa) 16
+    Product.create!(
+      name: 'Brazil Nut (Bertholletia excelsa)' ,
+      amount: 30000,
+      price: 999.99,
+      description: "The Brazil Nut (Bertholletia excelsa) is a large tree species that can grow up to 50 meters in height and have a trunk diameter of up to 2 meters. Belonging to the Lecythidaceae family and native to the Amazon rainforest, the Brazil Nut has a straight, cylindrical trunk with smooth, gray-brown bark. Its leaves are alternate and pinnate, with 8-24 pairs of oval-shaped leaflets. The flowers are large and white or pale pink, and are pollinated by bees that collect nectar from them. The fruits are large, spherical capsules that contain 12-24 triangular seeds, each enclosed in a hard, woody shell. The seeds, known as Brazil nuts, are a rich source of protein, healthy fats, and minerals such as selenium, and are consumed by people and wildlife alike.
+
+      The trees have an important role in the ecology of the Amazon rainforest, providing habitat and food for a variety of species, and contributing to the forest's nutrient cycling and carbon storage. They are also of cultural and economic importance to local communities, who harvest the nuts and sell them as a cash crop. Sustainable management practices, such as selective harvesting and protection of mature trees, are crucial to ensure the long-term viability of the Brazil nut industry and the conservation of the forests where they grow. Overall, the Brazil Nut is a valuable species that highlights the importance of maintaining healthy and sustainable ecosystems.",
+      bullet_desc: [
+        "A large tree species that can grow up to 50 meters in height and have a trunk diameter of up to 2 meters", 
+        "Belongs to the Lecythidaceae family and is native to the Amazon rainforest", 
+        "Has a straight, cylindrical trunk with smooth, gray-brown bark", 
+        "Leaves are alternate and pinnate, with 8-24 pairs of oval-shaped leaflets", 
+        "Flowers are large and white or pale pink, and are pollinated by bees that collect nectar from them",
+        "Fruits are large, spherical capsules that contain 12-24 triangular seeds, each enclosed in a hard, woody shell",
+        "The seeds, known as Brazil nuts, are a rich source of protein, healthy fats, and minerals such as selenium, and are consumed by people and wildlife alike",
+        "The trees have an important role in the ecology of the Amazon rainforest, providing habitat and food for a variety of species, and contributing to the forest's nutrient cycling and carbon storage",
+        "They are also of cultural and economic importance to local communities, who harvest the nuts and sell them as a cash crop",
+        "Sustainable management practices, such as selective harvesting and protection of mature trees, are crucial to ensure the long-term viability of the Brazil nut industry and the conservation of the forests where they grow.", 
+      ],
+      image: 'brazilnut.png',
+      category_id: 7
+    )
+
+    #jatoba 17
+    Product.create!(
+      name: 'Jatoba (Hymenaea courbaril)' ,
+      amount: 30000,
+      price: 999.99,
+      description: "Jatoba, also known as Brazilian Cherry or Courbaril, is a large tree species belonging to the Fabaceae family, and is native to the tropical regions of South and Central America. The tree can reach up to 50 meters in height, with a trunk diameter of up to 2 meters. It has a straight, cylindrical trunk with dark brown to gray bark, and its leaves are alternate and compound, with 5-8 pairs of glossy, oval-shaped leaflets. Jatoba is a deciduous tree, and its leaves turn yellow before shedding in the dry season.
+
+      The flowers of Jatoba are small, yellow or greenish-yellow, and are borne in dense clusters on the branches. The tree is pollinated by bees and other insects, and the fruits are large, woody pods that contain several seeds. The seeds are enclosed in a red, fibrous aril that is edible and sweet, and is a popular snack in many parts of South America.
+      
+      Jatoba is known for its hard, dense wood, which is resistant to decay, insect attack, and fire. The wood is a rich reddish-brown color, and has a fine, uniform texture with a straight or slightly interlocked grain. It is widely used in furniture-making, flooring, and construction, and is prized for its durability and beauty. Jatoba is also used in traditional medicine to treat a variety of ailments, and is believed to have anti-inflammatory and analgesic properties.
+      
+      Jatoba is an important species in the ecology of tropical forests, providing habitat and food for a variety of species, and contributing to the nutrient cycling and carbon storage of the ecosystem. However, like many tropical hardwoods, Jatoba is threatened by overharvesting and habitat destruction. Sustainable management practices, such as selective harvesting and reforestation, are crucial to ensure the long-term viability of the species and the forests where they grow.",
+      bullet_desc: [
+        "Jatoba is a large deciduous tree species native to tropical regions of South and Central America.", 
+        "The tree can reach up to 50 meters in height with a straight, cylindrical trunk and dark brown to gray bark.", 
+        "Jatoba leaves are alternate and compound with 5-8 pairs of glossy, oval-shaped leaflets that turn yellow before shedding in the dry season.", 
+        "The tree is pollinated by bees and other insects, and its large, woody fruit pods contain edible and sweet, red, fibrous arils that are popular snacks in South America.", 
+        "Jatoba wood is hard, dense, and resistant to decay, insect attack, and fire, and has a rich reddish-brown color with a fine, uniform texture and straight or slightly interlocked grain.",
+        "Jatoba wood is widely used in furniture-making, flooring, and construction for its durability and beauty.",
+        "Jatoba is also used in traditional medicine for its believed anti-inflammatory and analgesic properties.",
+        "Jatoba plays an important ecological role in tropical forests by providing habitat and food for a variety of species, and contributing to the nutrient cycling and carbon storage of the ecosystem.",
+        "Sustainable management practices, such as selective harvesting and reforestation, are crucial to ensure the long-term viability of Jatoba and its associated ecosystems.",
+      ],
+      image: 'jatoba.png',
+      category_id: 7
+    )
+
+    #Kapok (Ceiba pentandra) 18
+    Product.create!(
+      name: 'Kapok (Ceiba pentandra)' ,
+      amount: 30000,
+      price: 999.99,
+      description: "Ceiba pentandra, commonly known as kapok, is a large deciduous tree species that is native to the tropical regions of Africa, Asia, and South America. It can reach up to 70 meters in height and its trunk can be over 3 meters in diameter. The bark is smooth and gray, with large buttresses at the base of the tree for added support. Kapok leaves are large and palmately compound, with 5 to 9 leaflets that are elliptic and glossy green. The tree produces large, bell-shaped flowers that are creamy white with purple spots, and these are followed by brown, woody fruits that contain cotton-like fibers. The fibers, known as kapok, are buoyant and water-resistant, and are traditionally used for stuffing pillows, mattresses, and life jackets. Kapok wood is soft and light, and is not typically used for commercial purposes. Kapok plays an important ecological role in tropical forests by providing habitat and food for a variety of species, and contributing to the nutrient cycling and carbon storage of the ecosystem. Sustainable management practices, such as reforestation and habitat restoration, are crucial to ensure the long-term viability of kapok and its associated ecosystems.",
+      bullet_desc: [
+        "Large deciduous tree species native to tropical regions of Africa, Asia, and South America", 
+        "Can reach up to 70 meters in height with a trunk diameter of over 3 meters", 
+        "Smooth gray bark with large buttresses at the base for added support", 
+        "Large palmately compound leaves with 5-9 elliptic and glossy green leaflets", 
+        "Produces large, bell-shaped flowers that are creamy white with purple spots",
+        "Brown, woody fruits contain buoyant, water-resistant kapok fibers traditionally used for stuffing pillows, mattresses, and life jackets",
+        "Kapok wood is soft and light, and not typically used for commercial purposes",
+        "Plays an important ecological role in tropical forests by providing habitat and food for a variety of species, and contributing to nutrient cycling and carbon storage",
+        "Sustainable management practices are crucial for long-term viability of kapok and associated ecosystems",
+      ],
+      image: 'Kapok.png',
+      category_id: 7
+    )
 
 # ----------------------------- Reviews ----------------------------- #
   # == Schema Information
