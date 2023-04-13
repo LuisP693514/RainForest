@@ -237,19 +237,46 @@ ApplicationRecord.transaction do
       name: 'Charcoal - Fire fuel - 200lbs of Cooking Rocks - 100hr lifetime',
       amount: 300000,
       price: 13.29,
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc id ex ante. Donec enim mi, ullamcorper vel tortor sit amet, iaculis congue odio. Pellentesque dignissim finibus viverra. Sed maximus sem nec arcu interdum, eget gravida felis molestie. Nulla id vulputate sapien. Suspendisse rutrum pellentesque sapien non pulvinar. Mauris elit eros, fringilla a interdum at, hendrerit viverra neque. Curabitur dictum felis nec sem finibus aliquet. In nec lectus eu sapien auctor mattis non commodo mi. \n \n Phasellus dignissim mauris a velit malesuada tincidunt. Sed maximus at mi nec tempor. Integer gravida nec erat sed molestie. Donec sed congue nibh. Suspendisse non tortor eget magna pellentesque bibendum. Cras placerat elit arcu, sed sagittis metus venenatis ut. Aliquam porttitor gravida ligula lobortis molestie. Pellentesque non lectus sed augue feugiat condimentum. Mauris pulvinar nulla magna, eget scelerisque est tempor sed.",
-      bullet_desc: ['Charcoal used for camping, cookouts, bonfires, train fuel', 'Can last as long as 100hrs', 'With 200lbs you can\'t go wrong!', 'Extremely effective, 99.9% of charcoal owners recommend!', 'Bring your friends to the cookout!'],
+      description: "200lbs of high-quality charcoal are the perfect addition to any outdoor cooking experience. With a long lifetime, you can rest assured that these charcoal briquettes will last through multiple grilling sessions, providing consistent and even heat every time.
+
+      Our charcoal is made from high-quality materials and is carefully crafted to provide the perfect balance of heat and burn time. Whether you're cooking up a quick meal or planning a long, slow smoke, our charcoal will deliver the perfect flavor every time.
+      
+      Unlike other brands, our charcoal is designed to burn clean, without producing any harmful chemicals or byproducts. This means you can cook with confidence, knowing that you're not only getting great flavor but also taking care of your health and the environment.
+      
+      Our 200lbs of charcoal are perfect for backyard barbecues, camping trips, or any outdoor cooking adventure. With our long-lasting charcoal, you can enjoy more time cooking and less time worrying about refueling.",
+      bullet_desc: [
+        "Long lifetime: Our 200lbs of charcoal have a really long lifetime, meaning they'll last through multiple grilling sessions",
+        "High-quality materials: Our charcoal is made from high-quality materials and crafted to provide the perfect balance of heat and burn time.",
+        "Consistent and even heat: Our charcoal briquettes deliver consistent and even heat every time you use them, so you can cook with confidence.", 
+        "Clean-burning: Unlike other brands, our charcoal burns clean without producing any harmful chemicals or byproducts.", 
+        "Great flavor: Our charcoal is designed to provide the perfect flavor to your grilled foods, making your outdoor cooking experience even more enjoyable.",
+        "Perfect for any occasion: Our 200lbs of charcoal are ideal for backyard barbecues, camping trips, or any outdoor cooking adventure.",
+        "Saves time: With our long-lasting charcoal, you can enjoy more time cooking and less time worrying about refueling."
+      ],
       image: 'charcoal.png',
       category_id: 3
     )
 
     #charcoalFuel
     Product.create!(
-      name: 'Charcoal Liquid Fuel - Keeps the Fire Going - 3KL Pure Diesel' ,
+      name: 'Extreme Heat Charcoal: The Ultimate High-Performance Fuel for Outdoor Cooking' ,
       amount: 300000,
       price: 132.00,
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc id ex ante. Donec enim mi, ullamcorper vel tortor sit amet, iaculis congue odio. Pellentesque dignissim finibus viverra. Sed maximus sem nec arcu interdum, eget gravida felis molestie. Nulla id vulputate sapien. Suspendisse rutrum pellentesque sapien non pulvinar. Mauris elit eros, fringilla a interdum at, hendrerit viverra neque. Curabitur dictum felis nec sem finibus aliquet. In nec lectus eu sapien auctor mattis non commodo mi. \n \n Phasellus dignissim mauris a velit malesuada tincidunt. Sed maximus at mi nec tempor. Integer gravida nec erat sed molestie. Donec sed congue nibh. Suspendisse non tortor eget magna pellentesque bibendum. Cras placerat elit arcu, sed sagittis metus venenatis ut. Aliquam porttitor gravida ligula lobortis molestie. Pellentesque non lectus sed augue feugiat condimentum. Mauris pulvinar nulla magna, eget scelerisque est tempor sed.",
-      bullet_desc: ['Each milliliter of this fuel can keep a fire going for 12 hours.', 'Sealed container prevents leaks', 'Water proof caps so that you can use it in the rain!', '100% real diesel!', 'It even doubles as car fuel'],
+      description: "Premium line of high-performance charcoal, specifically designed to provide you with the most intense and sustained heat possible! Our charcoal fuel is the ultimate choice for outdoor cooking enthusiasts who demand nothing but the best.
+
+      Crafted from carefully selected materials and formulated to maximize burn time, our charcoal will deliver a heat output that rivals even the most powerful fuels on the market. You'll be amazed at how quickly and efficiently our charcoal cooks your food, saving you time and hassle while producing delicious, flavorful meals.
+      
+      Our high-performance charcoal is perfect for all kinds of outdoor cooking adventures, from backyard barbecues to camping trips and beyond. Whether you're cooking up burgers and hot dogs or preparing a slow-smoked brisket, our charcoal will deliver the intense, sustained heat you need to achieve perfect results every time.",
+      bullet_desc: [
+        "Intense heat output: Our charcoal fuel delivers an intense and sustained heat output that rivals even the most powerful fuels on the market.", 
+        "Maximum burn time: Formulated to maximize burn time, our charcoal provides longer cooking sessions without the need for refueling.", 
+        "Faster and more efficient cooking: With our high-performance charcoal, you can cook your food faster and more efficiently, saving you time and hassle while producing delicious, flavorful meals.", 
+        "Perfect for all kinds of outdoor cooking: Our charcoal is ideal for all kinds of outdoor cooking adventures, from backyard barbecues to camping trips and beyond.", 
+        "Great for slow-smoking: Our charcoal is perfect for slow-smoking meats, delivering the sustained heat needed to achieve perfect results every time.",
+        "High-quality materials: Crafted from carefully selected materials, our charcoal is formulated to provide the ultimate in heat output and burn time.",
+        "Exceptional flavor: Our charcoal delivers exceptional flavor to your food, enhancing the natural flavors of your ingredients and taking your outdoor cooking to the next level.",
+        "Convenient and easy to use: Our charcoal is easy to light and use, making it convenient for all your outdoor cooking needs."
+      ],
       image: 'charcoalFuel.png',
       category_id: 3
     )
@@ -259,8 +286,22 @@ ApplicationRecord.transaction do
       name: 'Hatchet - Not the Book - Stainless Steel - Heavy Duty' ,
       amount: 300000,
       price: 34.95,
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc id ex ante. Donec enim mi, ullamcorper vel tortor sit amet, iaculis congue odio. Pellentesque dignissim finibus viverra. Sed maximus sem nec arcu interdum, eget gravida felis molestie. Nulla id vulputate sapien. Suspendisse rutrum pellentesque sapien non pulvinar. Mauris elit eros, fringilla a interdum at, hendrerit viverra neque. Curabitur dictum felis nec sem finibus aliquet. In nec lectus eu sapien auctor mattis non commodo mi. \n \n Phasellus dignissim mauris a velit malesuada tincidunt. Sed maximus at mi nec tempor. Integer gravida nec erat sed molestie. Donec sed congue nibh. Suspendisse non tortor eget magna pellentesque bibendum. Cras placerat elit arcu, sed sagittis metus venenatis ut. Aliquam porttitor gravida ligula lobortis molestie. Pellentesque non lectus sed augue feugiat condimentum. Mauris pulvinar nulla magna, eget scelerisque est tempor sed.",
-      bullet_desc: ['Can chop trees', 'Gather that wood around the forest', 'Proven to work on any tree of any size.', 'REAL STEEL (not fake)'],
+      description: "The perfect tool for all your outdoor adventures! Whether you're camping, hiking, or exploring the great outdoors, a hatchet is an essential tool that can help you with everything from chopping firewood to clearing brush and building shelter.
+
+      Crafted from the highest-quality materials, our hatchets are designed for maximum durability and performance. With a sharp, finely-honed blade and a sturdy handle, our hatchets are both powerful and easy to use, allowing you to tackle even the toughest outdoor tasks with ease.
+      
+      In addition to their practical uses, our hatchets are also a beautiful and timeless addition to any outdoor enthusiast's collection. With their sleek design and classic style, our hatchets are a true symbol of rugged outdoor living and adventure.",
+      bullet_desc: [
+        "High-quality materials: Crafted from the highest-quality materials, our hatchets are designed for maximum durability and performance.", 
+        "Sharp blade: Our hatchets feature a sharp, finely-honed blade that can easily handle even the toughest outdoor tasks.", 
+        "Sturdy handle: With a sturdy handle that provides a comfortable and secure grip, our hatchets are both powerful and easy to use.", 
+        "Versatile tool: Our hatchets are a versatile tool that can help with everything from chopping firewood to clearing brush and building shelter.",
+        "Sleek design: Our hatchets feature a sleek design and classic style that make them a beautiful and timeless addition to any outdoor enthusiast's collection.",
+        "Lightweight and portable: Our hatchets are lightweight and portable, making them easy to carry with you on any outdoor adventure.",
+        "Ideal for camping and hiking: Our hatchets are the perfect tool for camping and hiking, allowing you to easily tackle any outdoor task that comes your way.",
+        "Perfect for chopping wood: Whether you're starting a fire or building a shelter, our hatchets are ideal for chopping wood and making kindling.",
+        "Durable and long-lasting: With their high-quality materials and expert craftsmanship, our hatchets are built to last and provide reliable performance for years to come."
+      ],
       image: 'hatchet.png',
       category_id: 3
     )
@@ -270,8 +311,28 @@ ApplicationRecord.transaction do
       name: 'Squirrel Monkey - Very Cute & Tiny - 963g (2.12 lbs) - 310mm Tall (1 ft.)' ,
       amount: 300000,
       price: 963212.31,
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc id ex ante. Donec enim mi, ullamcorper vel tortor sit amet, iaculis congue odio. Pellentesque dignissim finibus viverra. Sed maximus sem nec arcu interdum, eget gravida felis molestie. Nulla id vulputate sapien. Suspendisse rutrum pellentesque sapien non pulvinar. Mauris elit eros, fringilla a interdum at, hendrerit viverra neque. Curabitur dictum felis nec sem finibus aliquet. In nec lectus eu sapien auctor mattis non commodo mi. \n \n Phasellus dignissim mauris a velit malesuada tincidunt. Sed maximus at mi nec tempor. Integer gravida nec erat sed molestie. Donec sed congue nibh. Suspendisse non tortor eget magna pellentesque bibendum. Cras placerat elit arcu, sed sagittis metus venenatis ut. Aliquam porttitor gravida ligula lobortis molestie. Pellentesque non lectus sed augue feugiat condimentum. Mauris pulvinar nulla magna, eget scelerisque est tempor sed.",
-      bullet_desc: ['Super cute', 'Will take your cookie', 'TINY: their small size are proven expand on their cuteness ', 'Can be trained to be annoying'],
+      description: "Squirrel monkeys (Saimiri spp.) are small, arboreal primates belonging to the family Cebidae. They are native to the tropical forests of Central and South America and are known for their high level of activity and social behavior.
+
+      Squirrel monkeys have a distinctive appearance, characterized by their small size, long and slender limbs, and short, dense fur that is typically gray or brown in color. They have a white or cream-colored face with black markings around the eyes, and a long, pointed snout.
+      
+      Their average body length ranges from 25-35 cm, with a tail length of 35-42 cm, and they typically weigh between 0.5-1.5 kg. Squirrel monkeys have excellent vision and are able to see in color, which is an adaptation for their fruit-based diet.
+      
+      Squirrel monkeys are highly social animals and live in groups of up to 40 individuals, with a dominant male leading the group. They communicate with each other using a variety of vocalizations and body language, and spend much of their time grooming each other to maintain social bonds.
+      
+      In the wild, squirrel monkeys feed primarily on fruit, but also eat insects, small vertebrates, and other plant material. They are important seed dispersers and play a key role in maintaining the health and diversity of tropical forest ecosystems.
+      
+      Overall, squirrel monkeys are fascinating and important members of the primate community, known for their social behavior, high level of activity, and important ecological role in their native habitat.",
+      bullet_desc: [
+        "Arboreal primates: Squirrel monkeys are small, arboreal primates that live in the trees of tropical forests in Central and South America.", 
+        "High level of activity: Squirrel monkeys are known for their high level of activity, spending much of their day moving through the trees in search of food and socializing with their group.", 
+        "Social behavior: Squirrel monkeys live in large groups of up to 40 individuals and are highly social, communicating with each other using a variety of vocalizations and body language.", 
+        "Fruit-based diet: Squirrel monkeys primarily feed on fruit, but also eat insects, small vertebrates, and other plant material.",
+        "Excellent vision: Squirrel monkeys have excellent color vision, which is an adaptation for their fruit-based diet.",
+        "Important seed dispersers: Squirrel monkeys play a key role in maintaining the health and diversity of tropical forest ecosystems by dispersing seeds of the fruit they eat.",
+        "Unique appearance: Squirrel monkeys have a distinctive appearance, characterized by their small size, long and slender limbs, and short, dense fur that is typically gray or brown in color.",
+        "Long lifespan: Squirrel monkeys have a relatively long lifespan for their size, living up to 15 years in the wild and up to 20 years in captivity.",
+        "Endangered species: Several species of squirrel monkeys are listed as endangered or threatened due to habitat loss and hunting for the pet trade."
+      ],
       image: 'squirrelMonkey.png',
       category_id: 2
     )
@@ -281,8 +342,27 @@ ApplicationRecord.transaction do
       name: 'Arapaima Gigas - Large Catfish - 100 kg (220 lb) - 3 m Long (9.8 ft)' ,
       amount: 5,
       price: 100220.98,
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc id ex ante. Donec enim mi, ullamcorper vel tortor sit amet, iaculis congue odio. Pellentesque dignissim finibus viverra. Sed maximus sem nec arcu interdum, eget gravida felis molestie. Nulla id vulputate sapien. Suspendisse rutrum pellentesque sapien non pulvinar. Mauris elit eros, fringilla a interdum at, hendrerit viverra neque. Curabitur dictum felis nec sem finibus aliquet. In nec lectus eu sapien auctor mattis non commodo mi. \n \n Phasellus dignissim mauris a velit malesuada tincidunt. Sed maximus at mi nec tempor. Integer gravida nec erat sed molestie. Donec sed congue nibh. Suspendisse non tortor eget magna pellentesque bibendum. Cras placerat elit arcu, sed sagittis metus venenatis ut. Aliquam porttitor gravida ligula lobortis molestie. Pellentesque non lectus sed augue feugiat condimentum. Mauris pulvinar nulla magna, eget scelerisque est tempor sed.",
-      bullet_desc: ['Can breathe air!', 'Thrives in oxygen-deprived waters like the Amazon River', 'Eats fruits, insects, seeds, and small land animals', 'The TOP predetor in oxbow lakes! (During low water season)', 'IMAGE: By Shizhao - Own work, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=7755863', 'Learn more at https://en.wikipedia.org/wiki/Arapaima'],
+      description: "Arapaima gigas, also known as pirarucu, is a species of freshwater fish native to the Amazon Basin in South America. It is the largest freshwater fish in the region and is highly valued for its meat and as a sport fish.
+
+      Arapaima gigas can grow up to 3 meters in length and weigh over 200 kg, making it one of the largest freshwater fish in the world. It has a long, streamlined body with large scales that can be over 15 cm in diameter, providing protection against predators.
+      
+      This species has a primitive lung that allows it to breathe air, which is an adaptation for the oxygen-poor waters of the Amazon Basin. It is also known for its powerful jaws and sharp teeth, which are used to catch prey such as fish, crustaceans, and even birds.
+      
+      Arapaima gigas is a slow-growing fish, with some individuals living over 20 years in the wild. It is a highly valued food fish and is also popular with sport fishermen due to its large size and strength.
+      
+      This species is threatened by overfishing and habitat destruction, and is listed as a vulnerable species by the International Union for Conservation of Nature (IUCN). Efforts are underway to promote sustainable fishing practices and protect the habitats of Arapaima gigas and other Amazonian fish species.",
+      bullet_desc: [
+        "Largest freshwater fish in the Amazon Basin: Arapaima gigas can grow up to 3 meters in length and weigh over 200 kg, making it one of the largest freshwater fish in the world.", 
+        "Highly valued for its meat: Arapaima gigas is a highly valued food fish in South America, known for its flavorful meat.", 
+        "Adaptations for oxygen-poor waters: Arapaima gigas has a primitive lung that allows it to breathe air, which is an adaptation for the oxygen-poor waters of the Amazon Basin.", 
+        "Powerful jaws and sharp teeth: Arapaima gigas has powerful jaws and sharp teeth, which are used to catch prey such as fish, crustaceans, and even birds.", 
+        "Slow-growing: Arapaima gigas is a slow-growing fish, with some individuals living over 20 years in the wild.",
+        "Threatened species: Arapaima gigas is listed as a vulnerable species by the IUCN due to overfishing and habitat destruction.",
+        "Popular with sport fishermen: Arapaima gigas is popular with sport fishermen due to its large size and strength",
+        "Important part of Amazonian ecosystems: Arapaima gigas and other Amazonian fish species play an important role in maintaining the health and diversity of tropical freshwater ecosystems.",
+        "Sustainable fishing practices: Efforts are underway to promote sustainable fishing practices and protect the habitats of Arapaima gigas and other Amazonian fish species.",
+        'IMAGE: By Shizhao - Own work, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=7755863', 
+        'Learn more at https://en.wikipedia.org/wiki/Arapaima'],
       image: 'giantCatfish.jpg',
       category_id: 6
     ) 
