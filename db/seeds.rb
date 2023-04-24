@@ -581,5 +581,70 @@ ApplicationRecord.transaction do
       user_id: 4
     )
 
+  #Cast iron reviews (product_id: 7)
+    Review.create!(
+      body: "I absolutely love my cast iron! It's incredibly durable and versatile, and it makes cooking a joy. Highly recommend!",
+      product_id: 7,
+      score: 5,
+      user_id: 6
+    )
+
+    Review.create!(
+      body: "I'm really disappointed with my cast iron. It's so heavy and hard to handle, and it's not as non-stick as I was led to believe. Would not recommend.",
+      product_id: 7,
+      score: 1,
+      user_id: 8
+    )
+
+  #Capybara reviews (product_id: 3)
+
+    Review.create!(
+      body: "They are so cute!",
+      product_id: 3,
+      score: 5,
+      user_id: 3
+    )
+
+    Review.create!(
+      body: "I was scared for my life when one of them approached me.",
+      product_id: 3,
+      score: 1,
+      user_id: 3
+    )
+
+  #jaguar  reviews (product_id: 4)
+
+    Review.create!(
+      body: "HUGE CAT!",
+      product_id: 4,
+      score: 5,
+      user_id: 9
+    )
+
+    Review.create!(
+      body: "Reminds me of my cat Whiskers",
+      product_id: 4,
+      score: 4,
+      user_id: 2
+    )
+
+  #squirrel monkey (product_id: 11)
+  
+    Review.create!(
+      body: "They are so tiny and cute!!!",
+      product_id: 11,
+      score: 5,
+      user_id: 5
+    )
+
+    Review.create!(
+      body: "I would raise one if I could. They are so lovely and cute!",
+      product_id: 11,
+      score: 5,
+      user_id: 1
+    )
+
+  #charcoal reviews (product_id: )
+
   puts "Done!"
 end
