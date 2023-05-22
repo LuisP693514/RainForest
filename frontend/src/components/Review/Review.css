@@ -1,15 +1,13 @@
 #reviewContainer {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     width: 70%;
     margin: 0 auto;
-    border: 1px solid rgb(237, 237, 237);
+    margin-bottom: 40px;
 }
 
 #reviewAuthor {
-    width: 150px;
-    font-weight: bold;
-    font-size: 20px;
+    font-size: 16px;
     font-family: ember;
     box-sizing: border-box;
     text-align: left;
