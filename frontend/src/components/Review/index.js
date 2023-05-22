@@ -7,8 +7,6 @@ import './Review.css';
 
 const Review = ({ review }) => {
 
-    // todo: edit/delete if the user is the author
-
     const dispatch = useDispatch();
     const user = useSelector(getSessionUser);
     const author = useSelector(getUser(review.userId))
@@ -65,6 +63,7 @@ const Review = ({ review }) => {
                             placeholder='Write a review'
                             onChange={(e) => setReviewBody(e.target.value)}
                             value={reviewBody}
+                            required
                         />
 
                         <div id='selectContainerReview'>

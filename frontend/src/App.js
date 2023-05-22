@@ -9,12 +9,14 @@ import CategoryShowPage from './components/CategoryShowPage';
 import CartShowPage from './components/CartShowPage';
 import CartCheckOutPage from './components/CartCheckOutPage';
 import SearchResultPage from './components/SearchResultPage';
+import ConfirmationPage from './components/ConfirmationPage';
 
 function App() {
   return (
     <Switch>
       <Route path='/categories/:categoryId' component={CategoryShowPage}/>
       <Route path='/products/:productId' component={ProductShowPage}/>
+      <Route path='/confirmation' component={ConfirmationPage}/>
       <Route path='/checkout' component={CartCheckOutPage}/>
       <Route path='/searchResult' component={SearchResultPage}/>
       <Route path='/signup' component={SignUpFormPage}/>
