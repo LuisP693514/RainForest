@@ -126,6 +126,7 @@ const ProductShowPage = () => {
                 placeholder='Write a review'
                 onChange={(e) => setReviewBody(e.target.value)}
                 value={reviewBody}
+                required
             />
             <div id='selectContainerReview'>
                 <p id='selectContainerReviewPTag'>Score: </p>

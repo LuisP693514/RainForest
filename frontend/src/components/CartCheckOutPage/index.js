@@ -61,8 +61,7 @@ const CartCheckOutPage = () => {
         realCartItems.forEach(cartItem => {
             dispatch(deleteCartItem(cartItem.id));
         })
-        history.push('/checkout', {});
-        window.location.reload();
+        history.push('/confirmation', {confirm: true});
     }
 
     return (
