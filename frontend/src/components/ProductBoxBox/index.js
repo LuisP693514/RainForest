@@ -7,6 +7,13 @@ const ProductBoxBox = ({product}) => {
 
     const dispatch = useDispatch();
 
+    let prodName = product.name
+
+    if (prodName.length > 80) {
+        prodName = product.name.slice(0, 80) + '...';
+    }
+
+
     return (
         <div id='innerDivHolds2'>
             <Link onClick={(e) => {
@@ -15,7 +22,7 @@ const ProductBoxBox = ({product}) => {
                 <img id='productImageForInnerBox' src={require(`../../images/${product.image}`)} alt={product.name}/>
             </Link>
             <Link id='wordsLinkTag' to={`/products/${product.id}`} >
-                <p id='nameOfBoxBox'>{product.name}</p>
+                <p id='nameOfBoxBox'>{prodName}</p>
             </Link>
         </div>
     )

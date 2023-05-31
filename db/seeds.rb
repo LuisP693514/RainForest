@@ -529,6 +529,41 @@ ApplicationRecord.transaction do
       category_id: 7
     )
 
+    #all terrain vehicle 19
+    Product.create!(
+      name: 'Blue Thunder ATV' ,
+      amount: 90000,
+      price: 500.99,
+      description: "The Blue Thunder ATV stands out with its captivating blue exterior, exuding a sense of confidence and adventure. Its sleek design is complemented by robust construction, ensuring durability and reliability in the face of rugged landscapes and challenging trails. This ATV is built to handle anything you throw at it!
+
+      Equipped with a potent engine, the Blue Thunder delivers an adrenaline-pumping performance that will leave you craving for more. With its exceptional horsepower and torque, this beast effortlessly tackles steep inclines, muddy terrains, and rocky paths, making it the perfect companion for thrill-seekers and outdoor enthusiasts.
+      
+      The ATV's suspension system has been meticulously engineered to provide an exceptionally smooth ride, absorbing shocks and bumps with ease. Whether you're cruising along forest trails, exploring sandy dunes, or conquering rocky mountainsides, the Blue Thunder's suspension ensures maximum comfort and control.
+      
+      Safety is always a top priority, and the Blue Thunder ATV doesn't disappoint. It features advanced safety features, including responsive brakes, sturdy roll bars, and integrated lighting, allowing you to navigate confidently even in low-light conditions. The ATV also comes equipped with ergonomic handlebars and a comfortable seating arrangement, ensuring a comfortable and enjoyable riding experience.
+      
+      With ample storage space, the Blue Thunder ATV allows you to bring all your essentials for an epic adventure. Load up your camping gear, fishing equipment, or picnic supplies, and head out on a thrilling expedition without any worries about storage limitations.
+      
+      Whether you're an experienced rider or a novice looking to explore the great outdoors, the Blue Thunder ATV offers an incredible blend of power, performance, and style. It's time to unleash your inner adventurer and embrace the freedom of the open trails with the Blue Thunder ATV! Don't miss out on the opportunity to own this exhilarating machine that will make every ride an unforgettable experience. Get ready to dominate the off-road world in style!",
+      bullet_desc: [
+        "Stunning blue exterior that stands out from the crowd", 
+        "Powerful and reliable all-terrain vehicle", 
+        "Designed for off-roading adventures and conquering challenging terrains", 
+        "Durable construction with a robust frame for maximum durability", 
+        "High ground clearance for navigating obstacles with ease",
+        "Smooth and responsive handling for a thrilling riding experience",
+        "Equipped with a powerful engine for impressive acceleration and top speed",
+        "Comfortable seating and ergonomic design for long rides",
+        "Ample storage space for all your gear and equipment",
+        "Easy to maintain and service for hassle-free ownership",
+        "Safety features such as headlights, taillights, and a sturdy roll cage",
+        "Perfect for outdoor enthusiasts, adventurers, and thrill-seekers alike"
+      ],
+      image: 'atv.png',
+      category_id: 8
+    )
+
+
 # ----------------------------- Reviews ----------------------------- #
   # == Schema Information
   #
@@ -644,7 +679,19 @@ ApplicationRecord.transaction do
       user_id: 1
     )
 
-  #charcoal reviews (product_id: )
-
+  #charcoal reviews (product_id: 9)
+    Review.create!(
+      body: "Lovely charcoal I say! Has never let me down. Always kept the fire going after only one ignition. Saves me a lot of hassle by working immediately! Highly recommend!",
+      product_id: 9,
+      score: 5,
+      user_id: 8
+    )
+  #atv reviews (product_id: 19)
+    Review.create!(
+      body: "Such a nice vehicle! I bough my baby 2 years ago and had no problems with it. Take care of her every day. Highly recommend!",
+      product_id: 19,
+      score: 5,
+      user_id: 6
+    )
   puts "Done!"
 end
