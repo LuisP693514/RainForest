@@ -15,12 +15,12 @@
     background: transparent;
     border-radius: 6px;
     box-shadow: none;
-    width: 60px;
+    width: 20px;
     height: 50%;
     top:25%;
     position: absolute;
     z-index: 1;
-    border: 2px solid rgba(0, 0, 0, 0.16);
+    border: 2px solid rgba(179, 179, 179, 0.04);
 }
 
 #forwardButtonCarousel {
@@ -28,4 +28,8 @@
 }
 #backButtonCarousel {
     left:0
+}
+
+#sliderContainer, .horizontalSlider___281Ls, .carousel__slider, .carousel__slider--horizontal {
+    background: white;
 }

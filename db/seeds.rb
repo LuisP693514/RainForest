@@ -563,6 +563,38 @@ ApplicationRecord.transaction do
       category_id: 8
     )
 
+    #all terrain vehicle 20
+    Product.create!(
+      name: 'X-PRO Adult ATV Quad Four Wheelers 200 Utility ATV Full Size ATV Quad Adult ATVs,Black' ,
+      amount: 90000,
+      price: 2449.99,
+      description: "Designed to conquer even the harshest terrains, the Black ATV combines durability and performance seamlessly. Its robust construction ensures it can withstand the toughest challenges, while the high ground clearance allows you to effortlessly navigate over rocks, mud, and uneven surfaces. Whether you're tackling mountains, forests, or desert dunes, this ATV will take you there.
+
+      Underneath the hood, the Black ATV boasts a powerful engine that delivers impressive acceleration and top speed, giving you the adrenaline rush you crave. Its responsive handling and precise controls provide an exhilarating riding experience, making every journey an unforgettable one.
+      
+      Comfort is a top priority with the Black ATV. The ergonomically designed seating ensures maximum comfort, even during long rides, allowing you to focus on the adventure ahead. Plus, the ATV provides ample storage space for all your gear and essentials, so you can bring everything you need for an epic excursion.
+      
+      Safety is paramount, and the Black ATV is equipped with essential features to keep you protected. From reliable headlights that illuminate the darkest trails to a sturdy roll cage that provides added security, this ATV prioritizes your well-being while you conquer the outdoors.
+      
+      Maintenance is a breeze with the Black ATV, thanks to its user-friendly design and easy-to-access components. This means less time spent on repairs and more time enjoying the thrill of the ride.",
+      bullet_desc: [
+        "200cc Utility ATV broght by XPROUSA.", 
+        "Manual Transmission lets you be in full control of your 4-wheeler. The Reverse feature allows you to move your ATV backwards with ease without you having to get out of the ATV.", 
+        'Full size at 69.3" length, 42.1" Width, 43.3 " Height provide a roomy and comfortable riding, that give more space for growing out.', 
+        "Luggage Rack is on the front and rear of the ATV. This is a fantastic upgrade for carrying anything needed.", 
+        "High ground clearance for navigating obstacles with ease",
+        "Smooth and responsive handling for a thrilling riding experience",
+        "Equipped with a powerful engine for impressive acceleration and top speed",
+        "Comfortable seating and ergonomic design for long rides",
+        "Some assembly required: Assembly for ATVs include Handle bar brackets, all 4 wheels, front and rear racks, rear shock and battery.",
+        "Easy to maintain and service for hassle-free ownership",
+        "Safety features such as headlights, taillights, and a sturdy roll cage",
+        "Perfect for outdoor enthusiasts, adventurers, and thrill-seekers alike"
+      ],
+      image: 'atv2.png',
+      category_id: 8
+    )
+
 
 # ----------------------------- Reviews ----------------------------- #
   # == Schema Information
@@ -688,10 +720,18 @@ ApplicationRecord.transaction do
     )
   #atv reviews (product_id: 19)
     Review.create!(
-      body: "Such a nice vehicle! I bough my baby 2 years ago and had no problems with it. Take care of her every day. Highly recommend!",
+      body: "Such a nice vehicle! I bought my baby 2 years ago and had no problems with it. Take care of her every day. Highly recommend!",
       product_id: 19,
       score: 5,
       user_id: 6
+    )
+  
+  #atv2 reviews (product_id: 20)
+    Review.create!(
+      body: "Great ATV! I would take this one over the blue one. Highly recommend!",
+      product_id: 20,
+      score: 5,
+      user_id: 9
     )
   puts "Done!"
 end
