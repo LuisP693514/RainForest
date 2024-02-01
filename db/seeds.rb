@@ -614,7 +614,7 @@ ApplicationRecord.transaction do
 
   #Big leaf reviews (product_id: 1)
     Review.create!(
-      body: "I recently purchased the large leaf and I am absolutely thrilled with my purchase! The leaf is even more impressive in person, with its vibrant green color and intricate veins creating a texture that is simply breathtaking. The size of the leaf is truly impressive and adds a touch of natural beauty to my home that I didn't even realize was missing until I added it.
+      body: "The leaf is even more impressive in person, with its vibrant green color and intricate veins creating a texture that is simply breathtaking. The size of the leaf is truly impressive and adds a touch of natural beauty to my home that I didn't even realize was missing until I added it.
 
       \n\nWhat I love most about the leaf is its versatility. It can be displayed in a variety of ways, from placing it in a decorative vase to mounting it on a wall, which makes it perfect for anyone looking for unique and creative ways to enhance their decor. The leaf is also incredibly durable and long-lasting, requiring minimal maintenance to keep its beauty intact.",
       product_id: 1,
@@ -632,7 +632,7 @@ ApplicationRecord.transaction do
     )
 
     Review.create!(
-      body: "I recently purchased the large leaf and while it is certainly a beautiful piece, I can't help feeling a bit sad about my purchase. Unfortunately, the leaf arrived with a few small tears along the edges, which took away from its natural beauty. I was looking forward to displaying it in a prominent spot in my home, but now I'm not sure if I want to showcase it at all.
+      body: "I bought the large leaf and while it is certainly a beautiful piece, I can't help feeling a bit sad about my purchase. Unfortunately, the leaf arrived with a few small tears along the edges, which took away from its natural beauty. I was looking forward to displaying it in a prominent spot in my home, but now I'm not sure if I want to showcase it at all.
 
       \n\nOn top of that, the size of the leaf is almost too large for my home, which has made it difficult to find the perfect spot for it. I feel like I wasted my money on a product that I can't even fully enjoy or appreciate. Overall, I'm just disappointed that my purchase didn't live up to my expectations.",
       product_id: 1,
@@ -657,7 +657,7 @@ ApplicationRecord.transaction do
     )
 
     Review.create!(
-      body: "I'm really disappointed with my cast iron. It's so heavy and hard to handle, and it's not as non-stick as I was led to believe. Would not recommend.",
+      body: "I'm really disappointed with my cast iron. It's so heavy and hard to handle. Would not recommend.",
       product_id: 7,
       score: 1,
       user_id: 8
@@ -676,7 +676,7 @@ ApplicationRecord.transaction do
       body: "I was scared for my life when one of them approached me.",
       product_id: 3,
       score: 1,
-      user_id: 3
+      user_id: 4
     )
 
   #jaguar  reviews (product_id: 4)
@@ -713,7 +713,7 @@ ApplicationRecord.transaction do
 
   #charcoal reviews (product_id: 9)
     Review.create!(
-      body: "Lovely charcoal I say! Has never let me down. Always kept the fire going after only one ignition. Saves me a lot of hassle by working immediately! Highly recommend!",
+      body: "Lovely charcoal fuel! Has never let me down. Always kept the fire going after only one ignition. Saves me a lot of hassle by working immediately! Highly recommend!",
       product_id: 9,
       score: 5,
       user_id: 8
@@ -733,5 +733,43 @@ ApplicationRecord.transaction do
       score: 5,
       user_id: 9
     )
+
+  #kapok reviews (product_id: 18)
+    Review.create!(
+      body: "I felt inferior to its humongous height.",
+      product_id: 18,
+      score: 4,
+      user_id: 8
+    )
+
+    Review.create!(
+      body: "If I were this tall I would be the #1 NBA player",
+      product_id: 18,
+      score: 5,
+      user_id: 5
+    )
+  # janira beanie reviews (product_id: 5)
+    Review.create!(
+      body: "Super comfortable and smooth beanie! I love the texture.",
+      product_id: 5,
+      score: 5,
+      user_id: 1
+    )
+  #charcoal (product_id: 8)
+    Review.create!(
+      body: "Made the fire last for so long! Gave a unique flavor to my hotdogs. Really good!",
+      product_id: 8,
+      score: 5,
+      user_id: 7
+    )
+
+  # giant fish (product_id: 12)
+    Review.create!(
+      body: "Very large fish, but I've seen bigger.",
+      product_id: 12,
+      score: 4,
+      user_id: 4
+    )
+  
   puts "Done!"
 end
